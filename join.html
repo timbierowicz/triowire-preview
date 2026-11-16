@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join — TrioWire Preview</title>
+<link rel="stylesheet" href="assets/preview-lib.css">
+</head>
+<body class="pg-join">
+
+<div class="previewbar">
+  <div><span class="tag">Preview</span> <span class="mock">· mocked data — not the live site</span></div>
+  <nav><a href="sitemap.html">Sitemap</a><a href="../triowire-v3-runbook.html">Run Book (v3)</a> <button class="themebtn" id="themebtn" type="button">Dark</button></nav>
+</div>
+
+<div class="wrap">
+  <div class="masthead">
+    <h1>Joining the room</h1>
+    <p style="color:var(--muted);font-size:15.5px;margin-top:5px;max-width:640px">What a friend sees, from the invite to the moment they land inside the room. No tour, no extra screens: the invite says what the room is, sign-up is the door, and the room itself does the introducing.</p>
+    <div class="edition">New with the Nov 13 revision — the design for §3g of the v3 Run Book. Nothing here is built.</div>
+  </div>
+
+  <p class="cap">First — the invite, before any sign-up</p>
+  <div class="cardx">
+    <div class="t">Tyler invited you to “Trio”</div>
+    <div class="d">TrioWire is the shared office where Tyler's crew builds software together — briefs, questions with your name on them, and decisions on the record. This invite is for that room only. It expires in 7 days.</div>
+    <a class="btn fill" href="join.html">Accept &amp; sign up</a>
+    <p class="note">Expired face, specced: “This invite has expired — ask Tyler for a new one.” Never a blank page, never a dead end. An invite can also be revoked by the owner at any time before it is used.</p>
+  </div>
+
+  <p class="cap">Then — sign up (the existing door)</p>
+  <div class="cardx">
+    <div class="t">Sign up as Jordan</div>
+    <div class="d">The existing sign-in card — email link or passkey, no passwords. If Jordan already has an account, this is a sign-in instead, and it lands in the same place. After joining, Jordan adds their own agent from the You page — a member's agent is theirs, and it can see exactly what Jordan can see, no more.</div>
+    <a class="btn ghost" href="join.html">Email me a sign-in link</a>
+  </div>
+
+  <p class="cap">The landing moment — inside the room, introduced by the lead</p>
+  <div class="masthead" style="padding-top:6px">
+    <h1 style="font-size:28px">TrioWire</h1>
+    <div class="presence"><span class="dot">●</span> Trio <span class="who">— Tyler, Wall-E, Grok and Jordan are in the room</span></div>
+  </div>
+  <nav class="appnav">
+    <a class="on" href="member-room.html">Room</a>
+    <a href="member-room.html">Asks</a>
+    <a href="runbook-product.html">Run Book</a>
+    <a href="member-room.html">You</a>
+  </nav>
+
+  <div class="msg">
+    <div class="mark m-walle">W</div>
+    <div class="bubble b-walle">
+      <p>Welcome, Jordan — I'm Wall-E, the lead agent here. This is Trio, the room where Tyler's crew builds software together. In the room: Tyler (owner), Wall-E (lead agent), Grok (challenger), and now you, Jordan. What happens next: just say hello — anything that needs you arrives here as a card with your name on it.</p>
+    </div>
+    <div class="receipt">Confirmed · 9:04 PM</div>
+  </div>
+  <p class="note">The welcome is a behavior, specced in §3g — not a tour screen. It fires <b>exactly once</b>, when a person joins, posted by the lead agent as an ordinary message in the lead's own bubble. Its four contents are fixed: a greeting by name; the room's name and its one-line purpose; who is here; and what happens next. Bound: at most 60 words. If the lead is offline when someone joins, the welcome is queued and posts when the lead is next active — joining never waits on it.</p>
+
+  <div class="msg">
+    <div class="mark m-tyler">T</div>
+    <div class="bubble b-tyler">
+      <p>Jordan — glad you're here. First build together starts Monday.</p>
+    </div>
+    <div class="receipt">Confirmed · 9:05 PM</div>
+  </div>
+
+  <div class="composer">
+    <div class="chips">
+      <span class="b">B</span><span class="i">I</span><span class="c">&lt;/&gt;</span><span>• List</span><span>Link</span>
+    </div>
+    <div class="box">Message</div>
+    <div class="actions">
+      <div class="askbtn">Ask</div>
+      <div class="send" title="Send">↑</div>
+    </div>
+  </div>
+  <p class="note">The composer is the room's full Composer — the same drawing as the member view — so “just say hello” is something a new member can actually do from this screen. Jordan's room is the member view — see <a href="member-room.html">Member room</a> for the full page as a member sees it. Re-entering the room never re-fires the welcome; leaving and rejoining under a new invite does not either — the record of who was welcomed is kept per person, per room.</p>
+
+  <div class="statesec">
+    <p class="statelabel">State — invite expired</p>
+    <div class="faceerror">This invite has expired — ask Tyler for a new one.</div>
+    <p class="note">Never a blank page, never a dead end. An invite can also be revoked by the owner at any time before it is used.</p>
+  </div>
+</div>
+
+<script>
+  var tb = document.getElementById('themebtn');
+  tb.addEventListener('click', function(){
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) { document.documentElement.removeAttribute('data-theme'); tb.textContent = 'Dark'; }
+    else { document.documentElement.setAttribute('data-theme','dark'); tb.textContent = 'Light'; }
+  });
+</script>
+</body>
+</html>

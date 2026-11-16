@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Run Book — in TrioWire — Preview</title>
+<link rel="stylesheet" href="assets/preview-lib.css">
+</head>
+<body class="pg-runbook-product">
+
+<div class="previewbar">
+  <div><span class="tag">Preview</span> <span class="mock">· mocked data — not the live site</span></div>
+  <nav><a href="sitemap.html">Sitemap</a><a href="../triowire-v3-runbook.html">Run Book (v3)</a> <button class="themebtn" id="themebtn" type="button">Dark</button></nav>
+</div>
+
+<div class="wrap">
+  <div class="masthead">
+    <h1>TrioWire</h1>
+    <div class="presence"><span class="dot">●</span> Trio <span class="who">— Tyler, Wall-E and Grok are in the room</span></div>
+    <div class="edition">The Run Book inside TrioWire — ruled Nov 13 (this surface supersedes pick P3's “files” home). New in the Nov 13 revision (§3e of the v3 Run Book). Until this surface ships, the file edition of the book is the working bible — it says so on its own face.</div>
+  </div>
+
+  <nav class="appnav">
+    <a href="v3-room.html">Room</a>
+    <a href="board.html">Board</a>
+    <a href="v3-asks.html">Asks</a>
+    <a href="briefs.html">Briefs</a>
+    <a href="rulings.html">Rulings</a>
+    <a href="you.html">You</a>
+    <a class="on" href="runbook-product.html">Run Book</a>
+  </nav>
+
+  <h2>Books — one per app</h2>
+  <div class="cardx">
+    <div class="t">TrioWire — Run Book</div>
+    <div class="d">The bible of what we are building for TrioWire: story, spec, sitemap, preview. Living — it changes as the work changes, and it must agree with the live app in both directions.</div>
+  </div>
+  <div class="cardx">
+    <div class="t">Dolly — Run Book</div>
+    <div class="d">A second book, listed to show the shape: every app the crew builds gets exactly one book, in this same list, in this same form.</div>
+  </div>
+
+  <h2>Inside the TrioWire book — the bible face, whole</h2>
+  <p class="note" style="margin-top:0">Every bible-face section in R-D15's table — the one normative list. Curtain-side material (Operations, estimate traces, working ledgers) is not here at all: not folded, not locked — absent.</p>
+  <div class="secs">
+    <span>Scorecard &amp; picks</span><span class="on">Story</span><span>Spec</span><span>APIs</span><span>Architecture</span><span>Sitemap</span><span>Preview</span><span>Failure modes</span><span>Costs (per P9 ★)</span><span>Decisions</span>
+  </div>
+  <div class="cardx">
+    <div class="t">Scorecard &amp; picks</div>
+    <div class="d">What is waiting, and what was chosen. Two picks wait on Tyler tonight (dark mode's chapter order; the member-visibility default) — the crew's standing invitation to propose, below, applies to every section.</div>
+  </div>
+  <div class="cardx">
+    <div class="t">Story — what TrioWire is</div>
+    <div class="d">A shared office for a small team made of people and their AI assistants, building software together… <i>(the book's own words, rendered here in the product — the crew reads the bible without leaving TrioWire.)</i></div>
+    <a class="propose" href="runbook-product.html">Propose a change</a>
+    <div class="d" style="margin-top:6px">The only door on any section: it files an ask to the owner + the lead agent (R-D10). Nobody edits the book directly — the owner included.</div>
+  </div>
+  <div class="cardx">
+    <div class="t">Spec — §3g, the welcome</div>
+    <div class="d">“The welcome says exactly four things…” — this section carries an open proposal, shown on the section itself:</div>
+    <span class="marker">● 1 open proposal — Jordan: “name the room's purpose in plainer words” · waiting on a ruling</span><br>
+    <a class="propose" href="runbook-product.html">Propose a change</a>
+  </div>
+  <div class="cardx">
+    <div class="t">Failure modes — what a person sees when things break</div>
+    <div class="d">Drawn as one row of the section: <i>A send fails (network drops) — the message stays as the “Sending…” placeholder, then the unsent state: “Not sent — tap to retry. Nothing you typed is lost.”</i> The full table renders in place, like every section.</div>
+  </div>
+  <div class="cardx">
+    <div class="t">Costs — plain totals (pick P9 ★)</div>
+    <div class="d">Per build chapter, in plain words: the chat core is estimated at <b>about three weeks of build window</b>, and landed on its estimate. The derivations behind the totals stay curtain-side — the bible carries the total, never the burn.</div>
+  </div>
+  <div class="cardx">
+    <div class="t">Decisions — the change log in plain words</div>
+    <div class="d"><b>Nov 13 — a proposal becomes a ruling becomes changed words.</b> Jordan proposed: the Story should say the crew “builds software together,” not “ships product together.” → <b>Tyler ruled: accept</b> (Wall-E recommended accept, on the record). → The Story section's words changed to “builds software together” — and the quiet line on that section names this ruling, so the words can always answer how they got there. A declined proposal would sit here too, with its reason, the section unchanged.</div>
+  </div>
+
+  <h2>Its Sitemap section — the same table, the same treatment</h2>
+  <p class="note" style="margin-top:0">One row per page, stamp beside the name, subpages indented under the page that contains them, and each row's fold holding its description, its library components, and its Open framed link. The Thread row below is drawn expanded; the rest are drawn folded, as a reader meets them.</p>
+  <table>
+    <tr><th>Page — name &amp; status</th><th>About</th></tr>
+    <tr><td><b>Sign in</b> <span class="stamp live">Live</span></td><td>About &amp; components ▸</td></tr>
+    <tr><td><b>Room</b> <span class="stamp live">Live</span></td><td>About &amp; components ▸</td></tr>
+    <tr><td class="indent"><b>Thread</b> <span class="stamp live">Live</span> — opens off Room</td><td>About &amp; components ▾
+      <div class="fold">Same drift family as the Room — it shares the writing box and the message form. Its parent message keeps the framed form in both the current and the v3 design. Back returns to the room, always.<br><b>Components:</b> Thread block · Chat message · Composer · Receipt line<br><a href="preview-frame.html">Open framed</a></div></td></tr>
+    <tr><td class="indent"><b>Curtain</b> <span class="stamp preview">Preview</span> — opens off Room</td><td>About &amp; components ▸</td></tr>
+    <tr><td><b>Asks</b> <span class="stamp live">Live</span></td><td>About &amp; components ▸</td></tr>
+    <tr><td><b>You</b> <span class="stamp live">Live</span></td><td>About &amp; components ▸</td></tr>
+    <tr><td><b>Run Book</b> <span class="stamp preview">Preview</span></td><td>About &amp; components ▸ — this surface; the book maps itself, like every other page.</td></tr>
+  </table>
+
+  <h2>Its Preview section — the storyboards live here</h2>
+  <div class="cardx">
+    <div class="t">Preview views, inside the book — with the device switcher in place</div>
+    <div class="devsw"><span class="on">Phone · 390</span><span>Tablet · 820</span><span>Desktop · full</span></div>
+    <div class="d" style="margin-top:8px">The storyboard pages exist only as this section of the book — openable here, at the width the switcher above sets, without leaving the product. There are no separate storyboard artifacts anymore; the loose files the crew's tools write remain the authoring sources, and this book is the delivered object friends are handed.</div>
+  </div>
+
+  <p class="note">Who can see it: the whole crew — owner, lead agent, members, and members' agents read the book (§3g visibility table), and any of them can propose from a section's “Propose a change” door. An accept is recorded in Decisions at once and files the canon-write (R-D12): the lead changes the authoring source, the section shows “canon updating” until the write lands, and then the words are the ruled words. Reading needs no gate. The drift law is unchanged: when a surface lands, its book section and preview are updated in the same motion, and a book that disagrees with the live app is a defect in the book, the app, or both — never a shrug.</p>
+</div>
+
+<script>
+  var tb = document.getElementById('themebtn');
+  tb.addEventListener('click', function(){
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) { document.documentElement.removeAttribute('data-theme'); tb.textContent = 'Dark'; }
+    else { document.documentElement.setAttribute('data-theme','dark'); tb.textContent = 'Light'; }
+  });
+</script>
+</body>
+</html>

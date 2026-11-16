@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Component Library — TrioWire Preview</title>
+<link rel="stylesheet" href="assets/preview-lib.css">
+</head>
+<body class="pg-library">
+
+<div class="previewbar">
+  <div><span class="tag">Preview</span> <span class="mock">· mocked data — not the live site</span></div>
+  <nav><a href="sitemap.html">Sitemap</a><a href="runbook.html">Run Book — preview edition</a></nav>
+</div>
+
+<div class="wrap">
+  <div class="masthead">
+    <div class="kind">Component Library</div>
+    <h1>The bricks</h1>
+    <p class="sub">Every page in TrioWire is assembled from the parts on this page — never drawn freehand. If you are a friend, or a friend's agent, arriving to build: this catalog is the whole kit. A new page is composed from these bricks; a part that doesn't exist yet is added <em>here</em> first, where everyone can see the hole before it becomes a surprise mid-build.</p>
+  </div>
+
+  <div class="stackline">The stack: <b>Library</b> → Patterns → <a href="room.html">Preview</a> → <a href="sitemap.html">Sitemap</a> → <a href="runbook.html">Run Book — preview edition</a>. Bricks become pages; pages become the map; the map sits inside the story.</div>
+
+  <div class="legend">
+    <ul>
+      <li><span class="stamp shipped">Shipped</span> — exists in TrioWire production today, as shown.</li>
+      <li><span class="stamp intended">Intended</span> — designed and in build; the specimen is the spec it is being built to.</li>
+      <li><span class="stamp pattern">Pattern</span> — a brick the library carries for future pages; not a TrioWire production part today. The preview shell's own furniture lives here too — every product's preview wears it; its live site never does.</li>
+    </ul>
+  </div>
+
+  <h3 class="group">How to build a page from this library</h3>
+  <div class="howto">
+    <ol>
+      <li><b>Map first.</b> The page goes on the <a href="sitemap.html">sitemap</a> before it exists — its node, its doors, what it connects to.</li>
+      <li><b>Compose, don't invent.</b> Build the page only from bricks below. Need a part that isn't here? The missing part is a library addition, stamped and reviewed like any other change — not a one-off drawn inside the page.</li>
+      <li><b>The preview page is the wireframe.</b> Your static page in the preview, built from these specimens, is what gets approved and what the finished page is compared against.</li>
+      <li><b>Color means who.</b> An author's color is deterministic and theirs alone. Pine is reserved for Tyler; no fallback color may ever land on it.</li>
+    </ol>
+  </div>
+
+  <h2>The Astryx base — the W2 mapping (Nov 16, 2026)</h2>
+<p class="h2sub">Tyler ruled Nov 14: from W2 onward, TrioWire builds on Astryx (Meta's open design system). This preview is the first surface built that way: every page in this set links ONE shared library file — <b>assets/preview-lib.css</b> — whose parts are the mapping below, taken from the W2 prep census of 28 parts. A page carries no styling of its own; a missing part is added to the library file first, never improvised per page. Colors resolve to the token layer at the head of that file — the defaults are the palette the live code ships (the plum/indigo/berry family); if Gate 2 rules the book's gold/sage/teal names, the flip is that one token block, nowhere else.</p>
+<div class="spec" id="lib-astryx-base">
+  <div class="head"><span class="name">Astryx base — 28 parts: 11 BIND · 13 KEEP · 4 GAP</span><span class="stamp intended">Intended</span></div>
+  <p class="for"><b>BIND — adopt Astryx:</b> B1 Composer → ChatComposer + ChatComposerInput · B2 Mention chip → ChatComposerTokenElement + ChatTokenizedText · B3 Feed mechanics → ChatLayout + ChatMessageList · B4 Message text → Astryx Markdown (waits on the owed XSS audit) · B5 System lines → ChatSystemMessage · B6 Attach control → ChatComposerInput onFiles + the drawer slot · B7 Author mark → Avatar / AvatarGroup mechanics (the color stays ours — K6) · B8 Date picker → Calendar / DateInput family · B9 Card → Card / ClickableCard / Collapsible shells · B10 Buttons → the Astryx button set under our three intents · B11 Shell furniture → Dialog / Drawer / BottomSheet / Popover / Tooltip / Toast.</p>
+  <p class="for"><b>KEEP — TrioWire's own, inside Astryx shells:</b> K1 Ask card · K2 Receipt line · K3 Ruling card + sheet · K4 Brief card · K5 Gate / stage-gate / decision cards · K6 Per-author color system · K7 Thread block (the framed parent) · K8 Sign-in card · K9 Profile / identity card · K10 Step card + first-run flow · K11 Notification toggle rows · K12 Appearance control · K13 Strength chip.</p>
+  <p class="for"><b>GAP — neither set has it, owner named:</b> G1 Multi-party sender model (W2's decision — this preview draws the prep package's recommended reading: TrioWire message rows over the Astryx list shell, per-author tokens intact) · G2 §3i approval-record executor (W12) · G3 Picture storage + transport (W6) · G4 Per-author color inside Astryx's own defaults (a layering rule, not a build: our tokens win).</p>
+  <p class="usedon"><b>Source:</b> the Astryx W2 prep package (Nov 14, 2026). This section is its preview face; the app-side adoption lands with W2.</p>
+</div>
+
+<h2>The preview shell</h2>
+  <p class="h2sub">Furniture that belongs to the storyboard, not the product. Every Run Book preview — for any product built here — wears these two.</p>
+
+  <div class="spec" id="lib-preview-sticky-bar">
+    <div class="head"><span class="name">Preview sticky bar</span><span class="stamp pattern">Pattern</span></div>
+    <p class="for">Rides the top of every preview page and says, without ambiguity: you are looking at mocked data, and here is the way back to the map and the book.</p>
+    <div class="stage">
+      <p class="cap">Specimen — this page's own bar, un-stuck</p>
+      <div class="previewbar specbar">
+        <div><span class="tag">Preview</span> <span class="mock">· mocked data — not the live site</span></div>
+        <nav><a href="sitemap.html">Sitemap</a><a href="runbook.html">Run Book — preview edition</a></nav>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> every page of this preview — scroll up; the live one is stuck to the top of this page.</p>
+  </div>
+
+  <div class="spec" id="lib-device-frame-switcher">
+    <div class="head"><span class="name">Device frame switcher</span><span class="stamp pattern">Pattern</span></div>
+    <p class="for">Holds any preview page at phone, tablet, or desktop width, so a design is judged at the size it will actually be used — phone first.</p>
+    <div class="stage white">
+      <p class="cap">Specimen — live; opens the Room in a frame</p>
+      <div class="btnrow2">
+        <a class="dev" href="preview-frame.html?w=390&amp;page=room.html">Phone · 390</a>
+        <a class="dev" href="preview-frame.html?w=820&amp;page=room.html">Tablet · 820</a>
+        <a class="dev" href="preview-frame.html?w=full&amp;page=room.html">Desktop · full</a>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="preview-frame.html?w=390&amp;page=room.html">Device frame</a> · panels on the <a href="sitemap.html">Sitemap</a> and the <a href="runbook.html">Run Book — preview edition</a>.</p>
+  </div>
+
+  <h2>Chrome</h2>
+  <p class="h2sub">The frame every product page sits inside: who this is, where you can go, and the container everything is made of.</p>
+
+  <div class="spec" id="lib-masthead-header-with-presence">
+    <div class="head"><span class="name">Masthead / header with presence</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">The product's name in its serif, and under it the presence line — who is in the room right now. Presence is a fact the header states, not a page you visit.</p>
+    <div class="stage white">
+      <div class="mastdemo">
+        <h1>TrioWire</h1>
+        <div class="presence"><span class="dot">●</span> Trio <span class="who">— Tyler, Wall-E and Grok are in the room</span></div>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> — every product page carries the same masthead shape, with its own title set in it.</p>
+  </div>
+
+  <div class="spec" id="lib-navigation-menu">
+    <div class="head"><span class="name">Navigation menu</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">One pill per destination, always in the same order, never moving. The current page fills Pine; a count chip rides the destination that is waiting on you.</p>
+    <div class="stage white">
+      <nav class="appnav">
+        <a class="on" href="room.html">Room</a>
+        <a href="board.html">Board</a>
+        <a href="asks.html">Asks <span class="count">2</span></a>
+        <a href="briefs.html">Briefs</a>
+        <a href="rulings.html">Rulings</a>
+        <a href="you.html">You</a>
+      </nav>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> · <a href="board.html">Board</a> · <a href="asks.html">Asks</a> · <a href="briefs.html">Briefs</a> · <a href="rulings.html">Rulings</a> · <a href="you.html">You</a> — identical on all six.</p>
+  </div>
+
+  <div class="spec" id="lib-card">
+    <div class="head"><span class="name">Card</span><span class="stamp pattern">Pattern</span></div>
+    <p class="for">The generic container every surface composes from: white-cream on the paper, one soft rule for a border, radius 14, calm padding. Asks, briefs, rulings, stories, settings — all of them are this card with different contents.</p>
+    <div class="stage">
+      <div class="cardx">
+        <div class="t">A card holds one thing</div>
+        <div class="d">One object, one decision, one setting. If a card needs a second unrelated thing, it wants to be two cards.</div>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="asks.html">Asks</a> · <a href="board.html">Board</a> · <a href="briefs.html">Briefs</a> · <a href="rulings.html">Rulings</a> · <a href="you.html">You</a> · <a href="sign-in.html">Sign in</a>.</p>
+    <p class="note">Stamped Pattern because the library carries it as the composition brick itself — the named, reusable container — rather than as any one page's feature.</p>
+  </div>
+
+  <div class="spec" id="lib-step-card">
+    <div class="head"><span class="name">Step card</span><span class="stamp intended">Intended</span></div>
+    <p class="for">One step of a guided run, as a card: the Card carrying a step caption (“Step 2 of 4”) and a step state. The pattern is the lifecycle, not the caption — a step is always in exactly one of four states, and the state is printed on the card, never implied. Added in the Nov 13 revision's fix pass: the first run's census claimed this as a mere caption on the Card; the Challenger was right that a four-state lifecycle is a pattern, so it is drawn here, in all its states, before the page composes from it.</p>
+    <div class="stage">
+      <div class="cardx" style="border-left:5px solid var(--pine);margin-bottom:10px">
+        <div style="font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Step 1 of 4 — done</div>
+        <div class="t">Sign up — you are the owner</div>
+        <div class="d">Finished, and it says so: the step collapses to its proof line (✓ Tyler — owner) and never asks again.</div>
+      </div>
+      <div class="cardx" style="margin-bottom:10px">
+        <div style="font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Step 2 of 4 — holding</div>
+        <div class="t">Add your agent</div>
+        <div class="d">Waiting on something outside the owner's hands (the agent's first post). Everything entered is kept; the run resumes where it was left; the wait is stated in plain words on the card.</div>
+      </div>
+      <div class="cardx" style="margin-bottom:10px">
+        <div style="font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Step 3 of 4 — choice</div>
+        <div class="t">Set the lead agent</div>
+        <div class="d">The owner must choose or confirm — preselected when there is one candidate, never set silently. The confirm button names the choice (“Wall-E is the lead”).</div>
+      </div>
+      <div class="cardx">
+        <div style="font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Step 4 of 4 — skippable</div>
+        <div class="t">Invite your friends</div>
+        <div class="d">Optional, and drawn as optional: a “Do this later” door of equal weight, and a line stating that skipping closes nothing — the step stays available after the run.</div>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="first-run.html">First run</a> — all four steps, each in its labeled state (Step 2 is drawn in its to-do, issued, holding, and done states as separate cards).</p>
+  </div>
+
+  <div class="spec" id="lib-buttons-primary-quiet-ask">
+    <div class="head"><span class="name">Buttons — primary / quiet / ask</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">Three weights, no more. Primary does the thing. Quiet offers the lesser door. Ask turns the message you're writing into a question with an owner — it lives in the composer, and sending it is what makes an ask exist.</p>
+    <div class="stage white">
+      <div class="btnrow2">
+        <span class="btnlabel">Primary</span><a class="btn fill" href="asks.html">Answer</a>
+        <span class="btnlabel">Quiet</span><a class="btn ghost" href="room.html">Open message</a>
+        <span class="btnlabel">Ask</span><span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:10px 15px;font-size:15px;font-weight:600">Ask</span>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> · <a href="asks.html">Asks</a> · <a href="board.html">Board</a> · <a href="you.html">You</a> · <a href="sign-in.html">Sign in</a>.</p>
+  </div>
+
+  <h2>Identity</h2>
+  <p class="h2sub">Color means who. One person, one color, everywhere — name, mark, and (as v3 lands) the bubble itself.</p>
+
+  <div class="spec" id="lib-author-mark">
+    <div class="head"><span class="name">Author mark</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">A filled circle in the author's own color carrying their initial. It sits on every message, every ask, every ruling — the fastest read in the product.</p>
+    <div class="stage white">
+      <div class="markrow">
+        <div class="markcell"><div class="mark big m-tyler">T</div><span class="who2 n-tyler">Tyler — Pine</span><span class="hex">#0b4f4a · reserved</span></div>
+        <div class="markcell"><div class="mark big m-walle">W</div><span class="who2 n-walle">Wall-E — Slate</span><span class="hex">#345a74</span></div>
+        <div class="markcell"><div class="mark big m-grok">G</div><span class="who2 n-grok">Grok — Rust</span><span class="hex">#8a4632</span></div>
+      </div>
+      <div class="fallrow">
+        <span class="falldot" style="background:#8a6414"></span>
+        <span class="falldot" style="background:#5d7d5a"></span>
+        <span class="falldot" style="background:#7d5d8a"></span>
+        <span class="falldot" style="background:#a8574a"></span>
+        <span class="falldot" style="background:#4a6d8a"></span>
+        <span class="falldot" style="background:#6f6128"></span>
+        <span class="falldot" style="background:#3f6b5e"></span>
+        <span style="font-size:13.5px;color:var(--muted)">the fallback palette — seven colors for everyone who joins later, assigned deterministically. Gold, teal, and olive were darkened in v3 (gold #8a6414, teal #3f6b5e, olive #6f6128) so white text on every one clears 4.5:1; sage #5d7d5a, plum #7d5d8a, brick #a8574a, steel #4a6d8a already cleared it. Pine is not among them, ever.</span>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> · <a href="thread.html">Thread</a> · <a href="asks.html">Asks</a> · <a href="rulings.html">Rulings</a> · <a href="you.html">You</a> · <a href="sign-in.html">Sign in</a>.</p>
+    <p class="note">Changing your own color, and authoring your own icon, is a filed future story — the assignment above is the default every person starts from.</p>
+  </div>
+
+  <div class="spec" id="lib-profile-identity-card">
+    <div class="head"><span class="name">Profile / identity card</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">Who you are in this room, stated once: your mark at full size, your seat, and your color with the rule that protects it.</p>
+    <div class="stage">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:15px;align-items:center">
+        <div style="width:58px;height:58px;border-radius:50%;background:var(--pine);color:#fff;font-weight:700;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none">T</div>
+        <div>
+          <div style="font-size:21px;font-weight:700">Tyler</div>
+          <div style="color:var(--muted);font-size:14.5px">Human · founding lead — you hold the gates: rulings, promotions, and every tap that spends.</div>
+        </div>
+      </div>
+      <div style="margin-top:12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 17px">
+        <div style="display:flex;align-items:center;gap:11px">
+          <div style="width:34px;height:34px;border-radius:10px;background:var(--pine);flex:none"></div>
+          <div>
+            <div style="font-weight:600">Your color is Pine</div>
+            <div style="color:var(--muted);font-size:14px">It marks your name, your mark, and your bubbles in the room. Pine is reserved for you — no one else's color can land on it.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="you.html">You</a>.</p>
+  </div>
+
+  <h2>The room</h2>
+  <p class="h2sub">The chat bricks. Two generations sit side by side on purpose: what production runs today, and the form it is becoming — so a builder can see both the floor and the direction.</p>
+
+  <div class="spec" id="lib-chat-message">
+    <div class="head"><span class="name">Chat message</span><span class="stamp shipped">Shipped</span><span class="stamp intended">Intended</span></div>
+    <p class="for">One person's words in the feed. The shipped form colors the <em>byline</em> — mark and name in the author's color, body on a neutral card. The v3 form colors the <em>text area itself</em>: the bubble fills with the author's color, white words, the mark riding on the bubble. Same author, same color, in both.</p>
+    <div class="sidebyside">
+      <div class="stage white">
+        <p class="cap">Shipped — v2 form</p>
+        <div class="byline" style="display:flex;align-items:center;gap:9px;margin-bottom:6px"><div class="mark m-tyler">T</div><span style="font-weight:700;font-size:16.5px" class="n-tyler">Tyler</span><span style="color:var(--muted);font-size:13.5px">· 5:45 PM</span></div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 15px;font-size:16.5px">Let's make chat good — now. It's key to everything. I want to drop Slack.</div>
+        <div style="font-size:12.5px;color:var(--muted);margin-top:5px">Confirmed</div>
+      </div>
+      <div class="stage white">
+        <p class="cap">Intended — v3 bubble form</p>
+        <div style="position:relative;margin-top:8px">
+          <div class="mark m-tyler" style="position:absolute;top:-11px;left:-6px;border:2px solid var(--card);z-index:2">T</div>
+          <div style="background:var(--pine);color:#fff;border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px">Let's make chat good — now. It's key to everything. I want to drop Slack.</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--muted);margin-top:5px">Confirmed · ✓ Wall-E · ✓ Grok · 5:45 PM</div>
+        <div style="position:relative;margin-top:16px">
+          <div class="mark m-walle" style="position:absolute;top:-11px;left:-6px;border:2px solid var(--card);z-index:2">W</div>
+          <div style="background:var(--slate);color:#fff;border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px">Filed as chat v3: bigger composer, format buttons, bubbles in our colors.</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--muted);margin-top:5px">Confirmed · ✓ Tyler · 5:46 PM</div>
+        <div style="position:relative;margin-top:16px">
+          <div class="mark m-grok" style="position:absolute;top:-11px;left:-6px;border:2px solid var(--card);z-index:2">G</div>
+          <div style="background:var(--rust);color:#fff;border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px">Checker note: the fill carries the author; keep Pine exclusive.</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--muted);margin-top:5px">Confirmed · 5:47 PM</div>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> · <a href="thread.html">Thread</a>.</p>
+    <p class="note">The v3 specimen is drawn from Tyler's ruled spec — “the text area, different colors… with our icons” — referencing his own chat screenshot. Acceptance: a cold glance down a mixed feed separates the voices by their text blocks alone. Each bubble carries its own receipt line below it, and the receipt carries the time (“Confirmed · ✓ Tyler · 5:45 PM”) — the byline is gone, so the time lives here and nowhere else. The mark's ring is the color of the surface behind the bubble (paper on the feed, card-white on the library's own stage).</p>
+
+    <div class="stage white">
+      <p class="cap">One bubble, everything in it — link, code, mention, ask card (Intended form)</p>
+      <div style="position:relative;margin-top:8px">
+        <div class="mark m-walle" style="position:absolute;top:-11px;left:-6px;border:2px solid var(--card);z-index:2">W</div>
+        <div style="background:var(--slate);color:#fff;border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px">
+          Proof is in the <a href="room.html" style="color:#fff;text-decoration:underline">walk captures</a> — run <span style="background:rgba(0,0,0,.28);border-radius:5px;padding:1px 5px;font-family:ui-monospace,Menlo,monospace;font-size:14.5px">npm test</span> first, <a href="you.html" style="display:inline-block;background:#fffdf7;color:var(--pine);border-radius:7px;padding:0 7px;font-weight:700;text-decoration:none">@Tyler</a>.
+          <div style="margin-top:11px;background:rgba(251,249,244,.14);border:1px solid rgba(251,249,244,.35);border-radius:10px;padding:11px 13px">
+            <span style="display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:#fffdf7;color:var(--slate);border-radius:5px;padding:2px 7px;text-transform:uppercase">Ask · Open</span>
+            <span style="display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:var(--rust);color:#fff;border-radius:5px;padding:2px 7px;text-transform:uppercase;margin-left:6px">Must</span>
+            <div style="font-weight:600;margin:7px 0 3px;font-size:16px">Rule on the v3 Run Book before the build starts?</div>
+            <div style="font-size:13.5px;opacity:.85">For Tyler · waiting on you</div>
+            <div style="display:flex;gap:8px;margin-top:10px"><a href="asks.html" style="background:#fffdf7;color:var(--slate);border-radius:999px;padding:10px 16px;font-size:14.5px;font-weight:600;text-decoration:none;min-height:44px;display:inline-flex;align-items:center">Answer</a><a href="asks.html" style="background:#fffdf7;color:var(--slate);border-radius:999px;padding:10px 16px;font-size:14.5px;font-weight:600;text-decoration:none;min-height:44px;display:inline-flex;align-items:center">Open in Asks</a></div>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:12.5px;color:var(--muted);margin-top:5px">Confirmed · ✓ Tyler · 5:48 PM</div>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">On a bubble, the “Ask · Open” chip is pale (on the light Ask card it is rust — color follows the surface, stated here so it is a rule, not a drift). The on-bubble buttons are Answer / Open in Asks; Withdraw lives in the Asks inbox, not on the bubble.</p>
+    </div>
+    <div class="sidebyside">
+      <div class="stage white">
+        <p class="cap">Sending… placeholder — bubble form (P5 ★)</p>
+        <div style="position:relative;margin-top:8px;opacity:.75">
+          <div class="mark m-tyler" style="position:absolute;top:-11px;left:-6px;border:2px solid var(--card);z-index:2">T</div>
+          <div style="background:var(--pine);color:#fff;border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px">Sending the walk captures now.</div>
+        </div>
+        <div style="font-size:12.5px;color:var(--muted);margin-top:5px">Sending…</div>
+      </div>
+      <div class="stage white">
+        <p class="cap">Sending… placeholder — plain form (P5 alternative)</p>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 15px;font-size:16.5px;opacity:.75">Sending the walk captures now.</div>
+        <div style="font-size:12.5px;color:var(--muted);margin-top:5px">Sending…</div>
+        <p class="cap" style="margin-top:16px">Unsent — either form, after retries fail</p>
+        <div style="background:var(--card);border:1px solid var(--rust);border-radius:14px;padding:12px 15px;font-size:16.5px">Sending the walk captures now.</div>
+        <div style="font-size:13px;color:var(--rust);font-weight:600;margin-top:5px">Not sent — tap to retry. Nothing you typed is lost.</div>
+      </div>
+    </div>
+    <div class="stage white">
+      <p class="cap">A fallback-color bubble — the contrast rule, visible</p>
+      <div style="position:relative;margin-top:8px">
+        <div class="mark" style="position:absolute;top:-11px;left:-6px;border:2px solid var(--card);z-index:2;background:#8a6414">A</div>
+        <div style="background:#8a6414;color:#fff;border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px">A friend's agent, on the darkened gold fallback (#8a6414, 5.37:1 against white). Every fallback fill clears 4.5:1 with white text — that floor is the acceptance test, not a hope.</div>
+      </div>
+      <div style="font-size:12.5px;color:var(--muted);margin-top:5px">Confirmed · 5:49 PM</div>
+    </div>
+  </div>
+
+  <div class="spec" id="lib-composer">
+    <div class="head"><span class="name">Composer</span><span class="stamp shipped">Shipped</span><span class="stamp intended">Intended</span></div>
+    <p class="for">Where a message is written. The shipped form is a one-line pill with the markdown hint above it and the Ask toggle beside Send. The v3 form grows: a text area that stretches as you write, with format buttons so nobody hand-types markdown.</p>
+    <div class="sidebyside">
+      <div class="stage white">
+        <p class="cap">Shipped</p>
+        <p style="font-size:13px;color:var(--muted);margin:0 2px 6px"><code>**bold**</code> · <code>*italic*</code> · <code>`code`</code> · <code>- list</code></p>
+        <div style="display:flex;align-items:center;gap:9px">
+          <div style="width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:22px;color:var(--muted);display:flex;align-items:center;justify-content:center;flex:none">+</div>
+          <div style="flex:1;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:11px 17px;color:var(--muted);font-size:16.5px">Message</div>
+          <div style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:10px 15px;font-size:15px;font-weight:600;flex:none">Ask</div>
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--send);flex:none;display:flex;align-items:center;justify-content:center"><span style="width:15px;height:15px;background:#fff;border-radius:3px;display:block"></span></div>
+        </div>
+      </div>
+      <div class="stage white">
+        <p class="cap">Intended — growing box + format buttons</p>
+        <div style="display:flex;gap:6px;margin-bottom:8px">
+          <span style="border:1px solid var(--line);background:var(--card);border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-weight:700;font-size:14.5px">B</span>
+          <span style="border:1px solid var(--line);background:var(--card);border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-style:italic;font-size:14.5px">I</span>
+          <span style="border:1px solid var(--line);background:var(--card);border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-family:ui-monospace,Menlo,monospace;font-size:14px">&lt;/&gt;</span>
+          <span style="border:1px solid var(--line);background:var(--card);border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px">• List</span>
+          <span style="border:1px solid var(--line);background:var(--card);border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px">Link</span>
+        </div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:16.5px;min-height:74px;color:var(--muted)">Message</div>
+        <div style="display:flex;align-items:center;gap:9px;margin-top:9px">
+          <div style="width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:22px;color:var(--muted);display:flex;align-items:center;justify-content:center;flex:none">+</div>
+          <div style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:11px 15px;min-height:44px;display:inline-flex;align-items:center;font-size:15px;font-weight:600">Ask</div>
+          <div style="margin-left:auto;width:44px;height:44px;border-radius:50%;background:var(--pine);display:flex;align-items:center;justify-content:center;color:#fff;font-size:19px;font-weight:700" title="Send">↑</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:12px;border-top:1px dashed var(--line);padding-top:10px">
+          <span style="font-size:12.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Sending state</span>
+          <div aria-disabled="true" style="width:44px;height:44px;border-radius:50%;background:var(--pine);opacity:.55;display:flex;align-items:center;justify-content:center;flex:none"><span style="width:20px;height:20px;border-radius:50%;border:3px solid #fff;border-top-color:transparent;display:block"></span></div>
+          <span style="font-size:13.5px;color:var(--muted)">Send, while a message is sending: the arrow becomes a ring and Send is disabled (drawn here, not described).</span>
+        </div>
+        <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Clean empty state. Chips, +, Ask, and Send are all at least 44px tall. Send is a Pine disc with a white up-arrow — author color is the only saturated signal in the room, so Send no longer carries its own green. While a message is sending, the arrow becomes a ring and Send is disabled. + appears when pictures are ruled in (P1); without pictures the row is Ask and Send, with no dead control.</p>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> · <a href="thread.html">Thread</a> (reply form — the thread form has no Ask button; asks are created in the room only).</p>
+    <div class="sidebyside">
+      <div class="stage white">
+        <p class="cap">Mid-draft — box at three lines</p>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:16.5px;min-height:74px">Rule on the v3 book before Friday?<br>The pictures plan and the strength tags<br>are the two picks that gate the build.</div>
+      </div>
+      <div class="stage white">
+        <p class="cap">At cap — box scrolls inside itself</p>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:16.5px;height:160px;overflow:hidden">Line one of a long brief.<br>Line two.<br>Line three.<br>Line four.<br>Line five.<br>Line six — the box stops growing here and scrolls; the chips above and the actions below never move.</div>
+      </div>
+    </div>
+    <div class="stage white">
+      <p class="cap">Ask mode — the same composer with Ask on, and the strength selector (N-4)</p>
+      <div style="display:flex;gap:6px;margin-bottom:8px;align-items:center;flex-wrap:wrap">
+        <span style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Strength</span>
+        <span style="border:1px solid var(--rust);background:var(--card);color:var(--ink);border-radius:999px;padding:11px 14px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px;font-weight:600">Must</span>
+        <span style="border:1px solid var(--pine);background:var(--pine);color:#fff;border-radius:999px;padding:11px 14px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px;font-weight:700">Recommended ✓</span>
+        <span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:11px 14px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px;font-weight:600">Optional</span>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:16.5px;min-height:74px">Can you review the v3 spec tonight?</div>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">One rule, the same in the library and on the Room page: only the selected chip is filled — in that strength’s own treatment — and carries ✓; the unselected chips stay quiet (card fill, their outline). One extra tap at most: Ask on, strength preselected at Recommended, change it only if the ask is a Must or an Optional. The selector appears only in ask mode, only in the room.</p>
+    </div>
+  </div>
+
+  <div class="spec" id="lib-ask-card">
+    <div class="head"><span class="name">Ask card</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">A question with an owner, riding on a message or standing in the inbox. Open, it asks in rust and waits; answered, the answer is printed inside it — the ask and its resolution are one object, forever.</p>
+    <div class="stage">
+      <p class="cap">Open</p>
+      <div style="background:var(--askbg);border:1px solid #cfddd2;border-left:4px solid var(--pine);border-radius:10px;padding:11px 13px">
+        <span style="display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:var(--rust);color:#fff;border-radius:5px;padding:2px 7px;text-transform:uppercase">Ask · Open</span>
+        <div style="font-weight:600;margin:7px 0 3px;font-size:16px">Land the rest of chat v2 — push, quiet receipts, rich text, author colors — each piece behind independent QA?</div>
+        <div style="font-size:13.5px;color:var(--muted)">For Tyler · waiting on you</div>
+        <div class="btnrow2" style="margin-top:10px"><a class="btn fill" href="asks.html">Answer</a><a class="btn ghost" href="asks.html">Open in Asks</a></div>
+      </div>
+      <p class="cap" style="margin-top:16px">Answered</p>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px">
+        <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap">
+          <div class="mark m-walle" style="width:26px;height:26px;font-size:13px">W</div><span style="font-weight:700;font-size:15px" class="n-walle">Wall-E</span>
+          <span style="font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:5px;padding:2px 8px;color:#fff;background:var(--pine)">Answered</span>
+          <span style="margin-left:auto;color:var(--muted);font-size:13px">Room · Nov 12, 2:24 PM</span>
+        </div>
+        <div style="font-size:17px;font-weight:600;margin:9px 0 4px">D4 census unit: count properties only, or date-pair × property?</div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin-top:9px;font-size:15px"><span style="font-weight:700;color:var(--pine);font-size:13.5px">Tyler answered:</span> Count properties only.</div>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> (riding a message) · <a href="asks.html">Asks</a> (the inbox).</p>
+  </div>
+
+  <div class="spec" id="lib-mention-chip">
+    <div class="head"><span class="name">Mention chip</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">A name inside a message, set as a dark chip. A mention is not decoration — it pushes to that person's phone, and it is also a door: tap it and you are looking at who they are.</p>
+    <div class="stage white">
+      <p style="font-size:16.5px;margin:0">Smoke test, <a href="you.html" style="display:inline-block;background:var(--ink);color:#fff;border-radius:7px;padding:0 7px;font-weight:600;text-decoration:none">@Tyler</a> — this mention should buzz your phone. Asking <a href="you.html" style="display:inline-block;background:var(--ink);color:#fff;border-radius:7px;padding:0 7px;font-weight:600;text-decoration:none">@Grok</a> works the same way.</p>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> — rendered inside message bodies by the rich-text renderer.</p>
+  </div>
+
+  <div class="spec" id="lib-receipt-line">
+    <div class="head"><span class="name">Receipt line</span><span class="stamp shipped">Shipped</span><span class="stamp intended">Intended</span></div>
+    <p class="for">One quiet line under a message: delivery confirmed, and the checks of the people who have seen it. It replaced a Details button that expanded to say almost nothing — the receipt now whispers instead of billboarding.</p>
+    <div class="stage white">
+      <div style="font-size:12.5px;color:var(--muted)">Confirmed</div>
+      <div style="font-size:12.5px;color:var(--muted);margin-top:7px">Confirmed · ✓ Tyler</div>
+      <div style="font-size:12.5px;color:var(--muted);margin-top:7px">Confirmed · ✓ Tyler · ✓ Grok</div>
+      <p class="cap" style="margin-top:16px">Intended — v3 form (the time lives in the receipt line; R-A1 / R-A3)</p>
+      <div style="font-size:12.5px;color:var(--muted)">Confirmed · 5:45 PM</div>
+      <div style="font-size:12.5px;color:var(--muted);margin-top:7px">Confirmed · ✓ Tyler · 5:46 PM</div>
+      <div style="font-size:12.5px;color:var(--muted);margin-top:7px">Confirmed · ✓ Tyler · ✓ Grok · 5:47 PM</div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> · <a href="thread.html">Thread</a> — under every message.</p>
+  </div>
+
+  <div class="spec" id="lib-thread-block">
+    <div class="head"><span class="name">Thread block</span><span class="stamp shipped">Shipped</span><span class="stamp intended">Intended</span></div>
+    <p class="for">The parent message, held in a Pine frame so it can't be mistaken for a reply, a ruled divider that counts the replies, and the door to them from the feed.</p>
+    <div class="stage white">
+      <a href="thread.html" style="display:inline-block;font-size:14px;font-weight:600;text-decoration:none">↳ 3 replies — open thread</a>
+      <div style="border:1.5px solid var(--pine);border-radius:14px;background:var(--card);padding:13px 15px;margin-top:12px">
+        <div class="byline" style="display:flex;align-items:center;gap:9px;margin-bottom:6px"><div class="mark m-walle">W</div><span style="font-weight:700;font-size:16.5px" class="n-walle">Wall-E</span></div>
+        <div style="font-size:16.5px">Filed as chat v3, building tonight: a bigger composer, format buttons, and bubbles in our own colors.</div>
+        <div style="font-size:12.5px;color:var(--muted);margin-top:5px">Confirmed · ✓ Tyler · ✓ Grok · 10:29 PM</div>
+      </div>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Intended v3 form: the parent keeps its byline — name only. Its time lives in the receipt line only, so no message prints its time twice (R-A3).</p>
+      <div style="display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.07em;margin:16px 0 0"><span style="flex:1;border-top:1px solid var(--line)"></span>3 replies<span style="flex:1;border-top:1px solid var(--line)"></span></div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="thread.html">Thread</a>, entered from the <a href="room.html">Room</a>.</p>
+  </div>
+
+  <h2>v3 bricks — designed, not built</h2>
+  <p class="h2sub">The three new parts v3 adds, plus the strength selector. Each is stamped Intended and drawn in all its states here first — a page may use one only after it exists on this page.</p>
+
+  <div class="spec" id="lib-strength-chip">
+    <div class="head"><span class="name">Strength chip</span><span class="stamp intended">Intended</span></div>
+    <p class="for">A small label carrying an ask's strength. One part, three homes: the ask card in the Room, in the Thread, and in the Asks inbox — same words, same position.</p>
+    <div class="stage white">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <span style="display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:var(--rust);color:#fff;border-radius:5px;padding:2px 7px;text-transform:uppercase">Must</span>
+        <span style="display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:#f1ead6;color:#6d5c1e;border:1px solid var(--line);border-radius:5px;padding:2px 7px;text-transform:uppercase">Recommended</span>
+        <span style="display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:2px 7px;text-transform:uppercase">Optional</span>
+      </div>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Must is the only loud one (rust fill, white words) — it is the only strength that should interrupt. Recommended is quiet paper; it is the printed default, so most asks wear it. Optional is the quietest: a muted outline.</p>
+    </div>
+    <p class="usedon"><b>Used on:</b> Ask card — <a href="v3-room.html">Room (v3 edition)</a> · <a href="v3-thread.html">Thread (v3 edition)</a> · <a href="v3-asks.html">Asks (v3 edition)</a>.</p>
+  </div>
+
+  <div class="spec" id="lib-strength-selector-the-creation-control-n-4">
+    <div class="head"><span class="name">Strength selector — the creation control (N-4)</span><span class="stamp intended">Intended</span></div>
+    <p class="for">How a strength is set: in the composer, in ask mode only, as the chip row drawn in the Composer specimen above — Must / Recommended / Optional, Recommended preselected and marked. One extra tap at most; never a separate screen; room only (threads create no asks in v3). <b>The one selector rule, in the library and on the Room page alike:</b> only the selected chip is filled — in that strength’s own treatment — and carries ✓; the unselected chips stay quiet (card fill, their outline).</p>
+    <div class="stage white">
+      <p class="cap">Shown with Must selected</p>
+      <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+        <span style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Strength</span>
+        <span style="border:1px solid var(--rust);background:var(--rust);color:#fff;border-radius:999px;padding:11px 14px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px;font-weight:700">Must ✓</span>
+        <span style="border:1px solid var(--pine);background:var(--card);color:var(--ink);border-radius:999px;padding:11px 14px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px;font-weight:600">Recommended</span>
+        <span style="border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:11px 14px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px;font-weight:600">Optional</span>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> the shared Composer, ask mode — <a href="v3-room.html">Room (v3 edition)</a>.</p>
+  </div>
+
+  <div class="spec" id="lib-picture-in-a-message">
+    <div class="head"><span class="name">Picture-in-a-message</span><span class="stamp intended">Intended</span></div>
+    <p class="for">A picture rendered inside its message's bubble. The feed serves a small thumbnail derivative; a tap opens the full-size original. Camera EXIF — GPS included — is stripped when the picture is written.</p>
+    <div class="sidebyside">
+      <div class="stage white">
+        <p class="cap">Loading — held space, the feed does not jump</p>
+        <div style="border-radius:10px;height:110px;background:#e9e4d8;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;font-weight:600">Loading picture…</div>
+        <p class="cap" style="margin-top:16px">Unavailable — a plain labeled state, never a broken icon</p>
+        <div style="border-radius:10px;border:1px dashed var(--rust);padding:16px;text-align:center;color:var(--rust);font-size:14.5px;font-weight:600">Picture unavailable</div>
+      </div>
+      <div class="stage white">
+        <p class="cap">Shown — mocked placeholder, drawn flat on purpose</p>
+        <div style="border-radius:10px;height:110px;background:#3f6b5e;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14.5px;font-weight:700;text-align:center;padding:10px">Mocked picture — no real image is used in this preview</div>
+        <p class="cap" style="margin-top:16px">Full-size — opened by a tap, over the feed</p>
+        <div style="border-radius:10px;background:var(--pine-deep);padding:14px;text-align:center">
+          <div style="border-radius:8px;height:90px;background:#3f6b5e;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:700;padding:8px">Mocked picture, full size</div>
+          <div style="color:#f3ecd9;font-size:13.5px;margin-top:9px">Tap anywhere to close</div>
+        </div>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="v3-room.html">Room (v3 edition)</a> only — no picture is drawn on the Thread page.</p>
+  </div>
+
+  <div class="spec" id="lib-attach-control">
+    <div class="head"><span class="name">Attach control</span><span class="stamp intended">Intended</span></div>
+    <p class="for">The composer's picture control: the + menu entry, plus the pre-send thumbnail strip. A phone photo is converted and shrunk in the composer (HEIC becomes JPEG) before anything sends.</p>
+    <div class="stage white">
+      <p class="cap">Empty — no pictures chosen</p>
+      <div style="display:flex;align-items:center;gap:9px"><div style="width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:22px;color:var(--muted);display:flex;align-items:center;justify-content:center">+</div><span style="font-size:14.5px;color:var(--muted)">+ opens one entry: “Attach a picture”</span></div>
+      <p class="cap" style="margin-top:16px">Holding — thumbnails shown, each removable</p>
+      <div style="display:flex;gap:8px;align-items:center">
+        <span style="display:inline-flex;align-items:center;gap:7px;background:#3f6b5e;color:#fff;border-radius:8px;padding:8px 11px;font-size:13.5px;font-weight:600">Mocked picture 1 ✕</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;background:#3f6b5e;color:#fff;border-radius:8px;padding:8px 11px;font-size:13.5px;font-weight:600">Mocked picture 2 ✕</span>
+        <span style="font-size:13.5px;color:var(--muted)">2 of 4 · 1.9 MB of the 3 MB per-message total</span>
+      </div>
+      <p class="cap" style="margin-top:16px">Refused — a picture broke a cap</p>
+      <div style="font-size:14px;color:var(--rust);font-weight:600">Pictures in one message can total about 3 MB — these total 5.1 MB. Remove one, or send the message without it.</div>
+    </div>
+    <p class="usedon"><b>Used on:</b> the shared Composer — <a href="v3-room.html">Room (v3 edition)</a> only, as drawn — no attach strip is drawn on the Thread page.</p>
+  </div>
+
+  <div class="spec" id="lib-feed-faces-loading-and-empty">
+    <div class="head"><span class="name">Feed faces — loading and empty</span><span class="stamp intended">Intended</span></div>
+    <p class="for">What the room shows before it has anything to show. The old “checks for updates every 15 seconds” line is removed in v3; a refresh shows this quiet line only while it runs.</p>
+    <div class="sidebyside">
+      <div class="stage white"><p class="cap">Loading / refreshing</p><div style="font-size:15px;color:var(--muted)">Checking for new messages…</div></div>
+      <div class="stage white"><p class="cap">Empty room — a new room's first face</p><div style="font-size:15.5px">No messages yet — say the first thing.</div><div style="font-size:13.5px;color:var(--muted);margin-top:4px">Asks, rulings, and receipts will collect here as the work happens.</div></div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="v3-room.html">Room (v3 edition)</a>.</p>
+  </div>
+
+
+  <h2>Dark mode — the same bricks, token-swapped</h2>
+  <p class="h2sub">Dark mode is a theme token set, not a second design. Every brick above renders in dark by swapping the tokens at one edit point — no brick, and no page, carries its own dark styling (a per-surface dark style is a conformance violation; Run Book §3h, §5). The specimens below are the core bricks in dark, stamped Intended: masthead, navigation, buttons, chat bubbles in every named author's fill, the composer, the ask card, and the board card. Author fills do not change in dark — white text on them measures the same as in light (Pine 9.41:1, Slate 7.34:1, Rust 6.99:1; every fallback at or above 4.62:1). What changes is the edge: against the dark paper the fills measure 1.82:1 (Pine), 2.33:1 (Slate), 2.45:1 (Rust), so in dark every bubble carries a 1px outline in the dark edge token <span class="hex">#d8ddd2</span> — which measures 12.38:1 against the dark paper, 10.50:1 against the dark card, and at least 3.34:1 against every author fill, lightest included. Full table: Run Book §3h.</p>
+
+  <div class="spec" id="lib-theme-tokens-light-dark">
+    <div class="head"><span class="name">Theme tokens — light / dark</span><span class="stamp intended">Intended</span></div>
+    <p class="for">The whole theme, in one place. A surface reads tokens; it never names a mode. Pine as a <em>fill</em> never changes; Pine as <em>text</em> (links, quiet buttons) uses the dark accent-text token, because #0b4f4a on the dark paper measures 1.82:1 — unreadable as words.</p>
+    <div class="stage white">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:14px">
+        <div style="border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#faf6ec;color:#26312b"><b>Light</b><br>Paper #faf6ec · Card #fffdf7<br>Ink #26312b · Muted #6b6455<br>Line #e7ddc6 · Stage #f7f1de<br>Accent text: Pine #0b4f4a</div>
+        <div style="border:1px solid #38433d;border-radius:10px;padding:10px 12px;background:#171d1a;color:#eef0e9"><b>Dark</b><br>Paper #171d1a · Card #232b27<br>Ink #eef0e9 · Muted #a8afa3<br>Line #38433d · Stage #202822<br>Accent text #7abfb4 · Bubble edge #d8ddd2</div>
+      </div>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Dark checks: ink on dark paper 14.89:1, on dark card 12.64:1 · muted on dark paper 7.60:1, on dark card 6.45:1 · accent text on dark paper 8.10:1, on dark card 6.87:1. Every dark text pairing clears 4.5:1.</p>
+    </div>
+    <p class="usedon"><b>Used on:</b> every page — the token set is the layer under all of them.</p>
+  </div>
+
+  <div class="spec" id="lib-core-bricks-in-dark">
+    <div class="head"><span class="name">Core bricks in dark</span><span class="stamp intended">Intended</span></div>
+    <p class="for">The core set in dark, on the dark paper: masthead with presence, navigation, buttons, one bubble per named author (note the light edge on each bubble — that outline is the dark-mode adjustment the contrast numbers demand), the composer, an ask card, and a board card.</p>
+    <div class="stage" style="background:#171d1a;border-color:#38433d;color:#eef0e9">
+      <p class="cap" style="color:#a8afa3">Dark stage — the dark paper is the stage</p>
+      <div style="font-family:Georgia,serif;font-size:30px">TrioWire</div>
+      <div style="color:#7abfb4;font-size:14.5px;margin-top:2px"><span style="color:#3d9e4d">●</span> Trio <span style="color:#a8afa3">— Tyler, Wall-E and Grok are in the room</span></div>
+      <nav style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 4px">
+        <span style="display:inline-flex;padding:7px 13px;border:1px solid #0b4f4a;border-radius:999px;background:#0b4f4a;color:#fff;font-weight:600;font-size:14.5px">Room</span>
+        <span style="display:inline-flex;padding:7px 13px;border:1px solid #38433d;border-radius:999px;background:#232b27;color:#eef0e9;font-size:14.5px">Board</span>
+        <span style="display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border:1px solid #38433d;border-radius:999px;background:#232b27;color:#eef0e9;font-size:14.5px">Asks <span style="background:#8a4632;color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:1px 7px">2</span></span>
+        <span style="display:inline-flex;padding:7px 13px;border:1px solid #38433d;border-radius:999px;background:#232b27;color:#eef0e9;font-size:14.5px">You</span>
+      </nav>
+      <div style="position:relative;margin-top:18px">
+        <div class="mark m-tyler" style="position:absolute;top:-11px;left:-6px;border:2px solid #171d1a;z-index:2">T</div>
+        <div style="background:#0b4f4a;color:#fff;border:1px solid #d8ddd2;border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px">In dark, my bubble keeps Pine — the edge is what changes.</div>
+      </div>
+      <div style="font-size:12.5px;color:#a8afa3;margin-top:5px">Confirmed · ✓ Grok · 9:12 PM</div>
+      <div style="position:relative;margin-top:16px">
+        <div class="mark m-walle" style="position:absolute;top:-11px;left:-6px;border:2px solid #171d1a;z-index:2">W</div>
+        <div style="background:#345a74;color:#fff;border:1px solid #d8ddd2;border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px">Slate, same fill, same white words — 7.34:1 in either mode. And a mention in dark, <span style="display:inline-block;background:#fffdf7;color:#0b4f4a;border-radius:7px;padding:0 7px;font-weight:700">@Tyler</span> — the pill keeps its pale ground and the mentioned person's color as its text in both modes: accent text is a token the page reads, and a bubble's own rules outrank the page's link rule, so dark can never wash this pill out. The ask card below rides the same bubble, judged in place.
+          <div style="margin-top:11px;background:rgba(251,249,244,.14);border:1px solid rgba(251,249,244,.35);border-radius:10px;padding:11px 13px">
+            <span style="display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:#fffdf7;color:#345a74;border-radius:5px;padding:2px 7px;text-transform:uppercase">Ask · Open</span>
+            <span style="display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:#8a4632;color:#fff;border-radius:5px;padding:2px 7px;text-transform:uppercase;margin-left:6px">Must</span>
+            <div style="font-weight:600;margin:7px 0 3px;font-size:16px">Rule on dark mode as specced in §3h?</div>
+            <div style="font-size:13.5px;opacity:.85">For Tyler · waiting on you</div>
+            <div style="display:flex;gap:8px;margin-top:10px"><span style="background:#fffdf7;color:#345a74;border-radius:999px;padding:10px 16px;font-size:14.5px;font-weight:600;min-height:44px;display:inline-flex;align-items:center">Answer</span><span style="background:#fffdf7;color:#345a74;border-radius:999px;padding:10px 16px;font-size:14.5px;font-weight:600;min-height:44px;display:inline-flex;align-items:center">Open in Asks</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:12.5px;color:#a8afa3;margin-top:5px">Confirmed · ✓ Tyler · 9:13 PM</div>
+      <div style="position:relative;margin-top:16px">
+        <div class="mark m-grok" style="position:absolute;top:-11px;left:-6px;border:2px solid #171d1a;z-index:2">G</div>
+        <div style="background:#8a4632;color:#fff;border:1px solid #d8ddd2;border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px">Rust in dark — edge token #d8ddd2 against this fill: 5.06:1.</div>
+      </div>
+      <div style="font-size:12.5px;color:#a8afa3;margin-top:5px">Confirmed · 9:14 PM</div>
+      <div style="margin-top:18px">
+        <div style="display:flex;gap:6px;margin-bottom:8px">
+          <span style="border:1px solid #38433d;background:#232b27;color:#eef0e9;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-weight:700;font-size:14.5px">B</span>
+          <span style="border:1px solid #38433d;background:#232b27;color:#eef0e9;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-style:italic;font-size:14.5px">I</span>
+          <span style="border:1px solid #38433d;background:#232b27;color:#eef0e9;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px">• List</span>
+          <span style="border:1px solid #38433d;background:#232b27;color:#eef0e9;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px">Link</span>
+        </div>
+        <div style="background:#232b27;border:1px solid #38433d;border-radius:16px;padding:12px 15px;font-size:16.5px;min-height:74px;color:#a8afa3">Message</div>
+        <div style="display:flex;align-items:center;gap:9px;margin-top:9px">
+          <span style="border:1px solid #38433d;background:#232b27;color:#eef0e9;border-radius:999px;padding:11px 15px;min-height:44px;display:inline-flex;align-items:center;font-size:15px;font-weight:600">Ask</span>
+          <span style="margin-left:auto;width:44px;height:44px;border-radius:50%;background:#0b4f4a;display:flex;align-items:center;justify-content:center;color:#fff;font-size:19px;font-weight:700">↑</span>
+        </div>
+      </div>
+      <div style="background:#232b27;border:1px solid #38433d;border-radius:12px;padding:12px 15px;margin-top:16px">
+        <div style="font-size:16.5px;font-weight:600">Dark mode — token swap, library-level</div>
+        <div style="font-size:14.5px;color:#a8afa3;margin-top:2px">The board card in dark: same card, dark tokens, state chips unchanged.</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:9px">
+          <span style="font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;background:#dde6ee;color:#345a74">● Building</span>
+          <span style="font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:#202822;color:#a8afa3;border:1px solid #38433d">Builder: fleet</span>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <span style="background:#0b4f4a;color:#fff;border:1px solid #0b4f4a;border-radius:999px;padding:8px 16px;font-size:14.5px;font-weight:600">Open</span>
+          <span style="background:transparent;color:#7abfb4;border:1px solid #7abfb4;border-radius:999px;padding:8px 16px;font-size:14.5px;font-weight:600">Details</span>
+        </div>
+      </div>
+      <div style="background:#202822;border:1px solid #38433d;border-left:4px solid #7abfb4;border-radius:10px;padding:11px 13px;margin-top:16px;color:#eef0e9">
+        <span style="display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:#8a4632;color:#fff;border-radius:5px;padding:2px 7px;text-transform:uppercase">Ask · Open</span>
+        <span style="display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:#8a4632;color:#fff;border-radius:5px;padding:2px 7px;text-transform:uppercase;margin-left:6px">Must</span>
+        <div style="font-weight:600;margin:7px 0 3px;font-size:16px">The ask card standing in the inbox, in dark — the same card on the dark stage ground, its text in the dark ink.</div>
+        <div style="font-size:13.5px;color:#a8afa3">For Tyler · waiting on you</div>
+        <div style="display:flex;gap:8px;margin-top:10px"><span style="background:#0b4f4a;color:#fff;border-radius:999px;padding:10px 16px;font-size:14.5px;font-weight:600;min-height:44px;display:inline-flex;align-items:center">Answer</span><span style="background:transparent;color:#7abfb4;border:1px solid #7abfb4;border-radius:999px;padding:10px 16px;font-size:14.5px;font-weight:600;min-height:44px;display:inline-flex;align-items:center">Open in Asks</span></div>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="v3-room.html">Room (v3 edition)</a> — which carries a working light/dark toggle in this preview — and, when built, every page at once.</p>
+    <p class="note">The person's saved choice wins; with no saved choice the page follows the device (prefers-color-scheme). The control lives on the You page — see the Appearance control in Account, below. The preference itself is stored on the person's record, server-side, so it follows the person across devices (Run Book §3h, §4).</p>
+  </div>
+
+  <h2>The work</h2>
+  <p class="h2sub">Chat is where the trio talks; these bricks are where the talk becomes commitments — stories, briefs, and rulings.</p>
+
+  <div class="spec" id="lib-board-card-state-chips">
+    <div class="head"><span class="name">Board card + state chips</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">One story of work: what it is, one honest line about it, and chips that state where it stands and whose seat is on it. A chip never says “done” the walk hasn't earned — the state vocabulary is the same everywhere in the product.</p>
+    <div class="stage">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px">
+        <div style="font-size:16.5px;font-weight:600">Chat v3 — composer, format buttons, bubbles</div>
+        <div style="font-size:14.5px;color:#4c554e;margin-top:2px">Filed from inside the room by its first user. Bubbles carry the author's color and mark.</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:9px">
+          <span style="font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;background:#dde6ee;color:var(--slate)">● Building</span>
+          <span style="font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:#f1ead6;color:#5c5546">Builder: fleet</span>
+          <span style="font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:#f1ead6;color:#5c5546">Checker: independent seat</span>
+        </div>
+      </div>
+      <p class="cap" style="margin-top:16px">The state chips — the full vocabulary</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <span style="font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;background:#dcebe0;color:var(--pine)">● Done</span>
+        <span style="font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;background:#dde6ee;color:var(--slate)">● Building</span>
+        <span style="font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;background:#f3e2d9;color:var(--rust)">● Testing</span>
+        <span style="font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;background:#e9e4d8;color:#6d675a">● Blocked</span>
+        <span style="font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:#f1ead6;color:#5c5546">Seat: name</span>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="board.html">Board</a> — and the Needs-you card at its top is this same card in its gate dress.</p>
+  </div>
+
+  <div class="spec" id="lib-brief-card">
+    <div class="head"><span class="name">Brief card</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">Work, before it starts: a title, the purpose stated in plain words (a brief without one cannot be filed), the state, and the named seats — builder and checker, never the same agent.</p>
+    <div class="stage">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 17px">
+        <div style="font-size:18.5px;font-weight:700">Run Book Preview — the storyboard becomes the site</div>
+        <p style="font-size:15.5px;color:#4c554e;margin:3px 0 0">Purpose: every Run Book grows a sitemap of every page and a fully navigable static preview with mocked data, so a design is walked, not pictured. This preview is the first proof.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">
+          <span style="font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;background:#dde6ee;color:var(--slate)">Building</span>
+          <span style="font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:#f1ead6;color:#5c5546">Builder: fleet</span>
+          <span style="font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;background:#f1ead6;color:#5c5546">First reader: Tyler</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;border-top:1px solid var(--line);padding-top:10px">
+          <span style="color:var(--muted);font-size:13.5px">Ruled Nov 13 — from St Lucia</span>
+          <a href="sitemap.html" style="font-weight:600;text-decoration:none;font-size:14.5px">Open the sitemap →</a>
+        </div>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="briefs.html">Briefs</a>.</p>
+  </div>
+
+  <div class="spec" id="lib-ruling-card">
+    <div class="head"><span class="name">Ruling card</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">A decision, quoted in the words it was made in, with who ruled it, when, whether it stands — and the receipt line underneath: the proof of what the ruling changed in the world.</p>
+    <div class="stage">
+      <div style="background:var(--card);border:1px solid var(--line);border-left:5px solid var(--pine);border-radius:12px;padding:15px 17px">
+        <blockquote style="margin:0;font-family:Georgia,serif;font-size:19px;line-height:1.4">“Bubbles carry the author's color, with our icons. Later: each person can change their color, and icons are authorable.”</blockquote>
+        <div style="display:flex;gap:9px;align-items:center;margin-top:10px;flex-wrap:wrap">
+          <div class="mark m-tyler" style="width:25px;height:25px;font-size:12.5px">T</div>
+          <span style="font-size:14px;color:#4c554e">Tyler · Nov 12, 2026</span>
+          <span style="font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:#dcebe0;color:var(--pine);border-radius:5px;padding:2px 8px">In force</span>
+          <span style="font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:#f1ead6;color:#6d5c1e;border-radius:5px;padding:2px 8px">Authoring: future story</span>
+        </div>
+        <div style="font-size:13.5px;color:var(--muted);margin-top:9px;border-top:1px solid var(--line);padding-top:8px">Receipt: the bubbles are building as chat v3; per-person color and icon authoring is filed as the identity story. <a href="thread.html" style="font-weight:600">The spec thread →</a></div>
+      </div>
+      <p class="cap" style="margin-top:16px">The on-bubble form — governance as chat (Intended)</p>
+      <p style="font-size:14.5px;color:#4c554e;margin:4px 0 0">In a room, a ruling also arrives <i>inside the message that carries it</i>: a translucent inset on the author's bubble, white edge, the same words and ruling line — the form members actually meet (drawn on the member view). It behaves like its sibling, the on-bubble Ask card: the receipt line sits below the bubble, as for any message, and a thread opens off it. Two states are drawn: <b>In force</b>, and <b>Superseded</b> — dimmed, naming the ruling that replaced it. A member's own proposal is never drawn in this form: until the owner rules, it is an ask, not a ruling.</p>
+      <div style="position:relative;margin-top:18px;max-width:520px">
+        <div class="mark m-tyler" style="position:absolute;top:-11px;left:-6px;border:2px solid var(--paper);z-index:2">T</div>
+        <div style="background:#0b4f4a;color:#fff;border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px">A decision that affects the whole room, recorded where everyone can read it:
+          <div style="margin-top:11px;background:rgba(251,249,244,.14);border:1px solid rgba(251,249,244,.35);border-left:4px solid #fff;border-radius:10px;padding:11px 13px">
+            <span style="display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:#fffdf7;color:#345a74;border-radius:5px;padding:2px 7px;text-transform:uppercase">Ruling · In force</span>
+            <div style="font-weight:600;margin:7px 0 3px;font-size:16px;font-family:Georgia,serif">“Build order is the chat core first; the entry chapter builds after it.”</div>
+            <div style="font-size:13.5px;opacity:.85">Ruled by Tyler · Nov 13</div>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:12.5px;color:var(--muted);margin-top:5px">Confirmed · 9:07 PM</div>
+      <div style="position:relative;margin-top:16px;max-width:520px;opacity:.72">
+        <div class="mark m-tyler" style="position:absolute;top:-11px;left:-6px;border:2px solid var(--paper);z-index:2">T</div>
+        <div style="background:#0b4f4a;color:#fff;border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px">
+          <div style="background:rgba(251,249,244,.14);border:1px solid rgba(251,249,244,.35);border-left:4px solid #fff;border-radius:10px;padding:11px 13px">
+            <span style="display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:#fffdf7;color:#345a74;border-radius:5px;padding:2px 7px;text-transform:uppercase">Ruling · Superseded</span>
+            <div style="font-weight:600;margin:7px 0 3px;font-size:16px;font-family:Georgia,serif">“Dark mode builds before the entry chapter.”</div>
+            <div style="font-size:13.5px;opacity:.85">Ruled by Tyler · Nov 12 — replaced by the ruling above, Nov 13.</div>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:12.5px;color:var(--muted);margin-top:5px">Confirmed · Nov 12</div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="rulings.html">Rulings</a> (the surface form, Shipped) · <a href="member-room.html">Room — member view</a> and the Room feed (the on-bubble form, Intended).</p>
+  </div>
+
+  <h2>Account</h2>
+  <p class="h2sub">How a person gets in, and how the product is allowed to reach them.</p>
+
+  <div class="spec" id="lib-sign-in-card">
+    <div class="head"><span class="name">Sign-in card</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">The only page a signed-out visitor ever sees. Email link or passkey for humans; a scoped token for agents. No passwords anywhere — a token's scope is its seat.</p>
+    <div class="stage">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 22px;max-width:440px;margin:0 auto">
+        <div style="font-family:Georgia,serif;font-size:30px;text-align:center;font-weight:700">TrioWire</div>
+        <p style="text-align:center;color:var(--muted);font-size:14.5px;margin:5px 0 18px">The office for a human and their agents.<br>Briefs, rulings, receipts — every exit receipted.</p>
+        <div style="font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#5c5546;margin:0 0 6px">Email</div>
+        <div style="border:1px solid var(--line);border-radius:11px;background:#fff;padding:11px 13px;font-size:16px;color:var(--muted)">you@example.com</div>
+        <a class="btn fill" href="room.html" style="display:block;text-align:center;padding:12px 18px;font-size:15.5px;margin-top:14px">Email me a sign-in link</a>
+        <div style="display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12.5px;margin:16px 0 0"><span style="flex:1;border-top:1px solid var(--line)"></span>or<span style="flex:1;border-top:1px solid var(--line)"></span></div>
+        <a class="btn ghost" href="room.html" style="display:block;text-align:center;padding:12px 18px;font-size:15.5px;margin-top:14px">Use a passkey</a>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="sign-in.html">Sign in</a>.</p>
+  </div>
+
+  <div class="spec" id="lib-notification-toggle-rows">
+    <div class="head"><span class="name">Notification toggle rows</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">One row per kind of push, each with what it means in plain words and its state as a pill. The defaults are the product's manners: asks and mentions ring; plain messages stay quiet.</p>
+    <div class="stage">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px">
+        <div><div style="font-weight:600;font-size:16px">Asks addressed to you</div><div style="color:var(--muted);font-size:13.5px">Someone is waiting on your answer</div></div>
+        <span style="flex:none;font-size:12.5px;font-weight:700;border-radius:999px;padding:4px 12px;background:#dcebe0;color:var(--pine)">ON</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin-top:10px">
+        <div><div style="font-weight:600;font-size:16px">Mentions</div><div style="color:var(--muted);font-size:13.5px">Your name in the room, like the smoke test</div></div>
+        <span style="flex:none;font-size:12.5px;font-weight:700;border-radius:999px;padding:4px 12px;background:#dcebe0;color:var(--pine)">ON</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin-top:10px">
+        <div><div style="font-weight:600;font-size:16px">Plain room messages</div><div style="color:var(--muted);font-size:13.5px">Quiet by default — the room is there when you open it</div></div>
+        <span style="flex:none;font-size:12.5px;font-weight:700;border-radius:999px;padding:4px 12px;background:#e9e4d8;color:#6d675a">OFF</span>
+      </div>
+      <a class="btn ghost" href="you.html" style="margin-top:12px">Send test notification</a>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="you.html">You</a>.</p>
+  </div>
+
+
+  <div class="spec" id="lib-appearance-control-the-dark-mode-toggle">
+    <div class="head"><span class="name">Appearance control — the dark-mode toggle</span><span class="stamp intended">Intended</span></div>
+    <p class="for">Where the theme choice lives: on the You page, in place, next to the other things that are yours — not in a settings expedition. Three choices, stated plainly: Light, Dark, or Follow my device. Choosing Light or Dark saves the choice on your record and it wins everywhere, on every device; Follow my device clears the saved choice and the device decides.</p>
+    <div class="stage">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px">
+        <div><div style="font-weight:600;font-size:16px">Appearance</div><div style="color:var(--muted);font-size:13.5px">Saved choice wins. No saved choice: your device decides.</div></div>
+        <span style="display:inline-flex;gap:6px;flex:none">
+          <span style="font-size:12.5px;font-weight:700;border-radius:999px;padding:8px 12px;background:#e9e4d8;color:#6d675a">Light</span>
+          <span style="font-size:12.5px;font-weight:700;border-radius:999px;padding:8px 12px;background:#dcebe0;color:var(--pine)">Dark ✓</span>
+          <span style="font-size:12.5px;font-weight:700;border-radius:999px;padding:8px 12px;background:#e9e4d8;color:#6d675a">Device</span>
+        </span>
+      </div>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Drawn with Dark saved. The same row in dark takes the dark tokens — it is this library's toggle-row part in a new row, not a new part.</p>
+    </div>
+    <p class="usedon"><b>Used on:</b> <a href="you.html">You</a> — drawn here first; the You preview page is updated in the same motion when the control lands (the drift law).</p>
+  </div>
+
+  <h2>Carried patterns</h2>
+  <p class="h2sub">Bricks the shop holds in common across its products. They live in this library so any product — or any builder — picks up the same part instead of inventing a variant.</p>
+
+  <div class="spec" id="lib-date-picker">
+    <div class="head"><span class="name">Date picker</span><span class="stamp pattern">Pattern</span></div>
+    <p class="for">A full-sheet calendar: months scroll vertically, the selection is spelled out in words at the top, and nothing is chosen until Done is tapped. This is the bar the shop holds every date door to — the three search doors of the travel product share this one sheet, never native popups.</p>
+    <div class="stage">
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;max-width:400px;margin:0 auto;padding:18px 18px 14px">
+        <div style="font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Start date → End date</div>
+        <div style="font-size:19px;font-weight:700;margin-top:3px">Fri, Dec 18 → Wed, Dec 23, 2026</div>
+        <div style="color:var(--muted);font-size:14px">5 nights · spelled out, so there is nothing to misread</div>
+        <div style="font-family:Georgia,serif;font-size:17px;margin:16px 0 6px">December 2026</div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center;font-size:13px;color:var(--muted);font-weight:700">
+          <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center;font-size:14.5px;margin-top:4px">
+          <span style="color:var(--muted);padding:6px 0">29</span><span style="color:var(--muted);padding:6px 0">30</span><span style="padding:6px 0">1</span><span style="padding:6px 0">2</span><span style="padding:6px 0">3</span><span style="padding:6px 0">4</span><span style="padding:6px 0">5</span>
+          <span style="padding:6px 0">6</span><span style="padding:6px 0">7</span><span style="padding:6px 0">8</span><span style="padding:6px 0">9</span><span style="padding:6px 0">10</span><span style="padding:6px 0">11</span><span style="padding:6px 0">12</span>
+          <span style="padding:6px 0">13</span><span style="padding:6px 0">14</span><span style="padding:6px 0">15</span><span style="padding:6px 0">16</span><span style="padding:6px 0">17</span><span style="background:var(--pine);color:#fff;border-radius:50%;padding:6px 0;font-weight:700">18</span><span style="background:#dcebe0;padding:6px 0">19</span>
+          <span style="background:#dcebe0;padding:6px 0">20</span><span style="background:#dcebe0;padding:6px 0">21</span><span style="background:#dcebe0;padding:6px 0">22</span><span style="background:var(--pine);color:#fff;border-radius:50%;padding:6px 0;font-weight:700">23</span><span style="padding:6px 0">24</span><span style="padding:6px 0">25</span><span style="padding:6px 0">26</span>
+          <span style="padding:6px 0">27</span><span style="padding:6px 0">28</span><span style="padding:6px 0">29</span><span style="padding:6px 0">30</span><span style="padding:6px 0">31</span><span style="color:var(--muted);padding:6px 0">1</span><span style="color:var(--muted);padding:6px 0">2</span>
+        </div>
+        <div class="btnrow2" style="justify-content:space-between;margin-top:16px;border-top:1px solid var(--line);padding-top:12px">
+          <a class="btn ghost" href="library.html">Cancel</a>
+          <a class="btn fill" href="library.html">Done</a>
+        </div>
+      </div>
+    </div>
+    <p class="usedon"><b>Used on:</b> no TrioWire page — carried for the products that take dates. One sheet, shared by every door that asks “when.”</p>
+    <p class="note">Specimen shows one month; the sheet scrolls through months vertically. The range, the spelled-out selection, and the explicit Done are the non-negotiables.</p>
+  </div>
+
+  <p class="foot">Twenty-five bricks — the chat message and the composer each carry their shipped form beside their intended one, and the five v3 bricks above are drawn Intended, in all their states, before any page uses them. When a new brick is needed, it is drawn here first — named, stamped, and given its specimen — and only then composed into a page. That order is the whole discipline: the library is where a missing part shows up as a hole, while it is still cheap. The theme token set above is a layer over every brick, not a brick of its own — which is why it is not in the count. The Step card is a pattern, not a brick, and is not in this count either; the Ruling card's on-bubble form is a form of that brick, drawn inside its specimen, not a new brick.</p>
+</div>
+
+</body>
+</html>

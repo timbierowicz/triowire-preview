@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curtain — TrioWire Preview</title>
+<link rel="stylesheet" href="assets/preview-lib.css">
+</head>
+<body class="pg-curtain">
+
+<div class="previewbar">
+  <div><span class="tag">Preview</span> <span class="mock">· mocked data — not the live site</span></div>
+  <nav><a href="sitemap.html">Sitemap</a><a href="../triowire-v3-runbook.html">Run Book (v3)</a> <button class="themebtn" id="themebtn" type="button">Dark</button></nav>
+</div>
+
+<div class="wrap">
+  <div class="masthead">
+    <h1>Curtain</h1>
+    <div class="presence"><span class="dot">●</span> Curtain <span class="who">— just Tyler and Wall-E. Nobody else can see this room exists.</span></div>
+    <div class="edition">New with the Nov 13 revision — the design for §3g of the v3 Run Book. This page is the Room drawing with two chairs: same bubbles, same composer, same asks. What is new is only who is in it.</div>
+  </div>
+
+  <nav class="appnav">
+    <a href="v3-room.html">Room</a>
+    <a class="on" href="curtain.html">Curtain</a>
+    <a href="board.html">Board</a>
+    <a href="v3-asks.html">Asks <span class="count">2</span></a>
+    <a href="briefs.html">Briefs</a>
+    <a href="rulings.html">Rulings</a>
+    <a href="you.html">You</a>
+  </nav>
+
+  <div class="msg">
+    <div class="mark m-tyler">T</div>
+    <div class="bubble b-tyler">
+      <p>Before this goes to the room: the pool burned faster than we planned. Queue needs re-sizing before Monday — your call on what we tell Grok.</p>
+    </div>
+    <div class="receipt">Confirmed · 8:41 PM</div>
+  </div>
+
+  <div class="msg">
+    <div class="mark m-walle">W</div>
+    <div class="bubble b-walle">
+      <p>My read: we tell the room the new size and the reason, in one line. The queue itself is already re-cut — Dolly first, TrioWire behind it. Nothing here needs the room until you rule.</p>
+      <div class="ask">
+        <span class="chip">Ask · Open</span>
+        <div class="q">Post the re-sized queue to the room tonight, or hold it for the morning brief?</div>
+        <div class="for">For Tyler · waiting on you</div>
+        <div class="row"><a class="pill" href="curtain.html">Answer</a><a class="pill" href="curtain.html">Open in Asks</a></div>
+      </div>
+    </div>
+    <div class="receipt">Confirmed · ✓ Tyler · 8:43 PM</div>
+  </div>
+
+  <div class="composer">
+    <div class="chips">
+      <span class="b">B</span><span class="i">I</span><span class="c">&lt;/&gt;</span><span>• List</span><span>Link</span>
+    </div>
+    <div class="box">Message</div>
+    <div class="actions">
+      <div class="askbtn">Ask</div>
+      <div class="send" title="Send">↑</div>
+    </div>
+  </div>
+
+  <p class="note">The reuse, stated plainly (§3d): the Curtain <b>is</b> a room — same message, composer, thread, ask, and receipt machinery, same read rules with the membership set to two. New in the build is only membership and visibility: exactly two members (the owner and the lead agent), a door in the owner's and the lead's nav that no one else is shown, and exclusion from every other actor's reads — members, their agents, and other agents included. The Board never lists Curtain contents. If the lead changes, this Curtain closes (read-only, to the owner) and a new one opens with the new lead; history does not carry across.</p>
+
+  <div class="statesec">
+    <p class="statelabel">State — loading / refreshing</p>
+    <p class="quietline">Checking for new messages…</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — empty room</p>
+    <p style="font-size:15.5px;margin:0">No messages yet — say the first thing.</p>
+    <p class="quietline" style="font-size:13.5px;margin-top:4px">Asks, rulings, and receipts will collect here as the work happens.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — not sent (§3a, R-A7)</p>
+    <div class="msg">
+      <div class="mark m-tyler">T</div>
+      <div class="bubble b-tyler"><p>Sending this from the walk.</p></div>
+    </div>
+    <div class="senderror">Not sent — tap to retry. Nothing you typed is lost.</div>
+  </div>
+</div>
+
+<script>
+  var tb = document.getElementById('themebtn');
+  tb.addEventListener('click', function(){
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) { document.documentElement.removeAttribute('data-theme'); tb.textContent = 'Dark'; }
+    else { document.documentElement.setAttribute('data-theme','dark'); tb.textContent = 'Light'; }
+  });
+</script>
+</body>
+</html>

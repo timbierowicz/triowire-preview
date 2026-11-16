@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Room — v3 edition — TrioWire Preview</title>
+<link rel="stylesheet" href="assets/preview-lib.css">
+</head>
+<body class="pg-v3-room">
+
+<div class="previewbar">
+  <div><span class="tag">Preview</span> <span class="mock">· mocked data — not the live site</span></div>
+  <nav><a href="sitemap.html">Sitemap</a><a href="../triowire-v3-runbook.html">Run Book (v3)</a> <button class="themebtn" id="themebtn" type="button">Dark</button></nav>
+</div>
+
+<div class="wrap">
+  <div class="masthead">
+    <h1>TrioWire</h1>
+    <div class="presence"><span class="dot">●</span> Trio <span class="who">— Tyler, Wall-E and Grok are in the room</span></div>
+    <div class="edition">v3 edition — the target design for the next build. The live room today still uses the earlier form: see <a href="room.html">Room (current preview)</a>. This page renders in dark too — tap <b>Dark</b> in the bar above: the whole page swaps its theme tokens at one point (§3h); author fills do not change, and each bubble gains the light edge the dark contrast numbers demand.</div>
+  </div>
+
+  <nav class="appnav">
+    <a class="on" href="v3-room.html">Room</a>
+    <a href="board.html">Board</a>
+    <a href="v3-asks.html">Asks <span class="count">2</span></a>
+    <a href="briefs.html">Briefs</a>
+    <a href="rulings.html">Rulings</a>
+    <a href="you.html">You</a>
+  </nav>
+
+  <div class="pinbar">📌 <strong>Pinned:</strong> the room is the office — Slack was retired Nov 12. Working chat, asks and gates live here.</div>
+
+  <!-- Tyler: no byline row; mark rides on the bubble; receipt below, on the page -->
+  <div class="msg">
+    <div class="mark m-tyler">T</div>
+    <div class="bubble b-tyler">
+      <p>Can we make the text area larger? Add format buttons? I don't see the colors yet? Pictures?</p>
+    </div>
+    <div class="receipt">Confirmed · 5:45 PM</div>
+  </div>
+
+  <!-- Wall-E: mention pill + ask card with a strength tag -->
+  <div class="msg">
+    <div class="mark m-walle">W</div>
+    <div class="bubble b-walle">
+      <p><strong>Bubbles are the v3 form:</strong> the message itself carries your color, and your mark rides on it. No name row above — the color and the mark say who is speaking.</p>
+      <p>Smoke test, <a class="mention tyler" href="you.html">@Tyler</a> — a mention is a pale pill on the bubble, with the mentioned person's color as its text.</p>
+      <div class="ask">
+        <span class="chip">Ask · Open</span><span class="strength">Must</span>
+        <div class="q">Rule on the v3 Run Book — pictures plan, strength tags, and where the book itself lives — before the fleet's build starts?</div>
+        <div class="for">For Tyler · waiting on you</div>
+        <div class="row"><a class="pill" href="v3-asks.html">Answer</a><a class="pill" href="v3-asks.html">Open in Asks</a></div>
+      </div>
+    </div>
+    <div class="receipt">Confirmed · ✓ Tyler · 5:46 PM</div>
+  </div>
+
+  <!-- Grok: a picture message -->
+  <div class="msg">
+    <div class="mark m-grok">G</div>
+    <div class="bubble b-grok">
+      <p>Checker proof — the shelf at phone width, after the fix:</p>
+      <div class="photo">
+        <div class="img">Mocked picture — no real image<br>is used in this preview</div>
+      </div>
+      <p class="cap">Tap a picture to see it full size. A picture rides inside the message that sent it.</p>
+    </div>
+    <div class="receipt">Confirmed · 5:47 PM</div>
+  </div>
+
+  <!-- Grok: a picture that cannot be served — the explicit unavailable state (N-1) -->
+  <div class="msg">
+    <div class="mark m-grok">G</div>
+    <div class="bubble b-grok">
+      <p>And the second capture, from the same walk:</p>
+      <div style="border-radius:10px;border:1px dashed rgba(255,255,255,.7);padding:16px;text-align:center;font-size:14.5px;font-weight:600">Picture unavailable</div>
+      <p class="cap">The message text is unaffected — only the picture failed to load.</p>
+    </div>
+    <div class="receipt">Confirmed · 5:48 PM</div>
+  </div>
+
+  <!-- Wall-E: thread door -->
+  <div class="msg">
+    <div class="mark m-walle">W</div>
+    <div class="bubble b-walle">
+      <p>Spec is written. The build waits for the reviews and your ruling — nothing builds on a draft.</p>
+      <a class="threadlink" href="v3-thread.html">↳ 3 replies — open thread</a>
+    </div>
+    <div class="receipt">Confirmed · ✓ Tyler · ✓ Grok · 5:49 PM</div>
+  </div>
+
+
+  <!-- Sending placeholder — bubble form (P5, R-A7): drawn in the feed so P5 is judgeable in place -->
+  <div class="msg">
+    <div class="mark m-tyler">T</div>
+    <div class="bubble b-tyler" style="opacity:.75">
+      <p>Sending the walk captures now.</p>
+    </div>
+    <div class="receipt">Sending…</div>
+  </div>
+
+  <!-- Sending placeholder — plain form (P5 alternative, R-A7) -->
+  <div class="msg">
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 15px;font-size:16.5px;opacity:.75">Sending the walk captures now.</div>
+    <div class="receipt">Sending…</div>
+  </div>
+
+  <!-- Unsent state (R-A7) — either form, after retries fail -->
+  <div class="msg">
+    <div style="background:var(--card);border:1px solid var(--rust);border-radius:14px;padding:12px 15px;font-size:16.5px">Sending the walk captures now.</div>
+    <div style="font-size:13px;color:var(--rust);font-weight:600;margin-top:5px">Not sent — tap to retry. Nothing you typed is lost.</div>
+  </div>
+
+  <!-- Composer: chips above the box, box rests at three lines, actions below -->
+  <div class="composer">
+    <div class="chips">
+      <span class="b">B</span><span class="i">I</span><span class="c">&lt;/&gt;</span><span>• List</span><span>Link</span>
+    </div>
+    <div class="box"><span class="dim">Message</span></div>
+    <div class="actions">
+      <div class="plus">+</div>
+      <div class="askbtn">Ask</div>
+      <div class="send" title="Send">↑</div>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin:8px 0 0">Clean empty state. + appears when pictures are ruled in (P1) — it carries “Attach a picture”; without pictures it is not on the row at all. Mid-draft and at-cap states are drawn in the library's Composer specimen.</p>
+  </div>
+
+  <!-- Ask mode: the same composer with Ask on — the strength selector (N-4) appears -->
+  <div style="margin-top:26px;border-top:1px solid var(--line);padding-top:14px">
+    <p style="font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 10px">Same composer, Ask mode — strength selector in place</p>
+    <div style="display:flex;gap:6px;margin-bottom:8px;align-items:center;flex-wrap:wrap">
+      <span style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Strength</span>
+      <span style="border:1px solid var(--rust);background:var(--card);border-radius:999px;padding:11px 14px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px;font-weight:600">Must</span>
+      <span style="border:1px solid var(--pine);background:var(--pine);color:#fff;border-radius:999px;padding:11px 14px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px;font-weight:700">Recommended ✓</span>
+      <span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:11px 14px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px;font-weight:600">Optional</span>
+    </div>
+    <div class="box">Can you review the v3 spec tonight?</div>
+    <div class="actions">
+      <div class="plus">+</div>
+      <div class="askbtn">Ask ✓</div>
+      <div class="send" title="Send">↑</div>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin:8px 0 0">+ appears when pictures are ruled in (P1).</p>
+  </div>
+
+  <div class="statesec">
+    <p class="statelabel">State — loading / refreshing</p>
+    <p class="quietline">Checking for new messages…</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — empty room</p>
+    <p style="font-size:15.5px;margin:0">No messages yet — say the first thing.</p>
+    <p class="quietline" style="font-size:13.5px;margin-top:4px">Asks, rulings, and receipts will collect here as the work happens.</p>
+  </div>
+</div>
+
+
+<script>
+  var tb = document.getElementById('themebtn');
+  tb.addEventListener('click', function(){
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (dark) { document.documentElement.removeAttribute('data-theme'); tb.textContent = 'Dark'; }
+    else { document.documentElement.setAttribute('data-theme','dark'); tb.textContent = 'Light'; }
+  });
+</script>
+</body>
+</html>

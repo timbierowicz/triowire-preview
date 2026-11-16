@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Device frame — TrioWire Preview</title>
+<link rel="stylesheet" href="assets/preview-lib.css">
+</head>
+<body class="pg-preview-frame">
+
+<div class="previewbar">
+  <div><span class="tag">Preview</span> <span class="mock">· device frame — mocked data</span></div>
+  <nav><a href="sitemap.html">Sitemap</a><a href="runbook.html">Run Book — preview edition</a></nav>
+</div>
+
+<div class="controls">
+  <div class="lbl">Device</div>
+  <div class="btnrow" id="devrow">
+    <button class="dbtn" data-w="390">Phone · 390</button>
+    <button class="dbtn" data-w="820">Tablet · 820</button>
+    <button class="dbtn" data-w="full">Desktop · full</button>
+  </div>
+  <div class="lbl" style="margin-top:10px">Page</div>
+  <div class="btnrow" id="pagerow">
+    <button class="pbtn" data-p="sign-in.html">Sign in</button>
+    <button class="pbtn" data-p="room.html">Room</button>
+    <button class="pbtn" data-p="thread.html">Thread</button>
+    <button class="pbtn" data-p="board.html">Board</button>
+    <button class="pbtn" data-p="asks.html">Asks</button>
+    <button class="pbtn" data-p="briefs.html">Briefs</button>
+    <button class="pbtn" data-p="rulings.html">Rulings</button>
+    <button class="pbtn" data-p="you.html">You</button>
+    <button class="pbtn" data-p="v3-room.html">Room — v3</button>
+    <button class="pbtn" data-p="first-run.html">First run</button>
+    <button class="pbtn" data-p="join.html">Join</button>
+    <button class="pbtn" data-p="curtain.html">Curtain</button>
+    <button class="pbtn" data-p="member-room.html">Member room</button>
+    <button class="pbtn" data-p="runbook-product.html">Run Book</button>
+  </div>
+  <div class="lbl" style="margin-top:10px">Theme — applies to pages that carry the token swap (Room — v3, First run, Join, Curtain, Member room, Run Book)</div>
+  <div class="btnrow" id="themerow">
+    <button class="dbtn" data-t="light">Light</button>
+    <button class="dbtn" data-t="dark">Dark</button>
+  </div>
+</div>
+
+<div class="stage">
+  <div class="device" id="device" style="width:390px">
+    <iframe id="frame" src="room.html" title="TrioWire preview page"></iframe>
+  </div>
+</div>
+<p class="cap" id="cap">Phone — 390 px wide. Links inside the frame navigate the preview, like the real site.</p>
+
+<script>
+  var PAGES = ["sign-in.html","room.html","thread.html","board.html","asks.html","briefs.html","rulings.html","you.html","v3-room.html","first-run.html","join.html","curtain.html","member-room.html","runbook-product.html"];
+  var device = document.getElementById('device');
+  var frame  = document.getElementById('frame');
+  var cap    = document.getElementById('cap');
+  var qs = new URLSearchParams(location.search);
+  var curW = qs.get('w') || '390';
+  var curP = qs.get('page') || 'room.html';
+  if (PAGES.indexOf(curP) < 0) curP = 'room.html';
+  if (['390','820','full'].indexOf(curW) < 0) curW = '390';
+
+  var curT = 'light';
+  function applyTheme(){
+    try {
+      var doc = frame.contentWindow.document;
+      if (curT === 'dark') doc.documentElement.setAttribute('data-theme','dark');
+      else doc.documentElement.removeAttribute('data-theme');
+      var tb = doc.getElementById('themebtn'); if (tb) tb.textContent = (curT === 'dark') ? 'Light' : 'Dark';
+    } catch(e){}
+    var tb2 = document.querySelectorAll('#themerow .dbtn');
+    for (var k=0;k<tb2.length;k++) tb2[k].className = 'dbtn' + (tb2[k].getAttribute('data-t') === curT ? ' on' : '');
+  }
+  frame.addEventListener('load', applyTheme);
+  document.getElementById('themerow').addEventListener('click', function(e){
+    var b = e.target.closest('[data-t]'); if (!b) return; curT = b.getAttribute('data-t'); applyTheme();
+  });
+  var SWAP = ["v3-room.html","first-run.html","join.html","curtain.html","member-room.html","runbook-product.html"];
+  function apply(){
+    device.style.width = (curW === 'full') ? '100%' : curW + 'px';
+    device.className = 'device' + (curW === 'full' ? ' full' : '');
+    if (frame.getAttribute('src') !== curP) frame.setAttribute('src', curP);
+    cap.textContent = (curW === 'full' ? 'Desktop — full width.'
+      : (curW === '390' ? 'Phone' : 'Tablet') + ' — ' + curW + ' px wide.')
+      + ' Links inside the frame navigate the preview, like the real site.'
+      + (SWAP.indexOf(curP) < 0 ? ' This page predates dark mode — it has no token swap to drive, so the Theme buttons change nothing here.' : '');
+    var db = document.querySelectorAll('#devrow .dbtn');
+    for (var i=0;i<db.length;i++) db[i].className = 'dbtn' + (db[i].getAttribute('data-w') === curW ? ' on' : '');
+    var pb = document.querySelectorAll('#pagerow .pbtn');
+    for (var j=0;j<pb.length;j++) pb[j].className = 'pbtn' + (pb[j].getAttribute('data-p') === curP ? ' on' : '');
+    try { history.replaceState(null,'','?w=' + curW + '&page=' + curP); } catch(e){}
+  }
+  document.getElementById('devrow').addEventListener('click', function(e){
+    var b = e.target.closest('[data-w]'); if (!b) return; curW = b.getAttribute('data-w'); apply();
+  });
+  document.getElementById('pagerow').addEventListener('click', function(e){
+    var b = e.target.closest('[data-p]'); if (!b) return; curP = b.getAttribute('data-p'); apply();
+  });
+  apply();
+</script>
+
+</body>
+</html>

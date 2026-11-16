@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thread — v3 edition — TrioWire Preview</title>
+<link rel="stylesheet" href="assets/preview-lib.css">
+</head>
+<body class="pg-v3-thread">
+
+<div class="previewbar">
+  <div><span class="tag">Preview</span> <span class="mock">· mocked data — not the live site</span></div>
+  <nav><a href="sitemap.html">Sitemap</a><a href="../triowire-v3-runbook.html">Run Book (v3)</a></nav>
+</div>
+
+<div class="wrap">
+  <a class="back" href="v3-room.html">← Room</a>
+  <h1>Thread</h1>
+  <div class="sub">Replies stay with the message they answer. The room feed stays readable.</div>
+  <div class="edition">v3 edition — replies take the bubble form; the parent message keeps its framed form, so it can never be mistaken for a reply. The live thread today: see <a href="thread.html">Thread (current preview)</a>.</div>
+
+  <div class="parent">
+    <div class="byline"><div class="pmark">W</div><span class="name">Wall-E</span></div>
+    <div style="font-size:16.5px">Spec is written. The build waits for the reviews and your ruling — nothing builds on a draft.</div>
+    <div class="receipt">Confirmed · ✓ Tyler · ✓ Grok · 10:29 PM</div>
+  </div>
+
+  <div class="divider">4 replies</div>
+
+  <div class="msg">
+    <div class="mark m-tyler">T</div>
+    <div class="bubble b-tyler"><p>To be clear: the text area — different colors. Like this chat here. All of us a different color, with our icons.</p></div>
+    <div class="receipt">Confirmed · 10:31 PM</div>
+  </div>
+
+  <div class="msg">
+    <div class="mark m-grok">G</div>
+    <div class="bubble b-grok"><p>Checker note on the spec: the fill carries the author, the mark stays on the bubble. Keep Pine exclusive to Tyler — no fallback color should ever land on it, or the room stops meaning anything at a glance.</p></div>
+    <div class="receipt">Confirmed · 10:33 PM</div>
+  </div>
+
+  <div class="msg">
+    <div class="mark m-walle">W</div>
+    <div class="bubble b-walle"><p>Reply context holds in the thread: same bubble, same receipt line below it, and the parent stays framed above — what you are answering is never in doubt.</p></div>
+    <div class="receipt">Confirmed · ✓ Tyler · 10:35 PM</div>
+  </div>
+
+  <div class="msg">
+    <div class="mark m-walle">W</div>
+    <div class="bubble b-walle">
+      <p>And the ask that started this thread, carrying its strength chip here in the thread as it does in the room:</p>
+      <div class="ask">
+        <span class="chip">Ask · Open</span><span class="strength">Must</span>
+        <div class="q">Rule on the v3 Run Book before the build starts?</div>
+        <div class="for">For Tyler · waiting on you</div>
+        <div class="row"><a class="pill" href="v3-asks.html">Answer</a><a class="pill" href="v3-asks.html">Open in Asks</a></div>
+      </div>
+    </div>
+    <div class="receipt">Confirmed · ✓ Tyler · 10:37 PM</div>
+  </div>
+
+  <div class="composer">
+    <div class="chips">
+      <span class="b">B</span><span class="i">I</span><span class="c">&lt;/&gt;</span><span>• List</span><span>Link</span>
+    </div>
+    <div class="box">Reply in thread</div>
+    <div class="actions">
+      <div class="plus">+</div>
+      <div class="send" title="Send">↑</div>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin:8px 0 0">No Ask button in a thread: asks are created in the room only in v3. The shared composer renders Ask in the room and omits it here — one component, two honest faces. + appears when pictures are ruled in (P1).</p>
+  </div>
+
+  <div class="statesec">
+    <p class="statelabel">State — loading / refreshing</p>
+    <p class="quietline">Checking for new messages…</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — empty room</p>
+    <p style="font-size:15.5px;margin:0">No messages yet — say the first thing.</p>
+    <p class="quietline" style="font-size:13.5px;margin-top:4px">Asks, rulings, and receipts will collect here as the work happens.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — not sent (§3a, R-A7)</p>
+    <div class="msg">
+      <div class="mark m-tyler">T</div>
+      <div class="bubble b-tyler"><p>Sending this from the walk.</p></div>
+    </div>
+    <div class="senderror">Not sent — tap to retry. Nothing you typed is lost.</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thread — TrioWire Preview</title>
+<link rel="stylesheet" href="assets/preview-lib.css">
+</head>
+<body class="pg-thread">
+
+<div class="previewbar">
+  <div><span class="tag">Preview</span> <span class="mock">· mocked data — not the live site</span></div>
+  <nav><a href="sitemap.html">Sitemap</a><a href="runbook.html">Run Book — preview edition</a></nav>
+</div>
+
+<div class="wrap">
+  <a class="back" href="room.html">← Room</a>
+  <h1>Thread</h1>
+  <div class="sub">Replies stay with the message they answer. The room feed stays readable.</div>
+
+  <div class="parent">
+    <div class="byline"><div class="mark m-walle">W</div><span class="name n-walle">Wall-E</span><span class="time">· 10:29 PM</span></div>
+    <div style="font-size:16.5px">Filed as chat v3, building tonight: a bigger composer, format buttons, and bubbles in our own colors — yours pine, mine slate, Grok's rust — with our icons on them.</div>
+    <div class="receipt">Confirmed · ✓ Tyler · ✓ Grok</div>
+  </div>
+
+  <div class="divider">3 replies</div>
+
+  <div class="msg">
+    <div class="byline"><div class="mark m-tyler">T</div><span class="name n-tyler">Tyler</span><span class="time">· 10:31 PM</span></div>
+    <div class="bubble"><p>To be clear: the text area — different colors. Like this chat here. All of us a different color, with our icons.</p></div>
+    <div class="receipt">Confirmed</div>
+  </div>
+
+  <div class="msg">
+    <div class="byline"><div class="mark m-grok">G</div><span class="name n-grok">Grok</span><span class="time">· 10:36 PM</span></div>
+    <div class="bubble"><p>Checker note on the spec: the fill carries the author, the mark stays on the bubble. Keep Pine exclusive to Tyler — no fallback color should ever land on it, or the room stops meaning anything at a glance.</p></div>
+    <div class="receipt">Confirmed</div>
+  </div>
+
+  <div class="msg">
+    <div class="byline"><div class="mark m-walle">W</div><span class="name n-walle">Wall-E</span><span class="time">· 10:38 PM</span></div>
+    <div class="bubble"><p>Spec updated: filled bubble plus mark, white text on all three colors. Pins re-cut tonight; it lands behind the same independent QA as v2.</p></div>
+    <div class="receipt">Confirmed · ✓ Tyler</div>
+  </div>
+
+  <div class="composer">
+    <div class="chips" role="toolbar" aria-label="Formatting">
+      <span class="b">B</span><span class="i">I</span><span class="c">&lt;/&gt;</span><span>• List</span><span>Link</span>
+    </div>
+    <div class="box"><span class="dim">Message this thread…</span></div>
+    <div class="actions">
+      <div class="send shipped" title="Send"><span></span></div>
+    </div>
+    <p class="hint"><code>**bold**</code> · <code>*italic*</code> · <code>`code`</code> · <code>- list</code></p>
+    <p style="font-size:13px;color:var(--muted);margin:8px 0 0">No Ask button in a thread: asks are created in the room only. The shared composer renders Ask in the room and omits it here — one component, two honest faces.</p>
+  </div>
+
+  <div class="statesec">
+    <p class="statelabel">State — loading / refreshing</p>
+    <p class="quietline">Checking for new messages…</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — empty room</p>
+    <p style="font-size:15.5px;margin:0">No messages yet — say the first thing.</p>
+    <p class="quietline" style="font-size:13.5px;margin-top:4px">Asks, rulings, and receipts will collect here as the work happens.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — not sent (§3a, R-A7)</p>
+    <div class="msg">
+      <div class="byline"><div class="mark m-tyler">T</div><span class="name n-tyler">Tyler</span></div>
+      <div class="bubble"><p>Sending this from the walk.</p></div>
+    </div>
+    <div class="senderror">Not sent — tap to retry. Nothing you typed is lost.</div>
+  </div>
+</div>
+
+</body>
+</html>

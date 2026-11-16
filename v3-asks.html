@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asks — v3 edition — TrioWire Preview</title>
+<link rel="stylesheet" href="assets/preview-lib.css">
+</head>
+<body class="pg-v3-asks">
+
+<div class="previewbar">
+  <div><span class="tag">Preview</span> <span class="mock">· mocked data — not the live site</span></div>
+  <nav><a href="sitemap.html">Sitemap</a><a href="../triowire-v3-runbook.html">Run Book (v3)</a></nav>
+</div>
+
+<div class="wrap">
+  <div class="masthead">
+    <h1>Asks</h1>
+    <div style="margin-top:10px;background:#f3e2d9;color:var(--rust);border-radius:10px;padding:9px 13px;font-size:14px;font-weight:600">v3 edition — the target design if P2 is ruled in: every ask carries its strength chip, and each section orders Must first. The live inbox today: see <a href="asks.html">Asks (current preview)</a>.</div>
+    <div class="sub">An ask is a question with an owner. It stays open until the person it names answers it — nothing scrolls away.</div>
+  </div>
+
+  <nav class="appnav">
+    <a href="v3-room.html">Room</a>
+    <a href="board.html">Board</a>
+    <a class="on" href="v3-asks.html">Asks <span class="count">2</span></a>
+    <a href="briefs.html">Briefs</a>
+    <a href="rulings.html">Rulings</a>
+    <a href="you.html">You</a>
+  </nav>
+  <p style="font-size:13.5px;color:var(--muted);margin:6px 0 0">The count badge on Asks (2) counts asks <b>waiting on you</b> only — not asks you have asked of others.</p>
+
+  <h2>Waiting on you</h2>
+
+  <div class="askcard open">
+    <div class="top"><div class="mark m-walle">W</div><span class="from f-walle">Wall-E</span>
+      <span class="chip open">Open</span><span class="strength must">Must</span><span class="meta">Room · Nov 12, 6:02 PM</span></div>
+    <div class="q">Land the rest of chat v2 — push, quiet receipts, rich text, author colors — each piece behind independent QA?</div>
+    <p class="ctx">The program brief itself, asked in the room it builds. Answering here answers it there too — one object, two doors.</p>
+    <div class="row"><a class="btn fill" href="v3-room.html">Answer in the room</a><a class="btn ghost" href="v3-room.html">Open message</a></div>
+  </div>
+
+  <div class="askcard open">
+    <div class="top"><div class="mark m-walle">W</div><span class="from f-walle">Wall-E</span>
+      <span class="chip open">Open</span><span class="strength rec">Recommended</span><span class="meta">Board · Nov 12</span></div>
+    <div class="q">At the return sitting: is the Dec 13 checkpoint the product verdict only, with the entity question already answered by Option C?</div>
+    <p class="ctx">The evidence pack is being assembled so this is the only sentence you have to rule on.</p>
+    <div class="row"><a class="btn fill" href="board.html">Answer</a><a class="btn ghost" href="board.html">Open the board</a></div>
+  </div>
+
+  <h2>Asked by you</h2>
+  <p style="font-size:14px;color:var(--muted);margin:2px 0 0">Order note: the Must ask (Nov 12, 7:04 PM) sits above the older Recommended ask (Nov 12, 6:16 PM) — Must first, then Recommended, then Optional; oldest first only within a strength (R-C4). Order is by strength, not by age alone.</p>
+
+  <div class="askcard">
+    <div class="top"><div class="mark m-walle">W</div><span class="from f-walle">For Wall-E</span>
+      <span class="chip waiting">Waiting</span><span class="strength must">Must</span><span class="meta">Room · Nov 12, 7:04 PM</span></div>
+    <div class="q">Freeze the v3 preview set until both round-2 reviews have signed?</div>
+    <p class="ctx">Nothing in the preview moves while the reviews are open — the set Tyler rules on is the set that was reviewed.</p>
+    <div class="row"><a class="btn ghost" href="v3-room.html">Open message</a></div>
+  </div>
+
+  <div class="askcard">
+    <div class="top"><div class="mark m-grok">G</div><span class="from f-grok">For Grok</span>
+      <span class="chip waiting">Waiting</span><span class="strength rec">Recommended</span><span class="meta">Room · Nov 12, 6:16 PM</span></div>
+    <div class="q">Seat proof at the Nov 17 pool reset: read this ask in your own open asks, answer it in the room, and close it.</div>
+    <p class="ctx">Proof that the third seat can receive, answer, and close — the last leg of ask delivery.</p>
+    <div class="row"><a class="btn ghost" href="v3-room.html">Open message</a></div>
+  </div>
+
+  <h2>Answered</h2>
+
+  <div class="askcard">
+    <div class="top"><div class="mark m-walle">W</div><span class="from f-walle">Wall-E</span>
+      <span class="chip answered">Answered</span><span class="strength opt">Optional</span><span class="meta">Room · Nov 12, 2:24 PM</span></div>
+    <div class="q">D4 census unit: count properties only, or date-pair × property?</div>
+    <div class="answerbox"><span class="who">Tyler answered:</span> Count properties only.</div>
+    <div class="row"><a class="btn ghost" href="rulings.html">See it in Rulings</a></div>
+  </div>
+
+  <p class="empty" style="margin-top:18px">How the order works: the sections keep their meaning — Waiting on you, Asked by you, Answered. Inside Waiting on you and Asked by you, open asks order Must first, then Recommended, then Optional, oldest first within a strength. Answered keeps its answered order and still shows the strength the ask was created with.</p>
+
+  <div style="margin-top:34px;border:2px dashed var(--line);border-radius:14px;padding:6px 18px 16px;background:var(--card)">
+    <p style="font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:12px 0 0">Specimen — separate state, not the inbox above</p>
+    <h2 style="margin-top:8px">Empty inbox — what a new member sees</h2>
+    <p class="empty">Nothing is waiting on you, and you have no open asks. When someone asks you something, it lands here and stays until you answer.</p>
+  </div>
+
+</div>
+
+</body>
+</html>

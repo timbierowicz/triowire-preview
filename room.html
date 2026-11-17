@@ -20,7 +20,13 @@
        under it the pinned Waiting-on-you strip, header and strip in one
        sticky layer. The pill navigation row this page used to draw is
        retired on the room; its doors live in the menu (drawn open in
-       the states at the foot of this page). -->
+       the states at the foot of this page).
+       Nav stage 2 (production 1beb478c): the room's face under the
+       chrome is the conversation only — the thread cards that sat in
+       the scroll are gone, component and all; threads are reached
+       from the menu's threads section, and a thread carries one slim
+       count line back to the strip (drawn on the Thread page). The
+       no-cards face is drawn in the states at the foot of this page. -->
   <div style="display:flex;align-items:center;gap:10px">
     <span style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:19px">☰<span style="position:absolute;top:-6px;right:-6px;background:#f2b33d;color:#1b2321;border-radius:999px;font-size:12px;font-weight:700;padding:2px 7px">1</span></span>
     <img class="brandmark" src="assets/triowire-mark-small.svg" alt="" width="28" height="28">
@@ -258,7 +264,7 @@
   <div class="statesec">
     <p class="statelabel">State — Waiting on you · nothing waiting</p>
     <div style="border:1px solid var(--line);border-radius:10px;padding:10px 13px;font-size:15px">Nothing is waiting on you</div>
-    <p class="quietline" style="font-size:13.5px;margin-top:6px">The strip is pinned at the top of the room in the same sticky layer as the header, and it never disappears: with nothing waiting it says so in one quiet line. What counts into it — and into the header badge — is everything waiting on the viewer: open asks plus open rulings, summed; an item blocked at a gate is not counted as waiting. Landed Nov 17, 2026 (production <code>cd80b0c7</code>) — nav stage 1 (§3q): the strip pins in the Room only; threads carry a slim count line instead (stage work to come).</p>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">The strip is pinned at the top of the room in the same sticky layer as the header, and it never disappears: with nothing waiting it says so in one quiet line. What counts into it — and into the header badge — is everything waiting on the viewer: open asks plus open rulings, summed; an item blocked at a gate is not counted as waiting. Landed Nov 17, 2026 (production <code>cd80b0c7</code>) — nav stage 1 (§3q): the strip pins in the Room only; threads carry a slim count line instead — that line landed as nav stage 2 (production <code>1beb478c</code>) and is drawn on the Thread page.</p>
   </div>
   <div class="statesec">
     <p class="statelabel">State — the room could not load</p>
@@ -268,6 +274,11 @@
       <div style="font-weight:700;font-size:17px">Room</div>
     </div>
     <p class="quietline" style="font-size:13.5px;margin-top:6px">If the room's read fails, the header still stands — bare: the button, the mark, the name, and no badge, no strip, no invented content under it. The failure is the room's, and the chrome does not pretend otherwise. Landed Nov 17, 2026 (production <code>cd80b0c7</code>) — nav stage 1 (§3q).</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — the room's face · no thread cards in the scroll</p>
+    <p style="font-size:15.5px;margin:0">The room's face is the header, the pinned strip, and the conversation — in that order, with nothing between the strip and the messages. Thread cards used to render in the scroll; the cards and the component behind them are gone. A thread is reached from the menu's threads section, one tap away, and inside a thread one slim line points back at what waits in the Room — drawn on the Thread page.</p>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">Landed Nov 17, 2026 (production <code>1beb478c</code>) — nav stage 2 (§3q): the room keeps the order the chapter names, and the scroll carries conversation only.</p>
   </div>
 </div>
 

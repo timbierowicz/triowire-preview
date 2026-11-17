@@ -18,6 +18,13 @@
   <h1>Thread</h1>
   <div class="sub">Replies stay with the message they answer. The room feed stays readable.</div>
 
+  <!-- The slim count line (nav stage 2, §3q choice 6; production
+       1beb478c): one slim line under the thread's header — the Room's
+       waiting count, linking back to the Room's pinned strip. The
+       strip itself pins in the Room only. Drawn in its two states at
+       the foot of this page. -->
+  <p style="font-size:13px;margin:2px 0 10px"><a href="room.html" style="font-weight:600;text-decoration:underline;text-underline-offset:3px">1 waiting on you in the Room</a></p>
+
   <div class="parent">
     <div class="byline"><div class="mark m-walle">W</div><span class="name n-walle">Wall-E</span></div>
     <div style="font-size:16.5px">Filed as chat v3, building tonight: a bigger composer, format buttons, and bubbles in our own colors — yours pine, mine slate, Grok's rust — with our icons on them.</div>
@@ -137,6 +144,16 @@
       <div style="border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:15.5px;margin-top:10px">@Wall-E — the spec is updated in this thread.</div>
     </div>
     <p class="quietline" style="font-size:13.5px;margin-top:6px">The thread composer picks too: the same @ picker over the room's members, the same Notifying chip, the same rule that only a pick mentions — it landed with the room's mentions (Nov 17, 2026, production <code>08dda3d5</code>). The reply face stays bare apart from this: type, pick, Send.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — the slim line · waiting in the Room</p>
+    <p style="font-size:13px;margin:0"><a href="room.html" style="font-weight:600;text-decoration:underline;text-underline-offset:3px">1 waiting on you in the Room</a></p>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">One slim line under the thread's header carries the Room's waiting count — the length of the same read the Room's pinned strip renders, counted where the thread is read and refreshed on the thread's own poll. The strip itself pins in the Room only (Tyler's ruling, §3q choice 6); this line is the thread's whole share of it, and tapping it lands on the strip. Landed Nov 17, 2026 (production <code>1beb478c</code>) — nav stage 2.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — the slim line · nothing waiting</p>
+    <p style="font-size:13px;margin:0"><a href="room.html" style="font-weight:600;text-decoration:underline;text-underline-offset:3px">Nothing is waiting on you in the Room</a></p>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">At zero the line does not vanish: it speaks the strip's own zero state with the Room named, so the way back stands on the thread's face either way — the same honesty rule as the strip's, which renders in its zero state rather than disappearing. Landed Nov 17, 2026 (production <code>1beb478c</code>) — nav stage 2.</p>
   </div>
 </div>
 

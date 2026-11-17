@@ -207,7 +207,20 @@ h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;
 .chips .c{font-family:ui-monospace,Menlo,monospace;font-size:14px}
 .chips .i{font-style:italic}
 .chips span{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px}
-.composer{position:sticky;bottom:0;background:linear-gradient(transparent,var(--paper) 22%);padding:14px 0 4px;margin-top:22px}
+/* TW-6 (Nov 16) — the composer is ONE SOLID BLOCK. Tyler's direction, verbatim:
+   "Put the formatting as a solid background with the chat window." Root cause
+   of the float: the old rule gave this sticky composer a gradient ground that
+   stayed TRANSPARENT for its top 22% — exactly the band the chips row sits
+   in — so when the composer stuck, the preceding bubble scrolled underneath
+   and showed through around the chips: the toolbar read as white pills
+   floating over the message, hiding its text (the preview twin of TW-1).
+   Now the block carries the opaque card ground with its own border/radius,
+   and the toolbar, the input, and the action row sit ON that ground (their
+   own card fills flattened to it — the scoped rule below):
+   no translucency anywhere in the component, so nothing can show through or
+   be covered, in either theme. */
+.composer{position:sticky;bottom:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 12px 12px;margin-top:22px}
+.composer .askbtn,.composer .box,.composer .chips span,.composer .plus{background:transparent}
 .composer code{background:var(--stage);border-radius:5px;padding:1px 5px;font-size:14.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 .field{border:1px solid var(--line);border-radius:999px;background:var(--card);padding:11px 17px;font-size:16.5px}
 .field .dim{color:var(--muted)}

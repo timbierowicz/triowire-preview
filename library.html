@@ -313,17 +313,18 @@
       </div>
       <div class="stage white">
         <p class="cap">Intended — growing box + format buttons</p>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 12px 12px">
         <div style="display:flex;gap:6px;margin-bottom:8px">
-          <span style="border:1px solid var(--line);background:var(--card);border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-weight:700;font-size:14.5px">B</span>
-          <span style="border:1px solid var(--line);background:var(--card);border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-style:italic;font-size:14.5px">I</span>
-          <span style="border:1px solid var(--line);background:var(--card);border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-family:ui-monospace,Menlo,monospace;font-size:14px">&lt;/&gt;</span>
-          <span style="border:1px solid var(--line);background:var(--card);border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px">• List</span>
-          <span style="border:1px solid var(--line);background:var(--card);border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px">Link</span>
+          <span style="border:1px solid var(--line);background:transparent;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-weight:700;font-size:14.5px">B</span>
+          <span style="border:1px solid var(--line);background:transparent;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-style:italic;font-size:14.5px">I</span>
+          <span style="border:1px solid var(--line);background:transparent;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-family:ui-monospace,Menlo,monospace;font-size:14px">&lt;/&gt;</span>
+          <span style="border:1px solid var(--line);background:transparent;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px">• List</span>
+          <span style="border:1px solid var(--line);background:transparent;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px">Link</span>
         </div>
-        <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:16.5px;min-height:74px;color:var(--muted)">Message</div>
+        <div style="background:transparent;border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:16.5px;min-height:74px;color:var(--muted)">Message</div>
         <div style="display:flex;align-items:center;gap:9px;margin-top:9px">
-          <div style="width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:22px;color:var(--muted);display:flex;align-items:center;justify-content:center;flex:none">+</div>
-          <div style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:11px 15px;min-height:44px;display:inline-flex;align-items:center;font-size:15px;font-weight:600">Ask</div>
+          <div style="width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;font-size:22px;color:var(--muted);display:flex;align-items:center;justify-content:center;flex:none">+</div>
+          <div style="border:1px solid var(--line);background:transparent;border-radius:999px;padding:11px 15px;min-height:44px;display:inline-flex;align-items:center;font-size:15px;font-weight:600">Ask</div>
           <div style="margin-left:auto;width:44px;height:44px;border-radius:50%;background:var(--pine);display:flex;align-items:center;justify-content:center;color:#fff;font-size:19px;font-weight:700" title="Send">↑</div>
         </div>
         <div style="display:flex;align-items:center;gap:10px;margin-top:12px;border-top:1px dashed var(--line);padding-top:10px">
@@ -331,7 +332,8 @@
           <div aria-disabled="true" style="width:44px;height:44px;border-radius:50%;background:var(--pine);opacity:.55;display:flex;align-items:center;justify-content:center;flex:none"><span style="width:20px;height:20px;border-radius:50%;border:3px solid #fff;border-top-color:transparent;display:block"></span></div>
           <span style="font-size:13.5px;color:var(--muted)">Send, while a message is sending: the arrow becomes a ring and Send is disabled (drawn here, not described).</span>
         </div>
-        <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Clean empty state. Chips, +, Ask, and Send are all at least 44px tall. Send is a Pine disc with a white up-arrow — author color is the only saturated signal in the room, so Send no longer carries its own green. While a message is sending, the arrow becomes a ring and Send is disabled. + appears when pictures are ruled in (P1); without pictures the row is Ask and Send, with no dead control.</p>
+        </div>
+        <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Clean empty state. Chips, +, Ask, and Send are all at least 44px tall. Send is a Pine disc with a white up-arrow — author color is the only saturated signal in the room, so Send no longer carries its own green. While a message is sending, the arrow becomes a ring and Send is disabled. + appears when pictures are ruled in (P1); without pictures the row is Ask and Send, with no dead control. The whole composer — format row, box, and actions — sits on one solid card ground (TW-6; Tyler's direction: “Put the formatting as a solid background with the chat window”): the formatting is part of the composer block, never a floating row over the messages.</p>
       </div>
     </div>
     <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> · <a href="thread.html">Thread</a> (reply form — the thread form has no Ask button; asks are created in the room only).</p>
@@ -559,16 +561,16 @@
         <div style="background:#8a4632;color:#fff;border:1px solid #d8ddd2;border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px">Rust in dark — edge token #d8ddd2 against this fill: 5.06:1.</div>
       </div>
       <div style="font-size:12.5px;color:#a8afa3;margin-top:5px">Confirmed · 9:14 PM</div>
-      <div style="margin-top:18px">
+      <div style="margin-top:18px;background:#232b27;border:1px solid #38433d;border-radius:16px;padding:10px 12px 12px">
         <div style="display:flex;gap:6px;margin-bottom:8px">
-          <span style="border:1px solid #38433d;background:#232b27;color:#eef0e9;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-weight:700;font-size:14.5px">B</span>
-          <span style="border:1px solid #38433d;background:#232b27;color:#eef0e9;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-style:italic;font-size:14.5px">I</span>
-          <span style="border:1px solid #38433d;background:#232b27;color:#eef0e9;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px">• List</span>
-          <span style="border:1px solid #38433d;background:#232b27;color:#eef0e9;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px">Link</span>
+          <span style="border:1px solid #38433d;background:transparent;color:#eef0e9;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-weight:700;font-size:14.5px">B</span>
+          <span style="border:1px solid #38433d;background:transparent;color:#eef0e9;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-style:italic;font-size:14.5px">I</span>
+          <span style="border:1px solid #38433d;background:transparent;color:#eef0e9;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px">• List</span>
+          <span style="border:1px solid #38433d;background:transparent;color:#eef0e9;border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px">Link</span>
         </div>
-        <div style="background:#232b27;border:1px solid #38433d;border-radius:16px;padding:12px 15px;font-size:16.5px;min-height:74px;color:#a8afa3">Message</div>
+        <div style="background:transparent;border:1px solid #38433d;border-radius:16px;padding:12px 15px;font-size:16.5px;min-height:74px;color:#a8afa3">Message</div>
         <div style="display:flex;align-items:center;gap:9px;margin-top:9px">
-          <span style="border:1px solid #38433d;background:#232b27;color:#eef0e9;border-radius:999px;padding:11px 15px;min-height:44px;display:inline-flex;align-items:center;font-size:15px;font-weight:600">Ask</span>
+          <span style="border:1px solid #38433d;background:transparent;color:#eef0e9;border-radius:999px;padding:11px 15px;min-height:44px;display:inline-flex;align-items:center;font-size:15px;font-weight:600">Ask</span>
           <span style="margin-left:auto;width:44px;height:44px;border-radius:50%;background:#0b4f4a;display:flex;align-items:center;justify-content:center;color:#fff;font-size:19px;font-weight:700">↑</span>
         </div>
       </div>

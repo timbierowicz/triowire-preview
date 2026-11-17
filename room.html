@@ -26,7 +26,14 @@
        the scroll are gone, component and all; threads are reached
        from the menu's threads section, and a thread carries one slim
        count line back to the strip (drawn on the Thread page). The
-       no-cards face is drawn in the states at the foot of this page. -->
+       no-cards face is drawn in the states at the foot of this page.
+       Ask-lifecycle fix (production 51c84b6d): See the answer now
+       lands however deep in the feed the answer sits — the jump
+       pages earlier messages in, lands on the answer's first line
+       and holds, the ring pulsing — and a reader arriving on a link
+       is no longer pulled to the newest message; the author's own
+       open ask card carries Withdraw. Both faces are drawn in the
+       states at the foot of this page. -->
   <div style="display:flex;align-items:center;gap:10px">
     <span style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:19px">☰<span style="position:absolute;top:-6px;right:-6px;background:#f2b33d;color:#1b2321;border-radius:999px;font-size:12px;font-weight:700;padding:2px 7px">1</span></span>
     <img class="brandmark" src="assets/triowire-mark-small.svg" alt="" width="28" height="28">
@@ -219,7 +226,7 @@
       <div class="bubble b-walle" style="outline:3px solid #fffdf7;outline-offset:2px;box-shadow:0 0 0 6px rgba(27,35,33,.5)"><p>Yes — it's working. Your message reached me, and the room reads the way you ruled it should.</p></div>
       <div class="receipt">Confirmed · 9:57 AM</div>
     </div>
-    <p class="quietline" style="font-size:13.5px;margin-top:6px">An answered ask links to its answer: the card gains one button — See the answer — and the tap lands on the recorded answer in the conversation, ringed on its bubble, the same ring an ask card wears. The recorded answer is the first one; a second answer stands as an ordinary follow-up message and never moves the link, and an ask in any other state gains nothing. There is no count on the card — the record holds one pointer, so a number would be invented. Landed Nov 17, 2026 (production <code>ed5395b0</code>), from Tyler's live finding: the card said “Answered” and stopped there — status without a path, the same dead end as Open in Asks.</p>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">An answered ask links to its answer: the card gains one button — See the answer — and the tap lands on the recorded answer in the conversation, ringed on its bubble, the same ring an ask card wears. The recorded answer is the first one; a second answer stands as an ordinary follow-up message and never moves the link, and an ask in any other state gains nothing. There is no count on the card — the record holds one pointer, so a number would be invented. Landed Nov 17, 2026 (production <code>ed5395b0</code>), from Tyler's live finding: the card said “Answered” and stopped there — status without a path, the same dead end as Open in Asks. The landing itself was then fixed (ask-lifecycle, landed Nov 17, 2026, production <code>51c84b6d</code>), from Tyler's next live finding — the answer to his test ask sat deeper than the fifty messages the room opens with, and the tap did nothing he could see: the jump now pages earlier messages in until the answer arrives, lands on its first line and holds there, the ring pulsing so the eye catches it, and a reader arriving on a link is no longer pulled down to the newest message.</p>
   </div>
   <div class="statesec">
     <p class="statelabel">State — Mentions · the picker and the chip</p>
@@ -279,6 +286,35 @@
     <p class="statelabel">State — the room's face · no thread cards in the scroll</p>
     <p style="font-size:15.5px;margin:0">The room's face is the header, the pinned strip, and the conversation — in that order, with nothing between the strip and the messages. Thread cards used to render in the scroll; the cards and the component behind them are gone. A thread is reached from the menu's threads section, one tap away, and inside a thread one slim line points back at what waits in the Room — drawn on the Thread page.</p>
     <p class="quietline" style="font-size:13.5px;margin-top:6px">Landed Nov 17, 2026 (production <code>1beb478c</code>) — nav stage 2 (§3q): the room keeps the order the chapter names, and the scroll carries conversation only.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — Withdraw · your own ask</p>
+    <div class="msg">
+      <div class="mark m-tyler">T</div>
+      <div class="bubble b-tyler">
+        <p>One question from the first week of the room:</p>
+        <div class="ask">
+          <span class="chip open">Ask · Open</span>
+          <div class="q">Is the invite packet ready for Grok's grade?</div>
+          <div class="for">For Grok · waiting on him</div>
+          <div class="row"><a class="pill" href="asks.html">Open in Asks</a><a class="pill" href="room.html">Withdraw</a></div>
+        </div>
+      </div>
+      <div class="receipt">Confirmed · 9:41 AM</div>
+    </div>
+    <p style="font-size:13.5px;color:var(--muted);margin:10px 0 6px">After the tap — the same card, withdrawn:</p>
+    <div class="msg">
+      <div class="mark m-tyler">T</div>
+      <div class="bubble b-tyler">
+        <p>One question from the first week of the room:</p>
+        <div class="ask">
+          <div class="q">Is the invite packet ready for Grok's grade?</div>
+          <div class="for">For Grok · waiting on him — Withdrawn</div>
+        </div>
+      </div>
+      <div class="receipt">Confirmed · 9:41 AM</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">Your own open ask carries Withdraw in its row — the author alone sees it; the person waited on never does (their card offers Answer). Withdrawing flips the card to Withdrawn and takes the ask out of the other side's Waiting-on-you strip and badge the next time their room looks. Until this landing the card offered its author no way out at all: a stale ask could only be answered into closing, so Tyler's first test ask from Nov 12 sat in his strip with no honest way to clear it. A Dismiss for the person an ask waits on is not built — the ask's recorded states hold no such state, and adding one is a database change that waits on a ruling. Landed Nov 17, 2026 (production <code>51c84b6d</code>), from Tyler's live finding.</p>
   </div>
 </div>
 

@@ -74,13 +74,34 @@
 }
 /* Dark tuple (§3h — the same tokens, swapped at this one edit point;
    values carried from the Nov 13 proof's dark block, six pages in agreement.
-   Author fills do NOT change in dark; bubbles gain the --edge outline.) */
+   Author fills do NOT change in dark; bubbles gain the --edge outline.
+   Nov 16 (TW-2 audit): --accent lightened #7abfb4 → #83c8bb (the bubble-ask
+   wash composite case sat at 4.45:1), and the block gained the dark tuples
+   and text corrections below.) */
 :root[data-theme="dark"]{
   --paper:#171d1a; --card:#232b27; --ink:#eef0e9; --muted:#a8afa3;
-  --line:#38433d; --stage:#202822; --accent:#7abfb4; --edge:#d8ddd2;
+  --line:#38433d; --stage:#202822; --accent:#83c8bb; --edge:#d8ddd2;
+  /* Dark tuples added Nov 16 (TW-2 audit): the washes and the error text
+     below originally carried light values only, so dark text landed on
+     light washes (and the light error red on dark grounds) at ~1–2:1. */
+  --askbg:#263129; --askline:#42564a;
+  --yourswash:#3a2f1a; --yoursdeep:#d9a441;
+  --stuck:#ef8f83;
 }
 :root[data-theme="dark"] .bubble{border:1px solid var(--edge)}
 :root[data-theme="dark"] .edition{background:var(--stage);color:var(--ink)}
+/* Dark-only text corrections (TW-2 audit, Nov 16): author NAME colors are
+   text, not fills — the fills keep the light values above, the names take
+   lightened same-hue values on dark grounds. The presence dot takes a
+   lightened desk-done, and the ask "for" line reads at full strength.
+   (The mention chip's ground is fixed in its base rule in §6: it now sits
+   on --pine-deep, which never inverts, instead of --ink, which does.) */
+:root[data-theme="dark"] .f-grok,:root[data-theme="dark"] .n-grok{color:#d69a7c}
+:root[data-theme="dark"] .f-walle,:root[data-theme="dark"] .n-walle,:root[data-theme="dark"] .parent .name{color:#93b4cc}
+:root[data-theme="dark"] body.pg-v3-thread .name{color:#93b4cc}
+:root[data-theme="dark"] .presence .dot,:root[data-theme="dark"] .pres .dot{color:#57b87f}
+:root[data-theme="dark"] .ask .for{color:var(--ink);opacity:1}
+:root[data-theme="dark"] .parent{border-color:var(--accent)}
 
 /* ── §2 · BASE ─────────────────────────────────────────────────────────── */
 
@@ -89,7 +110,7 @@
 .appnav .count{background:var(--rust);color:#fff;font-size:12px;font-weight:700;border-radius:999px;padding:1px 7px}
 .appnav a{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);text-decoration:none;font-size:14.5px}
 .appnav a.on{background:var(--pine);border-color:var(--pine);color:#fff;font-weight:600}
-.dev{border:1px solid var(--pine);color:var(--pine);border-radius:999px;padding:9px 17px;font-weight:600;text-decoration:none;font-size:15px}
+.dev{border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:9px 17px;font-weight:600;text-decoration:none;font-size:15px}
 .dev:hover{background:var(--pine);color:#fff}
 .device{background:#fff;border:1px solid #c9bfa4;border-radius:22px;overflow:hidden;box-shadow:0 10px 34px rgba(38,49,43,.16);transition:width .25s ease}
 .device.full{border-radius:10px}
@@ -103,19 +124,29 @@
 .masthead h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:34px;margin:2px 0 0}
 .pinbar{margin:12px 0 4px;background:var(--stage);border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:14px;color:var(--muted)}
 .pres .dot{color:var(--send)}
-.presence{color:var(--pine);font-size:14.5px;margin-top:2px}
+.presence{color:var(--accent);font-size:14.5px;margin-top:2px}
 .presence .dot{color:var(--send)}
 .presence .who{color:var(--muted)}
 .previewbar{position:sticky;top:0;z-index:50;background:var(--pine-deep);color:var(--cream);display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 14px;font-size:13px}
 .previewbar .mock{opacity:.85}
 .previewbar .tag{font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+/* Brand cluster (Nov 16): the ratified T1 mark + wordmark in the shared
+   header — same mark, same 28px box, same wordmark on every page (the
+   Oct 28 unified-header ruling). The bar ground is --pine-deep in BOTH
+   themes (it never swaps), so the Pine tile takes a paper hairline to
+   define its edge; the Paper geometry reads ≈8.9:1 on the tile and the
+   cream wordmark ≈11.7:1 on the bar. */
+.brandrow{display:flex;align-items:center;gap:10px;min-width:0}
+.brand{display:inline-flex;align-items:center;gap:8px;flex:none}
+.brandmark{width:28px;height:28px;display:block;border-radius:7px;box-shadow:0 0 0 1px rgba(251,249,244,.55)}
+.brandword{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:17px;color:var(--cream);letter-spacing:.01em}
 .previewbar nav{display:flex;gap:14px;white-space:nowrap}
 .previewbar nav a{color:var(--cream);text-decoration:underline;text-underline-offset:3px}
 .specbar{position:static}
 .sub{color:var(--muted);font-size:15.5px;margin-top:5px}
 .themebtn{background:transparent;border:1px solid var(--cream);color:var(--cream);border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
 .wrap{max-width:760px;margin:0 auto;padding:0 14px 40px}
-a{color:var(--pine)}
+a{color:var(--accent)}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.45;-webkit-text-size-adjust:100%}
 h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;margin:4px 0 2px}
 
@@ -127,7 +158,7 @@ h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;
 .b-walle{background:var(--slate)}
 .bubble{border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px}
 .bubble .ask{border-radius:10px;margin-top:11px;padding:11px 13px;border:1px solid rgba(251,249,244,.35);background:rgba(251,249,244,.14)}
-.bubble .mention{border-radius:7px;font-weight:700;padding:0 7px;text-decoration:none;background:#fffdf7;display:inline-block}
+.bubble .mention{border-radius:7px;font-weight:700;padding:0 7px;text-decoration:none;background:#fffdf7;display:inline-block;color:#1b2321}
 .bubble .ruling{border-radius:10px;background:rgba(251,249,244,.14);border:1px solid rgba(251,249,244,.35);padding:11px 13px;margin-top:11px;border-left:4px solid #fff}
 .bubble .threadlink{font-size:14px;color:#fff;display:inline-block;font-weight:600;margin-top:7px}
 .bubble a{color:#fff;text-decoration:underline}
@@ -147,7 +178,7 @@ h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;
 .markcell .who2{font-weight:700;font-size:15.5px}
 .marker{display:inline-block;background:var(--rustwash);color:var(--rust);font-size:12.5px;font-weight:700;border-radius:6px;padding:3px 9px;margin-top:8px}
 .markrow{display:flex;gap:22px;flex-wrap:wrap}
-.mention{display:inline-block;background:var(--ink);color:#fff;border-radius:7px;padding:0 7px;font-weight:600;text-decoration:none}
+.mention{display:inline-block;background:var(--pine-deep);color:#fff;border-radius:7px;padding:0 7px;font-weight:600;text-decoration:none}
 .mention.grok{color:var(--rust)}
 .mention.tyler{color:var(--pine)}
 .msg{margin-top:16px}
@@ -165,9 +196,9 @@ h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;
 .askbtn{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:10px 15px;font-size:15px;font-weight:600}
 .box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:16.5px;min-height:74px;color:var(--muted)}
 .box .dim{color:var(--muted)}
-.btn{display:inline-block;border-radius:999px;padding:8px 16px;font-size:14.5px;font-weight:600;text-decoration:none;border:1px solid var(--pine)}
+.btn{display:inline-block;border-radius:999px;padding:8px 16px;font-size:14.5px;font-weight:600;text-decoration:none;border:1px solid var(--accent)}
 .btn.fill{background:var(--pine);color:#fff}
-.btn.ghost{background:transparent;color:var(--pine)}
+.btn.ghost{background:transparent;color:var(--accent)}
 .btnlabel{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
 .btnrow{display:flex;gap:8px;flex-wrap:wrap}
 .btnrow2{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
@@ -177,7 +208,7 @@ h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;
 .chips .i{font-style:italic}
 .chips span{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:11px 12px;min-height:44px;display:inline-flex;align-items:center;font-size:14.5px}
 .composer{position:sticky;bottom:0;background:linear-gradient(transparent,var(--paper) 22%);padding:14px 0 4px;margin-top:22px}
-.composer code{background:#f1ead6;border-radius:5px;padding:1px 5px;font-size:14.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.composer code{background:var(--stage);border-radius:5px;padding:1px 5px;font-size:14.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
 .field{border:1px solid var(--line);border-radius:999px;background:var(--card);padding:11px 17px;font-size:16.5px}
 .field .dim{color:var(--muted)}
 .hint{font-size:13px;color:var(--muted);margin:0 2px 6px}
@@ -188,8 +219,9 @@ h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;
 /* ── §7 · GOVERNANCE PARTS — KEEP (TrioWire’s own, inside Astryx Card shells, B9): K1 ask card · K13 strength chip + selector · K3 ruling card · K4 brief card · K5 gate / decision · board state chips ── */
 .ask{margin-top:11px;background:var(--askbg);border:1px solid var(--askline);border-left:4px solid var(--pine);border-radius:10px;padding:11px 13px}
 .ask .chip{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:#fffdf7;color:var(--slate);border-radius:5px;padding:2px 7px;text-transform:uppercase}
-.ask .chip.open{background:var(--rust)}
+.ask .chip.open{background:var(--rust);color:#fff}
 .ask .for{font-size:13.5px;opacity:.85}
+.bubble .ask .for{opacity:1}
 .ask .pill{background:#fffdf7;color:var(--slate);border-radius:999px;padding:10px 16px;font-size:14.5px;font-weight:600;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
 .ask .q{font-weight:600;margin:7px 0 3px;font-size:16px}
 .ask .row{display:flex;gap:8px;margin-top:10px}
@@ -200,19 +232,19 @@ h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;
 .brief h3{font-size:18.5px;margin:0 0 3px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 24px}
 .cardx{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
-.cardx .d{font-size:15px;color:#4c554e;margin-top:3px}
+.cardx .d{font-size:15px;color:var(--muted);margin-top:3px}
 .cardx .t{font-size:17px;font-weight:700}
 .chip{font-size:11.5px;font-weight:700;letter-spacing:.06em;border-radius:5px;padding:2px 8px}
 .chip a{color:inherit}
 .chip.answered{background:var(--pine)}
-.chip.blocked{background:#e9e4d8;color:#6d675a}
+.chip.blocked{background:#e9e4d8;color:#615a4e}
 .chip.building{background:#dde6ee;color:var(--slate)}
 .chip.done{background:#dcebe0;color:var(--pine)}
 .chip.future{background:#f1ead6;color:#6d5c1e}
 .chip.open{background:var(--rust)}
 .chip.seat{background:#f1ead6;color:#5c5546;font-weight:600}
 .chip.testing{background:var(--rustwash);color:var(--rust)}
-.chip.waiting{background:#8a8271}
+.chip.waiting{background:#6d675a;color:#fff}
 .row{display:flex;gap:8px;margin-top:11px;flex-wrap:wrap}
 .ruling{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--pine);border-radius:12px;padding:15px 17px;margin-top:14px}
 .ruling .chip{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.07em;background:#fffdf7;color:var(--slate);border-radius:5px;padding:2px 7px;text-transform:uppercase}
@@ -252,7 +284,7 @@ h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;
 .step .t{font-size:18px;font-weight:700}
 .step.done{border-left:5px solid var(--pine)}
 .toggle{flex:none;font-size:12.5px;font-weight:700;border-radius:999px;padding:4px 12px;letter-spacing:.03em}
-.toggle.off{background:#e9e4d8;color:#6d675a}
+.toggle.off{background:#e9e4d8;color:#615a4e}
 .toggle.on{background:#dcebe0;color:var(--pine)}
 .trio{display:flex;justify-content:center;gap:8px;margin-top:22px}
 
@@ -270,18 +302,19 @@ h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;
 .maptable .comps{font-size:13.5px}
 .maptable .pg .route{font-size:12px;color:var(--muted);font-family:ui-monospace,Menlo,monospace;margin-top:2px}
 .maptable .secrow td{background:var(--pine);color:#fff;font-weight:700;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase}
-.maptable details summary{cursor:pointer;font-weight:600;color:var(--pine);min-height:32px}
+.maptable details summary{cursor:pointer;font-weight:600;color:var(--accent);min-height:32px}
 .maptable th{background:var(--stage,#f7f1de);font-size:13px}
 .maptable th,.maptable td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
-.note{font-size:14px;color:#4c554e;margin-top:6px}
+.note{font-size:14px;color:var(--muted);margin-top:6px}
 .sidebyside{display:grid;grid-template-columns:1fr;gap:12px}
 .sidebyside .stage{margin-top:10px}
 .spec{margin-top:22px}
-.spec .for{font-size:15.5px;color:#4c554e;margin:3px 0 0;max-width:660px}
+.spec .for{font-size:15.5px;color:var(--muted);margin:3px 0 0;max-width:660px}
 .spec .head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .spec .name{font-size:19px;font-weight:700}
 .stage{padding:16px}
 .stage .cap{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.bubble .cap{color:#fff}
 .stage.white{background:var(--card)}
 .usedon{font-size:14px;color:var(--muted);margin-top:9px}
 .usedon a{font-weight:600;text-decoration:none}
@@ -295,21 +328,21 @@ th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-ali
 *{box-sizing:border-box}
 .actions{display:flex;align-items:center;gap:9px;margin-top:9px}
 .answerbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 13px;margin-top:9px;font-size:15px}
-.answerbox .who{font-weight:700;color:var(--pine);font-size:13.5px}
-.arrow{align-self:center;font-size:19px;color:var(--pine);padding:3px 0;line-height:1}
+.answerbox .who{font-weight:700;color:var(--accent);font-size:13.5px}
+.arrow{align-self:center;font-size:19px;color:var(--accent);padding:3px 0;line-height:1}
 .arrow .lbl{font-size:12.5px;color:var(--muted);margin-left:7px;letter-spacing:.02em}
 .back{display:inline-block;margin:16px 0 2px;font-weight:600;text-decoration:none;font-size:15px}
 .back:hover{text-decoration:underline}
 .bar{display:flex;align-items:center;gap:9px}
 .bigmark{width:58px;height:58px;border-radius:50%;background:var(--pine);color:#fff;font-weight:700;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
-.by{font-size:14px;color:#4c554e}
+.by{font-size:14px;color:var(--muted)}
 .choice{border:1.5px solid var(--line);border-radius:12px;padding:11px 14px;display:flex;gap:10px;align-items:center;background:var(--card)}
-.choice.on{border-color:var(--pine)}
+.choice.on{border-color:var(--accent)}
 .chooser{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
 .controls{max-width:900px;margin:0 auto;padding:16px 14px 4px;text-align:center}
 .controls .lbl{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.ctx{color:#4c554e;font-size:15px;margin:0 0 4px}
-.dbtn{border:1px solid var(--pine);background:var(--card);color:var(--pine);border-radius:999px;padding:8px 18px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}
+.ctx{color:var(--muted);font-size:15px;margin:0 0 4px}
+.dbtn{border:1px solid var(--accent);background:var(--card);color:var(--accent);border-radius:999px;padding:8px 18px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit}
 .dbtn.on{background:var(--pine);color:#fff}
 .divider{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.07em;margin:20px 0 2px}
 .divider:before,.divider:after{content:"";flex:1;border-top:1px solid var(--line)}
@@ -330,7 +363,7 @@ th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-ali
 .howto{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 18px 12px;margin-top:12px}
 .howto li{margin:7px 0;font-size:15px}
 .indent{padding-left:24px}
-.input{border:1px solid var(--line);border-radius:11px;background:#fff;padding:12px 14px;font-size:16.5px;color:var(--muted)}
+.input{border:1px solid var(--line);border-radius:11px;background:var(--card);padding:12px 14px;font-size:16.5px;color:var(--muted)}
 .light{font-size:15px}
 .mastdemo h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:34px;margin:0}
 .meta{}
@@ -338,10 +371,10 @@ th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-ali
 .meta a{font-weight:600;text-decoration:none;font-size:14.5px}
 .meta a:hover{text-decoration:underline}
 .n-grok{color:var(--rust)}
-.n-tyler{color:var(--pine)}
+.n-tyler{color:var(--accent)}
 .n-walle{color:var(--slate)}
 .needcard{background:var(--yourswash);border:1.5px solid var(--yoursline);border-radius:14px;padding:14px 16px;margin-top:12px}
-.needcard .d{font-size:15px;color:#4c554e;margin:0}
+.needcard .d{font-size:15px;color:var(--muted);margin:0}
 .needcard .k{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--yoursdeep)}
 .needcard .row{display:flex;gap:8px;margin-top:11px}
 .needcard .t{font-size:17.5px;font-weight:700;margin:5px 0 3px}
@@ -350,7 +383,7 @@ th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-ali
 .node .links a{font-weight:600;text-decoration:none;font-size:14.5px}
 .node .links a.frame{color:var(--slate)}
 .node .links a:hover{text-decoration:underline}
-.node .nd{font-size:15px;color:#4c554e;margin-top:3px}
+.node .nd{font-size:15px;color:var(--muted);margin-top:3px}
 .node .nt{font-size:18px;font-weight:700}
 .node .route{font-size:12.5px;color:var(--muted);font-family:ui-monospace,Menlo,monospace}
 .node.hub{border:1.5px solid var(--pine)}
@@ -365,8 +398,8 @@ th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-ali
 .photo .cap{font-size:13.5px;opacity:.9;margin-top:7px}
 .photo .img{height:150px;background:#3f6b5e;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px 12px;color:#fff;font-size:14.5px;font-weight:700}
 .plus{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);font-size:22px;color:var(--muted);display:flex;align-items:center;justify-content:center;flex:none}
-.propose{display:inline-block;margin-top:10px;border:1px solid var(--pine);color:var(--accent);border-radius:999px;padding:9px 15px;font-size:14px;font-weight:600;text-decoration:none;min-height:44px}
-.purpose{font-size:15.5px;color:#4c554e;margin:0}
+.propose{display:inline-block;margin-top:10px;border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:9px 15px;font-size:14px;font-weight:600;text-decoration:none;min-height:44px}
+.purpose{font-size:15.5px;color:var(--muted);margin:0}
 .q{font-size:17px;font-weight:600;margin:9px 0 4px}
 .score{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 17px;margin-top:16px}
 .score .t{font-weight:700;font-size:16.5px}
@@ -379,9 +412,9 @@ th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-ali
 .setrow .d{color:var(--muted);font-size:13.5px}
 .setrow .t{font-weight:600;font-size:16px}
 .stackline{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 17px;margin-top:16px;font-size:16px}
-.stackline b{color:var(--pine)}
+.stackline b{color:var(--accent)}
 .story{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin-top:10px}
-.story .d{font-size:14.5px;color:#4c554e;margin-top:2px}
+.story .d{font-size:14.5px;color:var(--muted);margin-top:2px}
 .story .t{font-size:16.5px;font-weight:600}
 .swatch{width:34px;height:34px;border-radius:10px;background:var(--pine);flex:none}
 .tagline{text-align:center;color:var(--muted);font-size:15.5px;margin:6px 0 22px}
@@ -390,14 +423,14 @@ th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-ali
 .who{display:flex;gap:9px;align-items:center;margin-top:10px;flex-wrap:wrap}
 :root[data-theme="dark"] .bubble{border:1px solid var(--edge)}
 :root[data-theme="dark"] .edition{background:var(--stage);color:var(--ink)}
-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:#f1ead6;border-radius:5px;padding:1px 6px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--stage);border-radius:5px;padding:1px 6px}
 h2{font-family:Georgia,serif;font-size:24px;margin:38px 0 4px}
 h3.group{font-family:Georgia,serif;font-size:19px;margin:26px 0 2px}
 iframe{display:block;width:100%;height:82vh;border:0;background:#faf6ec}
-label{display:block;font-size:13.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#5c5546;margin:16px 0 6px}
+label{display:block;font-size:13.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
 section{margin-top:30px}
 section p{font-size:16px;margin:10px 0}
-section p.d{color:#4c554e}
+section p.d{color:var(--muted)}
 
 /* Shipped-form Send (the current design, Room/Thread): the green disc with
    its square glyph, as live draws it. The v3 form (§6 base .send) is the
@@ -422,7 +455,7 @@ section p.d{color:#4c554e}
 
 /* ── §11 · PAGE SCOPES — the few declarations a single page genuinely owns (entry CTA, frame tool, map, specimens). Still one file, one edit point. ── */
 body.pg-sign-in .btn{display:block;text-align:center;border-radius:999px;padding:13px 18px;font-size:16px;font-weight:700;text-decoration:none;margin-top:16px}
-body.pg-sign-in .btn.ghost{border:1px solid var(--pine);color:var(--pine)}
+body.pg-sign-in .btn.ghost{border:1px solid var(--accent);color:var(--accent)}
 body.pg-sign-in .wrap{max-width:520px}
 body.pg-sign-in h1{text-align:center}
 body.pg-sign-in .note{text-align:center}
@@ -457,6 +490,10 @@ body.pg-room .previewbar .mock{font-weight:400;text-transform:none;letter-spacin
 body.pg-room .masthead h1{font-weight:700;letter-spacing:-.01em}
 body.pg-room .field{flex:1;color:var(--muted)}
 body.pg-room .bubble{background:var(--card);border:1px solid var(--line)}
+body.pg-room .bubble a,body.pg-thread .bubble a{color:var(--accent)}
+body.pg-room .bubble a.btn.fill,body.pg-thread .bubble a.btn.fill{color:#fff}
+body.pg-room .bubble a.mention,body.pg-thread .bubble a.mention{color:#1b2321}
+body.pg-room .bubble a.pill,body.pg-thread .bubble a.pill{color:var(--slate)}
 body.pg-room .askbtn{color:var(--ink);flex:none}
 body.pg-room .ask .for{color:var(--muted)}
 body.pg-thread .sub{margin-bottom:6px}
@@ -496,11 +533,14 @@ body.pg-asks .meta{margin-left:auto;color:var(--muted);font-size:13px}
 body.pg-v3-asks .btn{display:inline-flex;min-height:44px;align-items:center;justify-content:center}
 body.pg-v3-asks .chip{text-transform:uppercase;color:#fff}
 body.pg-v3-asks .meta{margin-left:auto;color:var(--muted);font-size:13px}
+/* The v3-asks masthead banner is a fixed pale wash (inline #f3e2d9, both
+   themes), so its link keeps the fixed pine in dark too (TW-2 audit). */
+:root[data-theme="dark"] body.pg-v3-asks .masthead div a{color:var(--pine)}
 body.pg-board .chips{flex-wrap:wrap;margin-top:9px}
 body.pg-board .chip{border-radius:999px}
 body.pg-briefs .chips{flex-wrap:wrap;margin-top:10px}
 body.pg-briefs .chip{border-radius:999px}
-body.pg-briefs .chip.waiting{color:var(--rust)}
+body.pg-briefs .chip.waiting{color:#fff}
 body.pg-briefs .meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
 body.pg-rulings .mark{background:var(--pine)}
 body.pg-rulings .receipt{border-top:1px solid var(--line);padding-top:8px}
@@ -523,6 +563,7 @@ body.pg-library h2{padding-bottom:7px;border-bottom:2px solid var(--pine)}
 body.pg-library .h2sub{max-width:640px}
 body.pg-library .foot{color:var(--muted);font-size:14px;max-width:640px}
 body.pg-library .dev{background:var(--card)}
+body.pg-library .dev:hover{background:var(--pine);color:#fff}
 body.pg-library .stage{background:var(--stage);border:1px solid var(--line);border-radius:14px;margin-top:10px;overflow:hidden}
 @media(min-width:680px){body.pg-library .sidebyside{grid-template-columns:1fr 1fr}}
 body.pg-sitemap .wrap{max-width:860px}

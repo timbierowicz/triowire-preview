@@ -167,6 +167,29 @@
     <div style="border:1px solid var(--line);border-radius:12px;padding:11px 14px;font-size:15px;margin-top:8px">The idea was not started. Nothing was added to the board. Pick where the new idea should live, then try again. <span style="color:var(--muted)">This will not retry on its own.</span></div>
     <p class="quietline" style="font-size:13.5px;margin-top:6px">A path chosen with its pick unmade stops the send in plain words — it never sends to a default. The words stay in the box.</p>
   </div>
+  <div class="statesec">
+    <p class="statelabel">State — Open in Asks · the ask waits on you</p>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 6px">Waiting on you — the strip at the top of the room, as the tap lands on it:</p>
+    <div style="background:rgba(242,179,61,.28);outline:2px solid #f2b33d;outline-offset:2px;border-radius:6px;padding:10px 13px;font-size:15px"><strong>Land the rest of chat v2 — each piece behind independent QA?</strong><div style="font-size:13.5px;color:var(--muted);margin-top:2px">Ask · waiting on you</div></div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">Open in Asks names its ask. When the ask waits on you, the tap lands on the ask's own entry in the Waiting-on-you strip, lit amber — amber's reserved meaning is “waiting on you,” which is exactly that entry. Landed Nov 17, 2026 (production <code>6e7c5b5f</code>), from Tyler's live finding.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — Open in Asks · the ask waits on someone else</p>
+    <div class="msg">
+      <div class="mark m-tyler">T</div>
+      <div class="bubble b-tyler">
+        <p>Is this working? — tell me what you would improve…</p>
+        <div class="ask" style="outline:3px solid #fffdf7;outline-offset:2px;box-shadow:0 0 0 6px rgba(27,35,33,.5)">
+          <span class="chip open">Ask · Open</span>
+          <div class="q">Is this working? — tell me what you would improve…</div>
+          <div class="for">For All agents · waiting on them</div>
+          <div class="row"><a class="pill" href="asks.html">Answer</a><a class="pill" href="asks.html">Open in Asks</a></div>
+        </div>
+      </div>
+      <div class="receipt">Confirmed · 9:56 AM</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">When the ask waits on anyone else, the tap lands on the ask's own card in the conversation, ringed so it cannot be missed. Until this fix, the button landed at the top of the room on the strip — where an ask waiting on someone else never appears, so the tap was a dead end. Tyler's own test ask, waiting on All agents, was the case that found it.</p>
+  </div>
 </div>
 
 </body>

@@ -267,7 +267,7 @@
         </div>
       </div>
       <div style="font-size:12.5px;color:var(--muted);margin-top:5px">Confirmed · ✓ Tyler · 5:48 PM</div>
-      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">On a bubble, the “Ask · Open” chip is pale (on the light Ask card it is rust — color follows the surface, stated here so it is a rule, not a drift). The on-bubble buttons are Answer / Open in Asks; Withdraw lives in the Asks inbox, not on the bubble. Open in Asks names its ask: it lands on the ask's entry in the Waiting-on-you strip, lit amber, when the ask waits on the viewer, and on the ask's own card in the conversation, ringed, when it waits on anyone else — in a thread, on the ask's own card in the thread log (landed Nov 17, 2026; until then it landed at the top of the room either way).</p>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">On a bubble, the “Ask · Open” chip is pale (on the light Ask card it is rust — color follows the surface, stated here so it is a rule, not a drift). The on-bubble buttons are Answer / Open in Asks; Withdraw lives in the Asks inbox, not on the bubble. Open in Asks names its ask: it lands on the ask's entry in the Waiting-on-you strip, lit amber, when the ask waits on the viewer, and on the ask's own card in the conversation, ringed, when it waits on anyone else — in a thread, on the ask's own card in the thread log (landed Nov 17, 2026; until then it landed at the top of the room either way). An answered ask's card trades those buttons for one — See the answer — which lands on the recorded first answer in the conversation, ringed on its bubble the same way; a later answer stands as an ordinary follow-up message and never moves the link, and the card carries no answer count, because the record holds one pointer and a number would be invented (landed Nov 17, 2026, production <code>ed5395b0</code>).</p>
     </div>
     <div class="sidebyside">
       <div class="stage white">
@@ -368,6 +368,17 @@
       </div>
       <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">The reply face is bare — type, Send, nothing competing — and everything else lives under the closed More this specimen draws open, exactly as shipped (production <code>c9cf07ff</code>). The two paths are separated: engage Ask and the idea section is gone; confirm the idea and Ask clears; each path asks only its own question, and only once it is engaged — opening More asks nothing. Nothing starts pre-picked: “Who should answer?” opens with nobody selected (the first member came pre-picked until Nov 17), “Where should a new idea live?” with no lane selected (Shop came pre-picked), and a send whose pick is unmade stops with a plain notice — “The question was not sent. Nothing in Chat was changed. Pick who should answer, then send again.” — the words still in the box. The thread composer carries the same closed More over Dictate and its ask block. The Room and Thread pages built on this brick open on the newest message, composer on screen; the thread's “New messages” marker still shows where the unread replies begin, but no longer sets the landing. The engaged faces and the stopped-send notices are drawn as states on the Room and Thread pages.</p>
     </div>
+    <div class="stage white">
+      <p class="cap">Mentions — the @ picker and the Notifying chip (landed Nov 17, 2026)</p>
+      <div style="border:1px solid var(--line);border-radius:12px;padding:6px 8px">
+        <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-grok">G</div><span style="font-weight:600">Grok</span><span style="color:var(--muted);font-size:13.5px">Challenger and verifier</span></div>
+        <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-walle">W</div><span style="font-weight:600">Wall-E</span><span style="color:var(--muted);font-size:13.5px">Lead</span></div>
+        <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-tyler">T</div><span style="font-weight:600">Tyler</span><span style="color:var(--muted);font-size:13.5px">Owner</span></div>
+      </div>
+      <p style="margin:10px 0 0;font-size:15px">Notifying <span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:14.5px;font-weight:600;display:inline-block">Grok ✕</span></p>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:16.5px;min-height:56px;margin-top:10px">@Grok — can you check the burn math?</div>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Typing @ opens the picker over every active member of the room — humans and agents, in seat colors — and typing filters it. Only a pick mentions: the pick binds the member's identity, the Notifying chip names who will be rung before anything sends, the chip's ✕ removes the mention, and at send the mention ships only if its @Name still stands in the words — delete the name and the mention dies with it; words typed by hand mention nobody. A mentioned human rings once, on the existing chat_mention push; a mentioned agent finds the message in their open mentions at their next room check — a list that is only visible: nothing in it waits, is answered, or closes (Tyler's rulings, §3n). The thread composer carries the same picker over the room's members. Landed Nov 17, 2026 (production <code>08dda3d5</code>) — chat basics 1 of 3; the faces are drawn as states on the Room and Thread pages.</p>
+    </div>
   </div>
 
   <div class="spec" id="lib-ask-card">
@@ -401,6 +412,7 @@
     <div class="stage white">
       <p style="font-size:16.5px;margin:0">Smoke test, <a href="you.html" style="display:inline-block;background:var(--ink);color:#fff;border-radius:7px;padding:0 7px;font-weight:600;text-decoration:none">@Tyler</a> — this mention should buzz your phone. Asking <a href="you.html" style="display:inline-block;background:var(--ink);color:#fff;border-radius:7px;padding:0 7px;font-weight:600;text-decoration:none">@Grok</a> works the same way.</p>
     </div>
+    <p class="note">How a mention comes to exist, as landed Nov 17, 2026 (production <code>08dda3d5</code>): only by picking the member in the composer's @ picker — the chip above is the sent form of a pick, never of typing; a name typed by hand is just words, and a pick whose @Name is deleted before send ships nothing. What the pick does is stated in the Composer brick: a human rings once; an agent finds it in their open mentions, visible only. In the room's bubble form the mention renders as a pale pill carrying the mentioned member's color as its text (drawn on the Room page); the dark chip here is this brick's neutral-ground form.</p>
     <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> — rendered inside message bodies by the rich-text renderer.</p>
   </div>
 

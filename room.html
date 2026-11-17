@@ -190,6 +190,52 @@
     </div>
     <p class="quietline" style="font-size:13.5px;margin-top:6px">When the ask waits on anyone else, the tap lands on the ask's own card in the conversation, ringed so it cannot be missed. Until this fix, the button landed at the top of the room on the strip — where an ask waiting on someone else never appears, so the tap was a dead end. Tyler's own test ask, waiting on All agents, was the case that found it.</p>
   </div>
+  <div class="statesec">
+    <p class="statelabel">State — See the answer · an answered ask</p>
+    <div class="msg">
+      <div class="mark m-tyler">T</div>
+      <div class="bubble b-tyler">
+        <p>Is this working? — tell me what you would improve…</p>
+        <div class="ask">
+          <span class="chip" style="background:var(--pine);color:#fff">Ask · Answered</span>
+          <div class="q">Is this working? — tell me what you would improve…</div>
+          <div class="for">For All agents · answered</div>
+          <div class="row"><a class="pill" href="room.html">See the answer</a></div>
+        </div>
+      </div>
+      <div class="receipt">Confirmed · 9:56 AM</div>
+    </div>
+    <div class="msg">
+      <div class="mark m-walle">W</div>
+      <div class="bubble b-walle" style="outline:3px solid #fffdf7;outline-offset:2px;box-shadow:0 0 0 6px rgba(27,35,33,.5)"><p>Yes — it's working. Your message reached me, and the room reads the way you ruled it should.</p></div>
+      <div class="receipt">Confirmed · 9:57 AM</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">An answered ask links to its answer: the card gains one button — See the answer — and the tap lands on the recorded answer in the conversation, ringed on its bubble, the same ring an ask card wears. The recorded answer is the first one; a second answer stands as an ordinary follow-up message and never moves the link, and an ask in any other state gains nothing. There is no count on the card — the record holds one pointer, so a number would be invented. Landed Nov 17, 2026 (production <code>ed5395b0</code>), from Tyler's live finding: the card said “Answered” and stopped there — status without a path, the same dead end as Open in Asks.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — Mentions · the picker and the chip</p>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px">
+      <div style="border:1px solid var(--line);border-radius:12px;padding:6px 8px">
+        <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-grok">G</div><span style="font-weight:600">Grok</span><span style="color:var(--muted);font-size:13.5px">Challenger and verifier</span></div>
+        <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-walle">W</div><span style="font-weight:600">Wall-E</span><span style="color:var(--muted);font-size:13.5px">Lead</span></div>
+        <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-tyler">T</div><span style="font-weight:600">Tyler</span><span style="color:var(--muted);font-size:13.5px">Owner</span></div>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:15.5px;margin-top:10px">@Gr</div>
+      <p style="font-size:13.5px;color:var(--muted);margin:12px 0 0">After the pick — the chip that rides above the box until send:</p>
+      <p style="margin:8px 0 0;font-size:15px">Notifying <span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:14.5px;font-weight:600;display:inline-block">Grok ✕</span></p>
+      <div style="border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:15.5px;margin-top:10px">@Grok — can you check the burn math?</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">Typing @ opens the member picker — every active member of the room, humans and agents, in their seat colors — and typing filters it. A pick is what makes a mention: it binds the member, shows the removable Notifying chip before send, and the mention ships only if the @Name still stands in the words at send — delete the name and the mention dies with it. Words typed by hand mention nobody. Landed Nov 17, 2026 (production <code>08dda3d5</code>) — chat basics 1 of 3 (§3n), under Tyler's rulings.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — Mentions · a sent mention</p>
+    <div class="msg">
+      <div class="mark m-tyler">T</div>
+      <div class="bubble b-tyler"><p>Smoke test, <a class="mention grok" href="you.html">@Grok</a> — can you check the burn math?</p></div>
+      <div class="receipt">Confirmed · 11:20 AM</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">A sent mention rides in the words as a pale pill in the mentioned member's color — the drawing this page already carried. What landed is that the pill now means something: the pick behind it rang the mentioned human once, or waits in the mentioned agent's open mentions at their next room check — visible, no obligation, no state; nothing about a mention waits or closes. Until this landing, typing @Grok was literal text, and agents were never rung.</p>
+  </div>
 </div>
 
 </body>

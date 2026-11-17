@@ -97,6 +97,97 @@
   </div>
 
 
+  <h2>Board — on a phone</h2>
+  <div class="h2sub">A kanban's value is the glance — every state at once. A phone cannot hold four lanes at card width, so the board folds instead of shrinking: the glance becomes a census strip that never leaves the screen — every state, its card count, and an amber mark where a card in that state waits on you — and below it the lanes keep their full card width, their order, and their continuity, the next lane peeking at the edge. Swipe moves one lane; tapping a state in the strip jumps straight to it. Mocked Nov 16 for Tyler's tap-test (TW-8) — a design mock, not yet a spec change.</div>
+
+  <div class="statesec">
+    <p class="statelabel">State — on a phone: at rest (Building open, Testing peeking)</p>
+    <div class="mframe">
+      <div class="mboard">
+        <div class="mhead"><span class="brand"><img class="brandmark" src="assets/triowire-mark-small.svg" alt="" width="28" height="28"><span class="roomname">Board</span></span><span class="waitbadge">2 waiting</span></div>
+        <div class="waitstrip">
+          <div class="wk">Waiting on you · 2</div>
+          <div class="waitrow"><div><div class="wt">Stay-first shelf — promotion call</div><div class="wm">Your call · Dolly</div></div><a class="wact" href="asks.html">Answer</a></div>
+          <div class="waitrow"><div><div class="wt">Retirement decision — Nov 17 shelf</div><div class="wm">Your call · Ballot Guide</div></div><a class="wact" href="asks.html">Answer</a></div>
+        </div>
+        <div class="census">
+          <div class="cseg on"><span class="cs">Building</span><span class="cn">1</span><span class="cwait">&nbsp;</span></div>
+          <div class="cseg"><span class="cs">Testing</span><span class="cn">1</span><span class="cwait">&nbsp;</span></div>
+          <div class="cseg"><span class="cs">Blocked</span><span class="cn">3</span><span class="cwait">1 waits on you</span></div>
+          <div class="cseg"><span class="cs">Done</span><span class="cn">4</span><span class="cwait">&nbsp;</span></div>
+        </div>
+        <div class="mlanes">
+          <div class="mlane">
+            <div class="mlanehead"><span class="mlt">Building</span><span class="mlc">1 card</span></div>
+            <div class="story">
+              <div class="t">Chat v3 — composer, format buttons, bubbles</div>
+              <div class="d">Filed from inside the room by its first user. Bubbles carry the author's color and mark.</div>
+              <div class="chips"><span class="chip building">● Building</span><span class="chip seat">Builder: fleet</span><span class="chip seat"><a href="thread.html">Spec thread</a></span></div>
+            </div>
+          </div>
+          <div class="mlane">
+            <div class="mlanehead"><span class="mlt">Testing</span><span class="mlc">1 card</span></div>
+            <div class="story">
+              <div class="t">Served captures — two hunts owed to the Walker</div>
+              <div class="d">Built, not yet walk-closed. The counts face must be read on the served page, not the database.</div>
+              <div class="chips"><span class="chip testing">● Testing</span><span class="chip seat">Walker: fleet</span><span class="chip seat">Grade: Grok, Nov 17</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note">The census strip is the whole board: four states, nine cards — and it tells the truth from any lane: one card waits on you, and it sits in Blocked. The lanes below hold full cards, never slivers; Testing peeks at the right edge because the board continues.</p>
+  </div>
+
+  <div class="statesec">
+    <p class="statelabel">State — on a phone: opened where you're needed (Blocked)</p>
+    <div class="mframe">
+      <div class="mboard">
+        <div class="mhead"><span class="brand"><img class="brandmark" src="assets/triowire-mark-small.svg" alt="" width="28" height="28"><span class="roomname">Board</span></span><span class="waitbadge">2 waiting</span></div>
+        <div class="waitstrip">
+          <div class="wk">Waiting on you · 2</div>
+          <div class="waitrow"><div><div class="wt">Stay-first shelf — promotion call</div><div class="wm">Your call · Dolly</div></div><a class="wact" href="asks.html">Answer</a></div>
+          <div class="waitrow"><div><div class="wt">Retirement decision — Nov 17 shelf</div><div class="wm">Your call · Ballot Guide</div></div><a class="wact" href="asks.html">Answer</a></div>
+        </div>
+        <div class="census">
+          <div class="cseg"><span class="cs">Building</span><span class="cn">1</span><span class="cwait">&nbsp;</span></div>
+          <div class="cseg"><span class="cs">Testing</span><span class="cn">1</span><span class="cwait">&nbsp;</span></div>
+          <div class="cseg on"><span class="cs">Blocked</span><span class="cn">3</span><span class="cwait">1 waits on you</span></div>
+          <div class="cseg"><span class="cs">Done</span><span class="cn">4</span><span class="cwait">&nbsp;</span></div>
+        </div>
+        <div class="mlanes">
+          <div class="mlane">
+            <div class="mlanehead"><span class="mlt">Blocked</span><span class="mlc">3 cards</span><span class="waitbadge">Waits on you</span></div>
+            <div class="story">
+              <div class="t">Production canary</div>
+              <div class="d">One household, production, watched by hand — only after the promotion call.</div>
+              <div class="chips"><span class="chip blocked">● Blocked — your call</span><span class="chip seat"><a href="asks.html">Waiting in Asks</a></span></div>
+            </div>
+            <div class="story">
+              <div class="t">Grok's seat proof</div>
+              <div class="d">Receive, answer, and close an ask from the third seat — the last leg of ask delivery.</div>
+              <div class="chips"><span class="chip blocked">● Scheduled — Nov 17 reset</span><span class="chip seat"><a href="asks.html">The ask waits in Asks</a></span></div>
+            </div>
+            <div class="story">
+              <div class="t">Quiz-engine removal (PR #35)</div>
+              <div class="d">Parked by ruling until the retirement call makes it moot or worth re-converging.</div>
+              <div class="chips"><span class="chip blocked">● Parked</span><span class="chip seat"><a href="rulings.html">Ruling</a></span></div>
+            </div>
+          </div>
+          <div class="mlane">
+            <div class="mlanehead"><span class="mlt">Done</span><span class="mlc">4 cards</span></div>
+            <div class="story">
+              <div class="t">Bed-proof witness (CH-P1) — staging build</div>
+              <div class="d">A stay proves it sleeps the party only when two independent fields agree on the same room.</div>
+              <div class="chips"><span class="chip done">● Done — hand check 10/10</span><span class="chip seat">Builder: Wall-E</span><span class="chip seat">Checker: Grok</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note">When a lane holds a card that waits on you, the board opens on that lane — Blocked here, the canary on top, its waiting badge riding the lane head. Done peeks at the right; Building and Testing are one tap back on the strip. Nothing on the board is ever more than one gesture away, and the census never leaves the screen.</p>
+  </div>
+
   <div class="statesec">
     <p class="statelabel">State — empty board</p>
     <p class="empty">No workstreams yet — work starts as a brief, and its card lands here.</p>

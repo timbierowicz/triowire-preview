@@ -633,3 +633,39 @@ body.pg-preview-frame .stage{display:flex;justify-content:center}
 .waitdot{width:9px;height:9px;border-radius:50%;background:var(--yoursdeep);flex:none;display:inline-block}
 :root[data-theme="dark"] .waitdot{background:var(--yours)}
 .menunote{font-size:13px;color:var(--muted);margin:13px 2px 0}
+
+/* ── §13 · BOARD ON A PHONE — TW-8 (Nov 16, 2026): Tyler's directive —
+   "build a creative design that gives us a kanban board on mobile." A
+   kanban's value is the glance: every state at once, with its cards. A
+   phone cannot hold four lanes at card width, so the board FOLDS instead
+   of shrinking. Two layers, both always present:
+   (1) THE CENSUS — a strip that is the whole board in miniature: every
+   state, its card count, and the waiting signal where a card in that
+   state waits on the viewer (the --yours family, per the palette law).
+   The strip never scrolls away, so the glance survives as a census: from
+   any lane you can read every state's count and where the waiting is.
+   (2) THE LANES — one true lane at ~84% of the phone's width, the next
+   lane peeking at the edge, so lanes read as continuous, never paged.
+   Swipe moves one lane; tapping a census segment jumps straight to it —
+   every state is visible in the census and one gesture away in the lanes.
+   The board opens on the lane that holds a card waiting on the viewer
+   (the pinned waiting strip rides above the lanes, as on the page).
+   Token-only throughout; the cards inside the lanes are the board's own
+   .story part, unchanged. ── */
+.mframe{width:min(390px,100%);margin:14px auto 0;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--paper)}
+.mboard{padding:14px 12px 16px}
+.mhead{display:flex;align-items:center;gap:8px}
+.mhead .waitbadge{margin-left:auto}
+.census{display:flex;gap:6px;margin-top:14px}
+.cseg{flex:1 1 0;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 9px}
+.cseg .cs{display:block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.cseg .cn{display:block;font-size:21px;font-weight:700;color:var(--ink);line-height:1.15;margin-top:1px}
+.cseg .cwait{display:block;font-size:11.5px;font-weight:700;color:var(--yoursdeep);margin-top:1px}
+.cseg.on{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.cseg.on .cs,.cseg.on .cn{color:var(--accent)}
+.mlanes{display:flex;gap:10px;overflow:hidden;margin-top:14px}
+.mlane{flex:0 0 84%;min-width:0}
+.mlanehead{display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--accent);padding-bottom:7px}
+.mlanehead .mlt{font-weight:700;font-size:16.5px;color:var(--ink)}
+.mlanehead .mlc{font-size:13.5px;color:var(--muted)}
+.mlanehead .waitbadge{margin-left:auto}

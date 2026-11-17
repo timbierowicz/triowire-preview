@@ -358,6 +358,16 @@
       <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:16.5px;min-height:74px">Can you review the v3 spec tonight?</div>
       <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">One rule, the same in the library and on the Room page: only the selected chip is filled — in that strength’s own treatment — and carries ✓; the unselected chips stay quiet (card fill, their outline). One extra tap at most: Ask on, strength preselected at Recommended, change it only if the ask is a Must or an Optional. The selector appears only in ask mode, only in the room.</p>
     </div>
+    <div class="stage white">
+      <p class="cap">More — the shipped composer's paths, separated (landed Nov 17, 2026)</p>
+      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px">
+        <p style="font-size:13.5px;color:var(--muted);margin:0">Dictate, or start an idea from these words. Ordinary words do not start an idea unless you confirm that below.</p>
+        <p style="margin:10px 0 0"><span style="border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14.5px;font-weight:600;display:inline-block">Dictate</span></p>
+        <label style="display:block;font-size:15px;margin-top:12px"><input type="checkbox"> Ask a question — it waits on one person or group until it is answered.</label>
+        <label style="display:block;font-size:15px;margin-top:8px"><input type="checkbox"> Start a new idea. It stays on the board. It is not removed by itself.</label>
+      </div>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">The reply face is bare — type, Send, nothing competing — and everything else lives under the closed More this specimen draws open, exactly as shipped (production <code>c9cf07ff</code>). The two paths are separated: engage Ask and the idea section is gone; confirm the idea and Ask clears; each path asks only its own question, and only once it is engaged — opening More asks nothing. Nothing starts pre-picked: “Who should answer?” opens with nobody selected (the first member came pre-picked until Nov 17), “Where should a new idea live?” with no lane selected (Shop came pre-picked), and a send whose pick is unmade stops with a plain notice — “The question was not sent. Nothing in Chat was changed. Pick who should answer, then send again.” — the words still in the box. The thread composer carries the same closed More over Dictate and its ask block. The Room and Thread pages built on this brick open on the newest message, composer on screen; the thread's “New messages” marker still shows where the unread replies begin, but no longer sets the landing. The engaged faces and the stopped-send notices are drawn as states on the Room and Thread pages.</p>
+    </div>
   </div>
 
   <div class="spec" id="lib-ask-card">

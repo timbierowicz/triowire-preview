@@ -81,7 +81,10 @@
   </div>
 
   <!-- Composer — the shipped form, as live: format bar, growing box, Ask + Send,
-       the markdown hint below the row. No + control: pictures are not ruled in
+       the markdown hint below the row, and the closed More under the hint
+       (Dictate + the ask and idea paths; their open faces are drawn in the
+       states at the foot of this page — paths separated, nothing pre-picked,
+       landed Nov 17, 2026). No + control: pictures are not ruled in
        (P1), and a dead control is never drawn. -->
   <div class="composer">
     <div class="chips" role="toolbar" aria-label="Formatting">
@@ -93,6 +96,7 @@
       <div class="send shipped" title="Send"><span></span></div>
     </div>
     <p class="hint"><code>**bold**</code> · <code>*italic*</code> · <code>`code`</code> · <code>- list</code></p>
+    <p style="margin:8px 0 0;font-size:14.5px"><span style="font-weight:600">More</span> <span style="color:var(--muted)">— closed; Dictate and the two paths live under it (drawn open in the states below)</span></p>
   </div>
 
   <div class="statesec">
@@ -111,6 +115,57 @@
       <div class="bubble"><p>Sending this from the walk.</p></div>
     </div>
     <div class="senderror">Not sent — tap to retry. Nothing you typed is lost.</div>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — opening</p>
+    <p style="font-size:15.5px;margin:0">The room opens on the newest message — the latest bubble and the composer are on screen, with nothing to scroll to reach them.</p>
+    <p class="quietline" style="font-size:13.5px;margin-top:4px">Landed Nov 17, 2026 (production <code>c9cf07ff</code>), from Tyler's phone walk: chat used to open at the top of the history.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — More, open · no path chosen</p>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px">
+      <p style="font-size:13.5px;color:var(--muted);margin:0">Dictate, or start an idea from these words. Ordinary words do not start an idea unless you confirm that below.</p>
+      <p style="margin:10px 0 0"><span style="border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14.5px;font-weight:600;display:inline-block">Dictate</span></p>
+      <label style="display:block;font-size:15px;margin-top:12px"><input type="checkbox"> Ask a question — it waits on one person or group until it is answered.</label>
+      <label style="display:block;font-size:15px;margin-top:8px"><input type="checkbox"> Start a new idea. It stays on the board. It is not removed by itself.</label>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">Opening More asks nothing: no question from either path shows until its own path is chosen.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — More, Ask chosen</p>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px">
+      <label style="display:block;font-size:15px"><input type="checkbox" checked> Ask a question — it waits on one person or group until it is answered.</label>
+      <fieldset style="border:1px solid var(--line);border-radius:12px;padding:8px 14px 12px;margin:12px 0 0">
+        <legend style="font-size:15px;font-weight:600;padding:0 6px">Who should answer?</legend>
+        <label style="display:block;font-size:15px;margin-top:6px"><input type="radio" name="pv-ask-target"> Wall-E</label>
+        <label style="display:block;font-size:15px;margin-top:6px"><input type="radio" name="pv-ask-target"> Grok</label>
+        <label style="display:block;font-size:15px;margin-top:6px"><input type="radio" name="pv-ask-target"> All agents</label>
+        <label style="display:block;font-size:15px;margin-top:6px"><input type="radio" name="pv-ask-target"> Decision maker</label>
+      </fieldset>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">Only the ask's own question shows — the idea path is gone while Ask is on — and nobody is pre-picked: until Nov 17 the first member (Grok) came selected.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — More, idea confirmed</p>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px">
+      <label style="display:block;font-size:15px"><input type="checkbox" checked> Start a new idea. It stays on the board. It is not removed by itself.</label>
+      <fieldset style="border:1px solid var(--line);border-radius:12px;padding:8px 14px 12px;margin:12px 0 0">
+        <legend style="font-size:15px;font-weight:600;padding:0 6px">Where should a new idea live?</legend>
+        <label style="display:block;font-size:15px;margin-top:6px"><input type="radio" name="pv-lane"> Dolly</label>
+        <label style="display:block;font-size:15px;margin-top:6px"><input type="radio" name="pv-lane"> Ballot Guide</label>
+        <label style="display:block;font-size:15px;margin-top:6px"><input type="radio" name="pv-lane"> Workout</label>
+        <label style="display:block;font-size:15px;margin-top:6px"><input type="radio" name="pv-lane"> Shop</label>
+        <label style="display:block;font-size:15px;margin-top:6px"><input type="radio" name="pv-lane"> TrioWire</label>
+      </fieldset>
+      <p style="margin:12px 0 0"><span style="background:var(--pine);color:#fff;border-radius:999px;padding:9px 16px;font-size:14.5px;font-weight:600;display:inline-block">Start this idea</span></p>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">The lane question appears only after the idea is confirmed, Ask has cleared, and no lane is pre-picked — Shop came selected until Nov 17.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — Send stopped · the pick not made</p>
+    <div style="border:1px solid var(--line);border-radius:12px;padding:11px 14px;font-size:15px">The question was not sent. Nothing in Chat was changed. Pick who should answer, then send again. <span style="color:var(--muted)">This will not retry on its own.</span></div>
+    <div style="border:1px solid var(--line);border-radius:12px;padding:11px 14px;font-size:15px;margin-top:8px">The idea was not started. Nothing was added to the board. Pick where the new idea should live, then try again. <span style="color:var(--muted)">This will not retry on its own.</span></div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">A path chosen with its pick unmade stops the send in plain words — it never sends to a default. The words stay in the box.</p>
   </div>
 </div>
 

@@ -189,6 +189,110 @@
   </div>
 
   <div class="statesec">
+    <p class="statelabel">State — on a phone: moving a card (long-press, mid-drag)</p>
+    <div class="mframe">
+      <div class="mboard">
+        <div class="mhead"><span class="brand"><img class="brandmark" src="assets/triowire-mark-small.svg" alt="" width="28" height="28"><span class="roomname">Board</span></span><span class="waitbadge">2 waiting</span></div>
+        <div class="waitstrip">
+          <div class="wk">Waiting on you · 2</div>
+          <div class="waitrow"><div><div class="wt">Stay-first shelf — promotion call</div><div class="wm">Your call · Dolly</div></div><a class="wact" href="asks.html">Answer</a></div>
+          <div class="waitrow"><div><div class="wt">Retirement decision — Nov 17 shelf</div><div class="wm">Your call · Ballot Guide</div></div><a class="wact" href="asks.html">Answer</a></div>
+        </div>
+        <div class="census">
+          <div class="cseg on"><span class="cs">Building</span><span class="cn">1</span><span class="cwait">&nbsp;</span></div>
+          <div class="cseg"><span class="cs">Testing</span><span class="cn">1</span><span class="cwait">&nbsp;</span></div>
+          <div class="cseg"><span class="cs">Blocked</span><span class="cn">3</span><span class="cwait">1 waits on you</span></div>
+          <div class="cseg"><span class="cs">Done</span><span class="cn">4</span><span class="cwait">&nbsp;</span></div>
+        </div>
+        <div class="mlanes">
+          <div class="mlane">
+            <div class="mlanehead"><span class="mlt">Building</span><span class="mlc">1 card</span></div>
+            <div class="story lifted">
+              <div class="liftbar">Lifted — drag to a lane, or use Move to…</div>
+              <div class="t">Chat v3 — composer, format buttons, bubbles</div>
+              <div class="d">Filed from inside the room by its first user. Bubbles carry the author's color and mark.</div>
+              <div class="chips"><span class="chip building">● Building</span><span class="chip seat">Builder: fleet</span><span class="movebtn">Move to…</span></div>
+            </div>
+          </div>
+          <div class="mlane">
+            <div class="mlanehead"><span class="mlt">Testing</span><span class="mlc">1 card</span><span class="tgt">Target</span></div>
+            <div class="dropslot">Release here — Testing</div>
+            <div class="story">
+              <div class="t">Served captures — two hunts owed to the Walker</div>
+              <div class="d">Built, not yet walk-closed. The counts face must be read on the served page, not the database.</div>
+              <div class="chips"><span class="chip testing">● Testing</span><span class="chip seat">Walker: fleet</span><span class="chip seat">Grade: Grok, Nov 17</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note">Moving a card is part of the design — drawn here as mocked behavior, not wired behavior: long-press a card and it lifts (a plain swipe-drag would fight the lane scroll and move cards by accident); hold it against a lane's edge and the lanes auto-scroll beneath it; release and it drops, and the census counts move with it. The lift is drawn mid-drag: the card rides raised in Building, Testing is marked as the target, and its drop slot waits at the top of the lane. The census still shows the counts as they stand — they change on the drop, not before.</p>
+  </div>
+
+  <div class="statesec">
+    <p class="statelabel">State — on a phone: “Move to…” — the no-drag path</p>
+    <div class="mframe">
+      <div class="mboard">
+        <div class="story">
+          <div class="t">Chat v3 — composer, format buttons, bubbles</div>
+          <div class="d">Filed from inside the room by its first user. Bubbles carry the author's color and mark.</div>
+          <div class="chips"><span class="chip building">● Building</span><span class="chip seat">Builder: fleet</span><span class="movebtn">Move to…</span></div>
+          <div class="movemenu">
+            <div class="mvrow cur">Building<span class="mvcur">Current</span></div>
+            <div class="mvrow">Testing<span class="mvto">Move →</span></div>
+            <div class="mvrow">Blocked<span class="mvto">Move →</span></div>
+            <div class="mvrow">Done<span class="mvto">Move →</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note">Drag is the fast path, never the only one: every card carries a “Move to…” action — tap it, pick the state, and the card moves with no drag at all. It is the precise path (no dropped cards, no edge-scroll timing) and the accessible one; both paths land the card in the same place, and the census counts the move either way. Drawn open on the card itself — mocked behavior, as with the drag above.</p>
+  </div>
+
+  <div class="statesec">
+    <p class="statelabel">State — on a phone: many states (the census overflow rule)</p>
+    <div class="mframe">
+      <div class="mboard">
+        <div class="mhead"><span class="brand"><img class="brandmark" src="assets/triowire-mark-small.svg" alt="" width="28" height="28"><span class="roomname">Board</span></span><span class="waitbadge">2 waiting</span></div>
+        <div class="census scroll mid">
+          <div class="cseg"><span class="cs">Ideas</span><span class="cn">2</span><span class="cwait">&nbsp;</span></div>
+          <div class="cseg"><span class="cs">Building</span><span class="cn">1</span><span class="cwait">&nbsp;</span></div>
+          <div class="cseg"><span class="cs">Testing</span><span class="cn">1</span><span class="cwait">&nbsp;</span></div>
+          <div class="cseg"><span class="cs">Blocked</span><span class="cn">3</span><span class="cwait">1 waits on you</span></div>
+          <div class="cseg on"><span class="cs">Waiting</span><span class="cn">2</span><span class="cwait">&nbsp;</span></div>
+          <div class="cseg"><span class="cs">Done</span><span class="cn">4</span><span class="cwait">&nbsp;</span></div>
+          <div class="cseg"><span class="cs">Answered</span><span class="cn">5</span><span class="cwait">&nbsp;</span></div>
+          <div class="cseg"><span class="cs">Parked</span><span class="cn">1</span><span class="cwait">&nbsp;</span></div>
+        </div>
+        <div class="mlanes">
+          <div class="mlane">
+            <div class="mlanehead"><span class="mlt">Waiting</span><span class="mlc">2 cards</span></div>
+            <div class="story">
+              <div class="t">Gate 2 — the palette ruling</div>
+              <div class="d">The book names gold, sage, teal; the code ships plum, indigo, berry. One palette wins before W2 builds on it.</div>
+              <div class="chips"><span class="chip waiting">● Waiting</span><span class="chip seat">For Tyler</span></div>
+            </div>
+            <div class="story">
+              <div class="t">W1 landing — the promotion tap</div>
+              <div class="d">Walked clean on staging. The landing waits on the tap and nothing else.</div>
+              <div class="chips"><span class="chip waiting">● Waiting</span><span class="chip seat">For Tyler</span></div>
+            </div>
+          </div>
+          <div class="mlane">
+            <div class="mlanehead"><span class="mlt">Done</span><span class="mlc">4 cards</span></div>
+            <div class="story">
+              <div class="t">Bed-proof witness (CH-P1) — staging build</div>
+              <div class="d">A stay proves it sleeps the party only when two independent fields agree on the same room.</div>
+              <div class="chips"><span class="chip done">● Done — hand check 10/10</span><span class="chip seat">Builder: Wall-E</span><span class="chip seat">Checker: Grok</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note">The overflow rule, drawn on a bigger board — eight states, twenty-one cards: past six states the census stops squeezing. Every segment holds a minimum width and the pinned strip itself scrolls sideways, its own edge peeking just like the lanes; it never wraps onto a second line and never shrinks a state into illegibility. Drawn mid-scroll: Ideas is half off the left edge, Waiting stands open below, and Answered and Parked wait a strip-swipe away — still counted, still one tap from their lanes.</p>
+  </div>
+
+  <div class="statesec">
     <p class="statelabel">State — empty board</p>
     <p class="empty">No workstreams yet — work starts as a brief, and its card lands here.</p>
   </div>

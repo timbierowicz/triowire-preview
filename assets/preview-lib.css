@@ -669,3 +669,42 @@ body.pg-preview-frame .stage{display:flex;justify-content:center}
 .mlanehead .mlt{font-weight:700;font-size:16.5px;color:var(--ink)}
 .mlanehead .mlc{font-size:13.5px;color:var(--muted)}
 .mlanehead .waitbadge{margin-left:auto}
+
+/* ── §13 (cont.) · THE TWO COMPLETIONS THE RESEARCH NAMED — prior-art
+   check, mobile-kanban-research-2026-11-16.md §4 (both additive; the
+   census + peeking-lanes mechanic above is unchanged):
+   (1) CARD-MOVE — a board you can only look at trains people to defer
+   real work to a bigger screen, so the move is part of the design. The
+   shipped consensus (Trello · Jira · KAP): LONG-PRESS lifts the card,
+   drag carries it, holding it at a lane's edge auto-scrolls the lanes
+   beneath it, release drops it. A plain swipe-drag is never the
+   mechanic — it would fight lane scrolling and move cards by accident.
+   And drag is never the ONLY path: every card carries a "Move to…"
+   action — tap, pick the state, done — the precise path and the
+   accessible one. Drawn below as .story.lifted (raised, accent ring;
+   the shadow follows the §2 device precedent), .liftbar (the held
+   card's own label), .dropslot (the target lane's waiting slot),
+   .mlanehead .tgt (the target mark), .movebtn + .movemenu (the
+   no-drag path, drawn open on the card itself).
+   (2) CENSUS OVERFLOW — past ~6 states the census stops flexing:
+   segments hold a MINIMUM WIDTH and the pinned strip itself scrolls
+   sideways, its own edge peeking like the lanes'. The strip never
+   wraps onto a second line and never shrinks a state into
+   illegibility. Drawn as .census.scroll; .mid draws the strip caught
+   mid-scroll. Token-only throughout. ── */
+.story.lifted{border-color:var(--accent);box-shadow:0 12px 26px rgba(38,49,43,.22),inset 0 0 0 1px var(--accent)}
+.liftbar{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--accent);margin-bottom:7px}
+.movebtn{display:inline-flex;align-items:center;border:1px solid var(--accent);background:var(--card);color:var(--accent);border-radius:999px;padding:2px 11px;font-size:12.5px;font-weight:700}
+.dropslot{border:1.5px dashed var(--accent);border-radius:12px;padding:15px 12px;margin-top:10px;text-align:center;color:var(--accent);font-size:13.5px;font-weight:700;background:var(--card)}
+.mlanehead .tgt{margin-left:auto;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.movemenu{margin-top:10px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.mvrow{display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--card);color:var(--ink);font-size:14.5px}
+.mvrow+.mvrow{border-top:1px solid var(--line)}
+.mvrow .mvto{margin-left:auto;color:var(--accent);font-weight:700}
+.mvrow.cur{color:var(--muted)}
+.mvrow .mvcur{margin-left:auto;font-size:12.5px;font-weight:700}
+.census.scroll{overflow-x:auto;scrollbar-width:none}
+.census.scroll::-webkit-scrollbar{display:none}
+.census.scroll .cseg{flex:0 0 auto;min-width:76px}
+.census.scroll.mid{overflow:hidden}
+.census.scroll.mid .cseg:first-child{margin-left:-30px}

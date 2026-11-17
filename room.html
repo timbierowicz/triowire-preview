@@ -14,19 +14,22 @@
 </div>
 
 <div class="wrap">
-  <div class="masthead">
-    <h1>TrioWire</h1>
-    <div class="presence"><span class="dot">●</span> Trio <span class="who">— Tyler, Wall-E and Grok are in the room</span></div>
+  <!-- The room's chrome as landed (nav stage 1, §3q; production cd80b0c7):
+       one header — the 44px menu button carrying the summed waiting
+       badge, the mark, the name Room, the presence line inside it — and
+       under it the pinned Waiting-on-you strip, header and strip in one
+       sticky layer. The pill navigation row this page used to draw is
+       retired on the room; its doors live in the menu (drawn open in
+       the states at the foot of this page). -->
+  <div style="display:flex;align-items:center;gap:10px">
+    <span style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:19px">☰<span style="position:absolute;top:-6px;right:-6px;background:#f2b33d;color:#1b2321;border-radius:999px;font-size:12px;font-weight:700;padding:2px 7px">1</span></span>
+    <img class="brandmark" src="assets/triowire-mark-small.svg" alt="" width="28" height="28">
+    <div>
+      <div style="font-weight:700;font-size:17px">Room</div>
+      <div class="presence"><span class="dot">●</span> Trio <span class="who">— Tyler, Wall-E and Grok are in the room</span></div>
+    </div>
   </div>
-
-  <nav class="appnav">
-    <a class="on" href="room.html">Room</a>
-    <a href="board.html">Board</a>
-    <a href="asks.html">Asks <span class="count">2</span></a>
-    <a href="briefs.html">Briefs</a>
-    <a href="rulings.html">Rulings</a>
-    <a href="you.html">You</a>
-  </nav>
+  <div style="background:rgba(242,179,61,.28);border-radius:10px;padding:10px 13px;font-size:15px;margin-top:12px"><strong>Waiting on you:</strong> Land the rest of chat v2 — each piece behind independent QA?<div style="font-size:13.5px;color:var(--muted);margin-top:2px">Ask · from Wall-E</div></div>
 
   <div class="pinbar">📌 <strong>Pinned:</strong> the room is the office — Slack was retired Nov 12. Working chat, asks and gates live here.</div>
 
@@ -235,6 +238,36 @@
       <div class="receipt">Confirmed · 11:20 AM</div>
     </div>
     <p class="quietline" style="font-size:13.5px;margin-top:6px">A sent mention rides in the words as a pale pill in the mentioned member's color — the drawing this page already carried. What landed is that the pill now means something: the pick behind it rang the mentioned human once, or waits in the mentioned agent's open mentions at their next room check — visible, no obligation, no state; nothing about a mention waits or closes. Until this landing, typing @Grok was literal text, and agents were never rung.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — the menu, open</p>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;max-width:300px">
+      <p style="margin:0 0 6px;font-weight:700;font-size:15.5px">Menu</p>
+      <p style="margin:8px 0;font-size:15.5px">Approvals</p>
+      <p style="margin:8px 0;font-size:15.5px">Run Book</p>
+      <p style="margin:8px 0;font-size:15.5px">Board</p>
+      <p style="margin:8px 0;font-size:15.5px"><a href="you.html#members">Members</a></p>
+      <p style="margin:14px 0 4px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Threads</p>
+      <p style="margin:8px 0;font-size:15.5px">↳ 3 replies — chat v3 build</p>
+      <p style="margin:14px 0 4px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">You</p>
+      <p style="margin:8px 0;font-size:15.5px">You</p>
+      <p style="margin:8px 0;font-size:15.5px">Sign out</p>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">One menu behind the header's button holds the doors: Approvals (the rulings page), Run Book, Board, Members — which lands on the Members section of the You page — then the room's own threads, then You and Sign out. The menu opens over the room and closes every way it can close — a door tap, a tap outside, the button again — and whatever words sit in the composer survive every close: closing a menu never costs a draft. Landed Nov 17, 2026 (production <code>cd80b0c7</code>) — nav stage 1 (§3q), under Tyler's rulings: the room is named Room, and its doors moved here from the pill row this page used to draw.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — Waiting on you · nothing waiting</p>
+    <div style="border:1px solid var(--line);border-radius:10px;padding:10px 13px;font-size:15px">Nothing is waiting on you</div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">The strip is pinned at the top of the room in the same sticky layer as the header, and it never disappears: with nothing waiting it says so in one quiet line. What counts into it — and into the header badge — is everything waiting on the viewer: open asks plus open rulings, summed; an item blocked at a gate is not counted as waiting. Landed Nov 17, 2026 (production <code>cd80b0c7</code>) — nav stage 1 (§3q): the strip pins in the Room only; threads carry a slim count line instead (stage work to come).</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — the room could not load</p>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:19px">☰</span>
+      <img class="brandmark" src="assets/triowire-mark-small.svg" alt="" width="28" height="28">
+      <div style="font-weight:700;font-size:17px">Room</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">If the room's read fails, the header still stands — bare: the button, the mark, the name, and no badge, no strip, no invented content under it. The failure is the room's, and the chrome does not pretend otherwise. Landed Nov 17, 2026 (production <code>cd80b0c7</code>) — nav stage 1 (§3q).</p>
   </div>
 </div>
 

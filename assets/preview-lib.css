@@ -703,3 +703,29 @@ body.pg-preview-frame .stage{display:flex;justify-content:center}
 .census.scroll .cseg{flex:0 0 auto;min-width:76px}
 .census.scroll.mid{overflow:hidden}
 .census.scroll.mid .cseg:first-child{margin-left:-30px}
+/* ── §3s DECLUTTER MOCK (Nov 17, 2026) — the composer pill, the + sheet,
+   the ask-mode panel, and the slim ask card. Drawn for Tyler's pick;
+   NOT built. The pill is one row: + · field · Send (Send exists only
+   while there are words). The sheet is where the extras live (Ask ·
+   Mention · Dictate · Idea · Formatting). The slim ask card sheds the
+   chip and the heavy left bar: the question, one quiet line, one
+   action row — the ask ground stays, so an ask still reads as an ask. ── */
+.pillcomposer{position:sticky;bottom:0;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px;display:flex;align-items:center;gap:6px;margin-top:22px}
+.pillcomposer.flat{position:static;margin-top:0}
+.pillcomposer .plusbtn{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--muted);font-size:24px;line-height:1;display:flex;align-items:center;justify-content:center;flex:none}
+.pillcomposer .pfield{flex:1;min-width:0;font-size:16.5px;padding:10px 4px}
+.pillcomposer .pfield .dim{color:var(--muted)}
+.pillcomposer .senddisc{width:44px;height:44px;border-radius:50%;background:var(--pine);color:#fff;font-size:19px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.plussheet{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px}
+.plussheet .xrow{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.plussheet .xrow.first{border-top:none;padding-top:2px}
+.plussheet .xname{font-weight:600;font-size:15.5px;flex:none;width:138px}
+.plussheet .xdesc{font-size:13.5px;color:var(--muted)}
+.plussheet .chips span{min-height:40px;padding:8px 11px}
+.askpanel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px}
+.askpanel .aeyebrow{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
+.askpanel .aexit{margin-left:auto;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 13px;font-size:13.5px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink)}
+.ask.slim{border-left:1px solid var(--askline);padding:10px 13px}
+.ask.slim .q{margin:0 0 2px}
+.ask.slim .for{font-size:13.5px;opacity:.85}
+.ask.slim .row{margin-top:8px}

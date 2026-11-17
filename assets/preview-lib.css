@@ -577,3 +577,46 @@ body.pg-sitemap .stamp{display:inline-block;margin-left:8px;vertical-align:2px}
 body.pg-preview-frame .btnrow{justify-content:center;margin:8px 0 4px}
 body.pg-preview-frame .cap{text-align:center;padding:0 14px 18px}
 body.pg-preview-frame .stage{display:flex;justify-content:center}
+
+/* ── §12 · ROOM NAVIGATION — Tyler's navigation model (Nov 16, 2026, mocked
+   on the Room — v3 page for his tap-test; TW-4/TW-5). The room is home:
+   login lands in the room, on its landing face; ONE menu button in the room
+   header — carrying the approvals WAITING COUNT, so a gate never hides —
+   opens the side menu (Approvals · Run Book · Board · Members · the room's
+   threads, each thread a menu item with a waiting dot where something in it
+   needs a person). A thread opens as its own object. Every part below is
+   token-only; the waiting badge/dot spend the --yours family, which the
+   palette law reserves for waiting-on-Tyler semantics. The wordmark here is
+   .roomname (ink), NOT .brandword — .brandword is cream tuned for the
+   pine-deep preview bar and would vanish on a card ground. ── */
+.roomhead{display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:9px 12px;margin-top:14px}
+.roomhead .brandmark,.sidemenu .brandmark{box-shadow:0 0 0 1px var(--line)}
+.roomhead .presence{margin:0 0 0 auto;text-align:right}
+.roomname{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-weight:700;font-size:19px;color:var(--ink);letter-spacing:.01em}
+.menubtn{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:6px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font-size:19px;line-height:1;text-decoration:none;flex:none}
+.waitbadge{background:var(--yours);color:#1b2321;font-size:12px;font-weight:700;border-radius:999px;padding:2px 8px;white-space:nowrap}
+.landing{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 17px;margin-top:12px}
+.landing .k{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.landing .purpose{font-size:16px;margin:0}
+.waitstrip{background:var(--yourswash);border:1.5px solid var(--yoursline);border-radius:12px;padding:12px 14px;margin-top:13px}
+.waitstrip .wk{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--yoursdeep)}
+.waitrow{display:flex;align-items:center;gap:12px;padding-top:10px;margin-top:10px;border-top:1px dashed var(--yoursline)}
+.waitrow .wt{font-weight:600;font-size:16px}
+.waitrow .wm{font-size:13.5px;color:var(--muted);margin-top:1px}
+.waitrow .wact{margin-left:auto;flex:none;border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:8px 15px;font-size:14.5px;font-weight:600;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.drawerframe{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper);margin-top:6px}
+.skelhint{position:absolute;top:18px;left:24px;right:18px}
+.scrim{position:absolute;inset:0;background:rgba(27,35,33,.45)}
+.sidemenu{position:relative;width:min(320px,88%);background:var(--card);border-right:1px solid var(--line);padding:14px 14px 16px}
+.menuhead{display:flex;align-items:center;gap:8px;padding-bottom:11px;border-bottom:1px solid var(--line)}
+.menuclose{margin-left:auto;color:var(--muted);text-decoration:none;font-size:16px;padding:10px;min-height:44px;display:inline-flex;align-items:center}
+.menuitem{display:flex;align-items:center;gap:8px;min-height:44px;padding:11px 10px;color:var(--ink);text-decoration:none;font-weight:600;font-size:16px;border-radius:10px}
+.menuitem .waitbadge{margin-left:auto}
+.menulabel{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:16px 2px 4px}
+.threaditem{display:block;padding:10px;border-radius:10px;color:var(--ink);text-decoration:none}
+.threaditem .tt{font-weight:600;font-size:15.5px;display:block}
+.threaditem .tm{font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:6px;margin-top:1px}
+.threaditem.on{background:var(--askbg);border:1px solid var(--askline)}
+.waitdot{width:9px;height:9px;border-radius:50%;background:var(--yoursdeep);flex:none;display:inline-block}
+:root[data-theme="dark"] .waitdot{background:var(--yours)}
+.menunote{font-size:13px;color:var(--muted);margin:13px 2px 0}

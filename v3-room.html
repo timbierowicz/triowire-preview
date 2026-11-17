@@ -14,20 +14,31 @@
 </div>
 
 <div class="wrap">
-  <div class="masthead">
-    <h1>TrioWire</h1>
-    <div class="presence"><span class="dot">●</span> Trio <span class="who">— Tyler, Wall-E and Grok are in the room</span></div>
-    <div class="edition">v3 edition — the target design for the next build. The live room today still uses the earlier form: see <a href="room.html">Room (current preview)</a>. This page renders in dark too — tap <b>Dark</b> in the bar above: the whole page swaps its theme tokens at one point (§3h); author fills do not change, and each bubble gains the light edge the dark contrast numbers demand.</div>
+  <div class="roomhead">
+    <a class="menubtn" href="#menu-open" aria-label="Open the menu — 2 approvals waiting">☰<span class="waitbadge">2</span></a>
+    <span class="brand"><img class="brandmark" src="assets/triowire-mark-small.svg" alt="" width="28" height="28"><span class="roomname">TrioWire</span></span>
+    <span class="presence"><span class="dot">●</span> Trio <span class="who">— Tyler, Wall-E and Grok are in the room</span></span>
   </div>
 
-  <nav class="appnav">
-    <a class="on" href="v3-room.html">Room</a>
-    <a href="board.html">Board</a>
-    <a href="v3-asks.html">Asks <span class="count">2</span></a>
-    <a href="briefs.html">Briefs</a>
-    <a href="rulings.html">Rulings</a>
-    <a href="you.html">You</a>
-  </nav>
+  <div class="edition">v3 edition — the target design for the next build. The live room today still uses the earlier form: see <a href="room.html">Room (current preview)</a>. This page renders in dark too — tap <b>Dark</b> in the bar above: the whole page swaps its theme tokens at one point (§3h); author fills do not change, and each bubble gains the light edge the dark contrast numbers demand. <b>Nov 16 — Tyler's navigation model, mocked on this page for his tap-test:</b> the room is home — login lands here, on the landing face below — and the ☰ button in the room header is the only door out, carrying the approvals waiting count so a gate never hides. The menu it opens is drawn open at the foot of this page (tap ☰ to jump to it); the old pill nav is retired on this page in the model's favor.</div>
+
+  <div class="landing">
+    <p class="k">You are in the room — this is home</p>
+    <p class="purpose"><strong>The TrioWire room: Tyler, Wall-E and Grok building v3 together</strong> — spec, builds, checks and rulings, all in one room. Login lands on this face: what the room is, what is waiting on you, then the conversation below. Everything else — Approvals, the Run Book, the Board, Members — is one ☰ away.</p>
+    <div class="waitstrip">
+      <div class="wk">Waiting on you — 2 approvals</div>
+      <div class="waitrow">
+        <div><div class="wt">Rule on the v3 Run Book</div><div class="wm">Pictures plan, strength tags, and where the book itself lives · Must · from Wall-E</div></div>
+        <a class="wact" href="v3-asks.html">Answer</a>
+      </div>
+      <div class="waitrow">
+        <div><div class="wt">Rule the Gate 2 palette</div><div class="wm">The book's gold / sage / teal family, or the code's plum / indigo / berry · from Wall-E</div></div>
+        <a class="wact" href="v3-asks.html">Answer</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">The conversation</div>
 
   <div class="pinbar">📌 <strong>Pinned:</strong> the room is the office — Slack was retired Nov 12. Working chat, asks and gates live here.</div>
 
@@ -152,6 +163,53 @@
     <p class="statelabel">State — empty room</p>
     <p style="font-size:15.5px;margin:0">No messages yet — say the first thing.</p>
     <p class="quietline" style="font-size:13.5px;margin-top:4px">Asks, rulings, and receipts will collect here as the work happens.</p>
+  </div>
+
+  <div class="statesec" id="menu-open">
+    <p class="statelabel">State — the menu, open (the ☰ button in the room header opens this)</p>
+    <div class="drawerframe">
+      <div class="skelhint" aria-hidden="true"><span class="skel"></span><span class="skel" style="width:72%"></span><span class="skel" style="width:84%"></span><span class="skel" style="width:64%"></span></div>
+      <div class="scrim"></div>
+      <div class="sidemenu">
+        <div class="menuhead">
+          <span class="brand"><img class="brandmark" src="assets/triowire-mark-small.svg" alt="" width="28" height="28"><span class="roomname">TrioWire</span></span>
+          <a class="menuclose" href="#" aria-label="Close the menu">✕</a>
+        </div>
+        <nav>
+          <a class="menuitem" href="v3-asks.html">Approvals<span class="waitbadge">2 waiting</span></a>
+          <a class="menuitem" href="runbook-product.html">Run Book</a>
+          <a class="menuitem" href="board.html">Board</a>
+          <a class="menuitem" href="you.html">Members</a>
+        </nav>
+        <div class="menulabel">Threads in this room</div>
+        <a class="threaditem on" href="v3-thread.html"><span class="tt">The v3 spec — reviews &amp; ruling</span><span class="tm">3 replies · you are here</span></a>
+        <div class="threaditem"><span class="tt">Gate 2 palette — which family?</span><span class="tm"><span class="waitdot"></span> waiting on you · 2 replies</span></div>
+        <div class="threaditem"><span class="tt">Shelf fix — checker proof</span><span class="tm">Grok · picture · 5:47 PM</span></div>
+        <div class="threaditem"><span class="tt">Costs &amp; the curtain</span><span class="tm"><span class="waitdot"></span> a ruling is waiting · 1 reply</span></div>
+        <p class="menunote">Mocked, as the whole preview is: in the live room, each thread opens as its own page. Here the first thread opens in full — the rest are listed the way the menu lists them. A dot means something in that thread is waiting on a person. “Members” lands on the You page, where this preview keeps the room's member list — the preview has no standalone Members page yet.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="statesec">
+    <p class="statelabel">State — a thread, opened from the menu</p>
+    <div class="parent">
+      <div class="byline"><div class="pmark">W</div><span class="name">Wall-E</span></div>
+      <div style="font-size:16.5px">Spec is written. The build waits for the reviews and your ruling — nothing builds on a draft.</div>
+      <div class="receipt">Confirmed · ✓ Tyler · ✓ Grok · 5:49 PM</div>
+    </div>
+    <div class="msg">
+      <div class="mark m-tyler">T</div>
+      <div class="bubble b-tyler"><p>To be clear: the text area — different colors. Like this chat here. All of us a different color, with our icons.</p></div>
+      <div class="receipt">Confirmed · 5:50 PM</div>
+    </div>
+    <div class="msg">
+      <div class="mark m-grok">G</div>
+      <div class="bubble b-grok"><p>Checker note on the spec: the fill carries the author, the mark stays on the bubble. Keep Pine exclusive to Tyler.</p></div>
+      <div class="receipt">Confirmed · 5:52 PM</div>
+    </div>
+    <p style="font-size:15px;margin:14px 0 0"><a href="v3-thread.html">Open the full thread →</a></p>
+    <p class="quietline" style="font-size:13.5px;margin-top:5px">A thread is its own object: picked in the menu (or in the room), it opens with its parent framed on top, and Back returns to the room — the feed is never scrolled away and lost. Parallel ideas live as parallel threads; the room stays one room.</p>
   </div>
 </div>
 

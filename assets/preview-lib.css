@@ -716,6 +716,8 @@ body.pg-preview-frame .stage{display:flex;justify-content:center}
 .pillcomposer .pfield{flex:1;min-width:0;font-size:16.5px;padding:10px 4px}
 .pillcomposer .pfield .dim{color:var(--muted)}
 .pillcomposer .senddisc{width:44px;height:44px;border-radius:50%;background:var(--pine);color:#fff;font-size:19px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.pillcomposer .micbtn{width:44px;height:44px;border-radius:50%;color:var(--muted);display:flex;align-items:center;justify-content:center;flex:none}
+.pillcomposer .micbtn svg{display:block}
 .plussheet{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px}
 .plussheet .xrow{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
 .plussheet .xrow.first{border-top:none;padding-top:2px}

@@ -723,11 +723,11 @@ body.pg-preview-frame .stage{display:flex;justify-content:center}
 .plussheet .xrow.first{border-top:none;padding-top:2px}
 .plussheet .xname{font-weight:600;font-size:15.5px;flex:none;width:138px}
 .plussheet .xdesc{font-size:13.5px;color:var(--muted)}
-.plussheet .chips span{min-height:40px;padding:8px 11px}
+.plussheet .chips span{min-height:44px;padding:8px 11px}
 .askpanel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px}
 .askpanel .aeyebrow{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
 .askpanel .aexit{margin-left:auto;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:7px 13px;font-size:13.5px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink)}
 .ask.slim{border-left:1px solid var(--askline);padding:10px 13px}
 .ask.slim .q{margin:0 0 2px}
-.ask.slim .for{font-size:13.5px;opacity:.85}
+.ask.slim .for{font-size:13.5px}
 .ask.slim .row{margin-top:8px}

@@ -502,16 +502,11 @@ body.pg-room .previewbar{letter-spacing:.01em}
 body.pg-room .previewbar .mock{font-weight:400;text-transform:none;letter-spacing:0}
 body.pg-room .masthead h1{font-weight:700;letter-spacing:-.01em}
 body.pg-room .field{flex:1;color:var(--muted)}
-body.pg-room .bubble{background:var(--card);border:1px solid var(--line)}
-body.pg-room .bubble a,body.pg-thread .bubble a{color:var(--accent)}
-body.pg-room .bubble a.btn.fill,body.pg-thread .bubble a.btn.fill{color:#fff}
-body.pg-room .bubble a.mention,body.pg-thread .bubble a.mention{color:#1b2321}
-body.pg-room .bubble a.pill,body.pg-thread .bubble a.pill{color:var(--slate)}
+body.pg-room .msg{position:relative}
 body.pg-room .askbtn{color:var(--ink);flex:none}
-body.pg-room .ask .for{color:var(--muted)}
 body.pg-thread .sub{margin-bottom:6px}
 body.pg-thread .field{flex:1;color:var(--muted)}
-body.pg-thread .bubble{background:var(--card);border:1px solid var(--line)}
+body.pg-thread .msg{position:relative}
 body.pg-v3-thread .sub{margin-bottom:6px}
 body.pg-v3-thread .msg{position:relative}
 body.pg-v3-thread .bubble{color:#fff}

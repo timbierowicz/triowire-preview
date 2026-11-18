@@ -42,12 +42,16 @@
   <div class="msg">
     <div class="mark m-grok">G</div><span class="name n-grok">Grok</span></div>
     <div class="bubble b-grok"><p>Checker note on the spec: the fill carries the author, the mark stays on the bubble. Keep Pine exclusive to Tyler — no fallback color should ever land on it, or the room stops meaning anything at a glance.</p></div>
+    <p style="margin:6px 0 0"><span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 12px;font-size:13.5px;font-weight:600;display:inline-block">Reply</span></p>
     <div class="receipt">Confirmed · 10:36 PM</div>
   </div>
 
   <div class="msg">
     <div class="mark m-walle">W</div><span class="name n-walle">Wall-E</span></div>
-    <div class="bubble b-walle"><p>Spec updated: filled bubble plus mark, white text on all three colors. Pins re-cut tonight; it lands behind the same independent QA as v2.</p></div>
+    <div class="bubble b-walle">
+      <a href="#m-<message_id>" style="display:flex;align-items:center;gap:8px;min-height:44px;background:rgba(0,0,0,.18);border-left:3px solid var(--rust);border-radius:0 8px 8px 0;padding:6px 10px;margin:0 0 8px;text-decoration:none;color:#fff"><span style="font-weight:700;font-size:12.5px">Grok</span><span style="font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Checker note on the spec: the fill carries the author…</span></a>
+      <p>Spec updated: filled bubble plus mark, white text on all three colors. Pins re-cut tonight; it lands behind the same independent QA as v2.</p>
+    </div>
     <div class="receipt">Confirmed · ✓ Tyler · 10:38 PM</div>
   </div>
 
@@ -134,10 +138,16 @@
     </div>
     <div class="msg">
       <div class="mark m-tyler">T</div>
-      <div class="bubble b-tyler" style="outline:3px solid #fffdf7;outline-offset:2px;box-shadow:0 0 0 6px rgba(27,35,33,.5)"><p>Ruled — the book governs; build after the gates.</p></div>
+      <div class="bubble b-tyler" style="outline:3px solid #fffdf7;outline-offset:2px;box-shadow:0 0 0 6px rgba(27,35,33,.5)">
+        <div style="background:rgba(0,0,0,.18);border-left:3px solid var(--slate);border-radius:0 8px 8px 0;padding:8px 10px;margin:0 0 10px">
+          <p style="margin:0;font-weight:700">Rule on the v3 Run Book before the build starts?</p>
+          <div style="font-size:13.5px;margin-top:2px">Ask · for Tyler · Answered</div>
+        </div>
+        <p>Ruled — the book governs; build after the gates.</p>
+      </div>
       <div class="receipt">Confirmed · 10:41 PM</div>
     </div>
-    <p class="quietline" style="font-size:13.5px;margin-top:6px">An answered ask in a thread links to its answer the same way the room's does — the same message component draws both: See the answer lands on the recorded first answer in the thread log, ringed on its bubble (landed Nov 17, 2026, production <code>ed5395b0</code>). The landing reaches however deep in the thread log the answer sits — the jump pages earlier replies in and holds the landing, the ring pulsing — the same fix as the room's (ask-lifecycle, landed Nov 17, 2026, production <code>51c84b6d</code>).</p>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">An answered ask in a thread links to its answer the same way the room's does — the same message component draws both: See the answer lands on the recorded first answer in the thread log, ringed on its bubble (landed Nov 17, 2026, production <code>ed5395b0</code>). And the answer carries its question nested in frame, exactly as the room's does — the panel at the head of its bubble above, ruled in the ask author's seat color: the NEST, landed with the replies Nov 17, 2026 (production <code>b30a3cca</code>). The landing reaches however deep in the thread log the answer sits — the jump pages earlier replies in and holds the landing, the ring pulsing — the same fix as the room's (ask-lifecycle, landed Nov 17, 2026, production <code>51c84b6d</code>).</p>
   </div>
   <div class="statesec">
     <p class="statelabel">State — Mentions · in a thread</p>
@@ -152,6 +162,19 @@
       <div class="senddisc" title="Send">↑</div>
     </div>
     <p class="quietline" style="font-size:13.5px;margin-top:6px">The thread composer picks too: the same @ picker over the room's members, the same Notifying chip riding on the pill, the same rule that only a pick mentions — it landed with the room's mentions (Nov 17, 2026, production <code>08dda3d5</code>), and the chip rides on the pill since the declutter (production <code>ba2d5f96</code>). The reply face stays bare apart from this: type, pick, Send.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — Replies · the Replying-to chip, in a thread</p>
+    <div style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:14.5px">
+      <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><strong>Replying to Grok</strong> — Checker note on the spec: the fill carries the author…</span>
+      <span style="margin-left:auto;font-weight:600">Cancel</span>
+    </div>
+    <div class="pillcomposer flat" style="margin-top:8px">
+      <div class="plusbtn" title="Extras">+</div>
+      <div class="pfield">Pine stays Tyler's alone — noted in the spec.</div>
+      <div class="senddisc" title="Send">↑</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">Replies quote in place inside a thread too — the same message component draws both faces: Reply stands on every thread message (drawn under Grok's in the log above), the chip arms above the thread's pill with the same Cancel, and the sent reply wears its strip in the log (drawn on Wall-E's reply above). A reply never crosses threads — the store refuses it — and a thread ask's line names its turn as the room's does, the thread face having gained the member names with this landing. Landed Nov 17, 2026 (production <code>b30a3cca</code>) — replies (§3p), with the room's.</p>
   </div>
   <div class="statesec">
     <p class="statelabel">State — the slim line · waiting in the Room</p>
@@ -171,7 +194,7 @@
         <p>One question rides on this reply:</p>
         <div class="ask slim">
           <div class="q">Can you re-check the staging counts before the grade?</div>
-          <div class="for">Ask · for Wall-E · waiting</div>
+          <div class="for">Ask · waiting on Wall-E</div>
           <div class="row"><a class="pill" href="#oa-<ask_id>">Open in Asks</a><a class="pill" href="thread.html">Withdraw</a></div>
         </div>
       </div>

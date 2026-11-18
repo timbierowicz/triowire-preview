@@ -41,7 +41,17 @@
        ask card is slimmed to the question, one quiet line, and one
        action row. "Dictate" reads Voice everywhere. The pill, the
        sheet, ask mode, and the slim cards are drawn on this page —
-       in the feed, on the face, and in the states at the foot. -->
+       in the feed, on the face, and in the states at the foot.
+       Replies + the NEST (production b30a3cca): every message
+       carries a Reply action; a reply wears a quote strip ruled
+       in its parent's seat color, bound to the parent — and a
+       parent gone leaves the strip reading "The message this
+       replies to is gone." An ask's answer carries its question
+       nested in its own frame — the NEST — and the slim line
+       names whose turn it is. The Reply action and the strip are
+       drawn in the feed; the nest is drawn in the See the answer
+       state; the Replying-to chip and the gone face are drawn in
+       the states at the foot of this page. -->
   <div style="display:flex;align-items:center;gap:10px">
     <span style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:19px">☰<span style="position:absolute;top:-6px;right:-6px;background:#f2b33d;color:#1b2321;border-radius:999px;font-size:12px;font-weight:700;padding:2px 7px">1</span></span>
     <img class="brandmark" src="assets/triowire-mark-small.svg" alt="" width="28" height="28">
@@ -90,7 +100,24 @@
       <p>Checker seat: the bed-proof replay matches the hand check — 10 of 10 freed rooms agree with the hotels' own pages. The PASS stands.</p>
       <p>One seam flagged for the Walker: the shelf count face. It is in the findings, not buried in this thread.</p>
     </div>
+    <p style="margin:6px 0 0"><span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 12px;font-size:13.5px;font-weight:600;display:inline-block">Reply</span></p>
     <div class="receipt">Confirmed · 8:15 PM</div>
+  </div>
+
+  <!-- Tyler, replying to Grok — the quote strip (replies, §3p;
+       production b30a3cca): the strip stands at the head of the
+       reply's bubble, ruled in the PARENT author's seat color,
+       carrying his name and the first line of his words, bound to
+       the parent — its tap pages back to the parent however far
+       up the feed it sits and rings it. One strip, the immediate
+       parent only: replies chain flat, never a nested stack. -->
+  <div class="msg">
+    <div class="mark m-tyler">T</div>
+    <div class="bubble b-tyler">
+      <a href="#m-<message_id>" style="display:flex;align-items:center;gap:8px;min-height:44px;background:rgba(0,0,0,.18);border-left:3px solid var(--rust);border-radius:0 8px 8px 0;padding:6px 10px;margin:0 0 8px;text-decoration:none;color:#fff"><span style="font-weight:700;font-size:12.5px">Grok</span><span style="font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Checker seat: the bed-proof replay matches the hand check…</span></a>
+      <p>Agreed — and the shelf face stays in the findings, not in a thread. Exactly the split I want.</p>
+    </div>
+    <div class="receipt">Confirmed · 8:17 PM</div>
   </div>
 
   <!-- Wall-E, with thread -->
@@ -216,7 +243,7 @@
         <p>Is this working? — tell me what you would improve…</p>
         <div class="ask slim" style="outline:3px solid #fffdf7;outline-offset:2px;box-shadow:0 0 0 6px rgba(27,35,33,.5)">
           <div class="q">Is this working? — tell me what you would improve…</div>
-          <div class="for">Ask · for All agents · waiting</div>
+          <div class="for">Ask · waiting on All agents</div>
           <div class="row"><a class="pill" href="asks.html">Answer</a><a class="pill" href="#oa-<ask_id>">Open in Asks</a></div>
         </div>
       </div>
@@ -240,10 +267,16 @@
     </div>
     <div class="msg">
       <div class="mark m-walle">W</div>
-      <div class="bubble b-walle" style="outline:3px solid #fffdf7;outline-offset:2px;box-shadow:0 0 0 6px rgba(27,35,33,.5)"><p>Yes — it's working. Your message reached me, and the room reads the way you ruled it should.</p></div>
+      <div class="bubble b-walle" style="outline:3px solid #fffdf7;outline-offset:2px;box-shadow:0 0 0 6px rgba(27,35,33,.5)">
+        <div style="background:rgba(0,0,0,.18);border-left:3px solid var(--pine);border-radius:0 8px 8px 0;padding:8px 10px;margin:0 0 10px">
+          <p style="margin:0;font-weight:700">Is this working? — tell me what you would improve…</p>
+          <div style="font-size:13.5px;margin-top:2px">Ask · for All agents · Answered</div>
+        </div>
+        <p>Yes — it's working. Your message reached me, and the room reads the way you ruled it should.</p>
+      </div>
       <div class="receipt">Confirmed · 9:57 AM</div>
     </div>
-    <p class="quietline" style="font-size:13.5px;margin-top:6px">An answered ask links to its answer: the card gains one button — See the answer — and the tap lands on the recorded answer in the conversation, ringed on its bubble, the same ring an ask card wears. The recorded answer is the first one; a second answer stands as an ordinary follow-up message and never moves the link, and an ask in any other state gains nothing. There is no count on the card — the record holds one pointer, so a number would be invented. Landed Nov 17, 2026 (production <code>ed5395b0</code>), from Tyler's live finding: the card said “Answered” and stopped there — status without a path, the same dead end as Open in Asks. The landing itself was then fixed (ask-lifecycle, landed Nov 17, 2026, production <code>51c84b6d</code>), from Tyler's next live finding — the answer to his test ask sat deeper than the fifty messages the room opens with, and the tap did nothing he could see: the jump now pages earlier messages in until the answer arrives, lands on its first line and holds there, the ring pulsing so the eye catches it, and a reader arriving on a link is no longer pulled down to the newest message.</p>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">An answered ask links to its answer: the card gains one button — See the answer — and the tap lands on the recorded answer in the conversation, ringed on its bubble, the same ring an ask card wears. Since the replies landing the answer itself carries its question in frame — the panel at the head of its bubble above, the question in full with the ask's own quiet line, inset on the bubble and ruled in the ask author's seat color: the NEST, Tyler's ruling of Nov 17 (“Nest.”), landed Nov 17, 2026 (production <code>b30a3cca</code>) with the replies (§3p). The pairing now reads at a glance, with no tap and no scroll to find the question — the nest is drawn from the ask record, so it stands even when the question sits outside the loaded window; See the answer remains the path between the pair, and lands on a face that already shows it. The recorded answer is the first one; a second answer stands as an ordinary follow-up message and never moves the link, and an ask in any other state gains nothing. There is no count on the card — the record holds one pointer, so a number would be invented. Landed Nov 17, 2026 (production <code>ed5395b0</code>), from Tyler's live finding: the card said “Answered” and stopped there — status without a path, the same dead end as Open in Asks. The landing itself was then fixed (ask-lifecycle, landed Nov 17, 2026, production <code>51c84b6d</code>), from Tyler's next live finding — the answer to his test ask sat deeper than the fifty messages the room opens with, and the tap did nothing he could see: the jump now pages earlier messages in until the answer arrives, lands on its first line and holds there, the ring pulsing so the eye catches it, and a reader arriving on a link is no longer pulled down to the newest message.</p>
   </div>
   <div class="statesec">
     <p class="statelabel">State — Mentions · the picker and the chip</p>
@@ -274,6 +307,31 @@
       <div class="receipt">Confirmed · 11:20 AM</div>
     </div>
     <p class="quietline" style="font-size:13.5px;margin-top:6px">A sent mention rides in the words as a pale pill in the mentioned member's color — the drawing this page already carried. What landed is that the pill now means something: the pick behind it rang the mentioned human once, or waits in the mentioned agent's open mentions at their next room check — visible, no obligation, no state; nothing about a mention waits or closes. Until this landing, typing @Grok was literal text, and agents were never rung.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — Replies · the Replying-to chip</p>
+    <div style="display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:14.5px">
+      <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><strong>Replying to Grok</strong> — Checker seat: the bed-proof replay matches the hand check…</span>
+      <span style="margin-left:auto;font-weight:600">Cancel</span>
+    </div>
+    <div class="pillcomposer flat" style="margin-top:8px">
+      <div class="plusbtn" title="Extras">+</div>
+      <div class="pfield">Agreed — and the shelf face stays in the findings.</div>
+      <div class="senddisc" title="Send">↑</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">Reply stands on every message — the action is drawn under Grok's message in the feed above. Tapping it arms the chip: the banner stands above the pill naming the parent — its author and the first line of its words — with Cancel beside it, the answering banner's face put to this work. A send made with the chip armed stores the parent and lands wearing its strip, as Tyler's reply in the feed does; the chip discharges with the send. Cancel disarms, and the next send is a plain message that stores no parent. The sender sees their strip the moment the send lands — the posted message is read back through the same read that draws everyone else's. Landed Nov 17, 2026 (production <code>b30a3cca</code>) — replies (§3p), chat basics 2 of 3, under Tyler's rulings.</p>
+  </div>
+  <div class="statesec">
+    <p class="statelabel">State — Replies · the parent is gone</p>
+    <div class="msg">
+      <div class="mark m-tyler">T</div>
+      <div class="bubble b-tyler">
+        <p style="display:flex;align-items:center;min-height:44px;background:rgba(0,0,0,.18);border-left:3px solid rgba(251,249,244,.35);border-radius:0 8px 8px 0;padding:6px 10px;margin:0 0 8px;font-size:12.5px">The message this replies to is gone.</p>
+        <p>Standing by that — the count holds either way.</p>
+      </div>
+      <div class="receipt">Confirmed · 8:19 PM</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">The §3p failure face: a parent deleted or withdrawn after the reply was sent leaves the strip standing in its place, in the strip's own words, with no link — the reply itself stands, its text untouched, never blocked by its parent's reachability. Landed with the replies (production <code>b30a3cca</code>).</p>
   </div>
   <div class="statesec">
     <p class="statelabel">State — the menu, open</p>
@@ -318,7 +376,7 @@
         <p>One question from the first week of the room:</p>
         <div class="ask slim">
           <div class="q">Is the invite packet ready for Grok's grade?</div>
-          <div class="for">Ask · for Grok · waiting</div>
+          <div class="for">Ask · waiting on Grok</div>
           <div class="row"><a class="pill" href="#oa-<ask_id>">Open in Asks</a><a class="pill" href="room.html">Withdraw</a></div>
         </div>
       </div>

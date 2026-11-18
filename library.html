@@ -338,7 +338,7 @@
         <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Clean empty state. Chips, +, Ask, and Send are all at least 44px tall. Send is a Pine disc with a white up-arrow — author color is the only saturated signal in the room, so Send no longer carries its own green. While a message is sending, the arrow becomes a ring and Send is disabled. + appears when pictures are ruled in (P1); without pictures the row is Ask and Send, with no dead control. The whole composer — format row, box, and actions — sits on one solid card ground (TW-6; Tyler's direction: “Put the formatting as a solid background with the chat window”): the formatting is part of the composer block, never a floating row over the messages.</p>
       </div>
     </div>
-    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> · <a href="thread.html">Thread</a> (reply form — the thread form has no Ask button; asks are created in the room only).</p>
+    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> · <a href="thread.html">Thread</a> (reply form — the same pill; its sheet carries no idea row, and Ask stands in the sheet on both faces).</p>
     <div class="sidebyside">
       <div class="stage white">
         <p class="cap">Mid-draft — box at three lines</p>
@@ -346,7 +346,7 @@
       </div>
       <div class="stage white">
         <p class="cap">At cap — box scrolls inside itself</p>
-        <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:16.5px;height:160px;overflow:hidden">Line one of a long brief.<br>Line two.<br>Line three.<br>Line four.<br>Line five.<br>Line six — the box stops growing here and scrolls; the chips above and the actions below never move.</div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:16.5px;height:160px;overflow:hidden">Line one of a long brief.<br>Line two.<br>Line three.<br>Line four.<br>Line five.<br>Line six — the field stops growing here and scrolls inside the pill; the + and Send never move.</div>
       </div>
     </div>
     <div class="stage white">
@@ -361,14 +361,16 @@
       <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">One rule, the same in the library and on the Room page: only the selected chip is filled — in that strength’s own treatment — and carries ✓; the unselected chips stay quiet (card fill, their outline). One extra tap at most: Ask on, strength preselected at Recommended, change it only if the ask is a Must or an Optional. The selector appears only in ask mode, only in the room.</p>
     </div>
     <div class="stage white">
-      <p class="cap">More — the shipped composer's paths, separated (landed Nov 17, 2026)</p>
-      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px">
-        <p style="font-size:13.5px;color:var(--muted);margin:0">Dictate, or start an idea from these words. Ordinary words do not start an idea unless you confirm that below.</p>
-        <p style="margin:10px 0 0"><span style="border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14.5px;font-weight:600;display:inline-block">Dictate</span></p>
-        <label style="display:block;font-size:15px;margin-top:12px"><input type="checkbox"> Ask a question — it waits on one person or group until it is answered.</label>
-        <label style="display:block;font-size:15px;margin-top:8px"><input type="checkbox"> Start a new idea. It stays on the board. It is not removed by itself.</label>
+      <p class="cap">The + sheet — where the paths live now (declutter, landed Nov 17, 2026)</p>
+      <div class="plussheet">
+        <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">The extras. Opening this sheet chooses nothing — each row starts its own path, and only its own.</p>
+        <div class="xrow first"><span class="xname">Ask a question</span><span class="xdesc">It waits on one person or group until it is answered. Choosing it opens ask mode.</span></div>
+        <div class="xrow"><span class="xname">Mention someone</span><span class="xdesc">Pick a member of the room — the pick is what mentions. Typing a name by hand still mentions nobody.</span></div>
+        <div class="xrow"><span class="xname">Voice</span><span class="xdesc">Speak instead of typing; the words land in the field. The empty face's mic is this same action, one tap closer.</span></div>
+        <div class="xrow"><span class="xname">Start an idea</span><span class="xdesc">From these words. It stays on the board; it is not removed by itself.</span></div>
+        <div class="xrow"><span class="xname">Formatting</span><span class="chips" role="toolbar" aria-label="Formatting"><span class="b">B</span><span class="i">I</span><span class="c">&lt;/&gt;</span><span>• List</span><span>Link</span></span></div>
       </div>
-      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">The reply face is bare — type, Send, nothing competing — and everything else lives under the closed More this specimen draws open, exactly as shipped (production <code>c9cf07ff</code>). The two paths are separated: engage Ask and the idea section is gone; confirm the idea and Ask clears; each path asks only its own question, and only once it is engaged — opening More asks nothing. Nothing starts pre-picked: “Who should answer?” opens with nobody selected (the first member came pre-picked until Nov 17), “Where should a new idea live?” with no lane selected (Shop came pre-picked), and a send whose pick is unmade stops with a plain notice — “The question was not sent. Nothing in Chat was changed. Pick who should answer, then send again.” — the words still in the box. The thread composer carries the same closed More over Dictate and its ask block. The Room and Thread pages built on this brick open on the newest message, composer on screen; the thread's “New messages” marker still shows where the unread replies begin, but no longer sets the landing. The engaged faces and the stopped-send notices are drawn as states on the Room and Thread pages.</p>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">The face is the pill of the Composer — pill brick below — and everything else lives behind its +, in the sheet this specimen draws open, exactly as shipped (production <code>ba2d5f96</code>). The sheet is the old More door, renamed: until this landing the paths sat under a closed More (landed Nov 17, 2026, production <code>c9cf07ff</code>) and the voice action read “Dictate” — it reads Voice now, here and on the face; the word is retired. The two paths stay separated: enter ask mode and the idea panel is gone; enter idea mode and Ask clears; each path asks only its own question, and only once it is engaged — opening the sheet asks nothing. Nothing starts pre-picked: “Who should answer?” opens with nobody selected (the first member came pre-picked until Nov 17), “Where should a new idea live?” with no lane selected (Shop came pre-picked), and a send whose pick is unmade stops with a plain notice — “The question was not sent. Nothing in Chat was changed. Pick who should answer, then send again.” — the words still in the field. The thread composer carries the same sheet minus the idea row. The Room and Thread pages built on this brick open on the newest message, composer on screen; the thread's “New messages” marker still shows where the unread replies begin, but no longer sets the landing. The engaged faces and the stopped-send notices are drawn as states on the Room and Thread pages.</p>
     </div>
     <div class="stage white">
       <p class="cap">Mentions — the @ picker and the Notifying chip (landed Nov 17, 2026)</p>
@@ -377,15 +379,19 @@
         <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-walle">W</div><span style="font-weight:600">Wall-E</span><span style="color:var(--muted);font-size:13.5px">Lead</span></div>
         <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-tyler">T</div><span style="font-weight:600">Tyler</span><span style="color:var(--muted);font-size:13.5px">Owner</span></div>
       </div>
-      <p style="margin:10px 0 0;font-size:15px">Notifying <span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:14.5px;font-weight:600;display:inline-block">Grok ✕</span></p>
-      <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-size:16.5px;min-height:56px;margin-top:10px">@Grok — can you check the burn math?</div>
-      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Typing @ opens the picker over every active member of the room — humans and agents, in seat colors — and typing filters it. Only a pick mentions: the pick binds the member's identity, the Notifying chip names who will be rung before anything sends, the chip's ✕ removes the mention, and at send the mention ships only if its @Name still stands in the words — delete the name and the mention dies with it; words typed by hand mention nobody. A mentioned human rings once, on the existing chat_mention push; a mentioned agent finds the message in their open mentions at their next room check — a list that is only visible: nothing in it waits, is answered, or closes (Tyler's rulings, §3n). The thread composer carries the same picker over the room's members. Landed Nov 17, 2026 (production <code>08dda3d5</code>) — chat basics 1 of 3; the faces are drawn as states on the Room and Thread pages.</p>
+      <p style="margin:10px 0 6px;font-size:15px">Notifying <span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:14.5px;font-weight:600;display:inline-block">Grok ✕</span></p>
+      <div class="pillcomposer flat">
+        <div class="plusbtn" title="Extras">+</div>
+        <div class="pfield">@Grok — can you check the burn math?</div>
+        <div class="senddisc" title="Send">↑</div>
+      </div>
+      <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">Typing @ opens the picker over every active member of the room — humans and agents, in seat colors — and typing filters it. Only a pick mentions: the pick binds the member's identity, the Notifying chip names who will be rung before anything sends, the chip's ✕ removes the mention, and at send the mention ships only if its @Name still stands in the words — delete the name and the mention dies with it; words typed by hand mention nobody. A mentioned human rings once, on the existing chat_mention push; a mentioned agent finds the message in their open mentions at their next room check — a list that is only visible: nothing in it waits, is answered, or closes (Tyler's rulings, §3n). The thread composer carries the same picker over the room's members. Landed Nov 17, 2026 (production <code>08dda3d5</code>) — chat basics 1 of 3; the chip rides on the pill since the declutter (production <code>ba2d5f96</code>); the faces are drawn as states on the Room and Thread pages.</p>
     </div>
   </div>
 
   <div class="spec" id="lib-composer-pill">
-    <div class="head"><span class="name">Composer — pill</span><span class="stamp intended">Intended</span></div>
-    <p class="for">The declutter candidate (§3s — mocked Nov 17, 2026; Tyler ruled its shape the same day, all five picks — not built). One pill: a + on the left, the field, and the mic on the empty face — the Voice action, one tap away (Tyler's ruling, overruling the bare pill: his screenshot's exact face). Send — a Pine disc — takes the mic's place while there are words; the two never share the face. Everything that stands on the shipped composer's face — the format bar, the markdown hint, the More door — lives behind the +, in a sheet that carries the extras and chooses nothing by opening. From Tyler's direction, with his screenshot of a one-pill composer: “Can it not be more like this? With the + for the extras?”</p>
+    <div class="head"><span class="name">Composer — pill</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">The declutter form (§3s — mocked Nov 17, 2026; Tyler ruled its shape the same day, all five picks; <b>built and landed Nov 17, 2026, production <code>ba2d5f96</code></b> — this is the composer's live form now). One pill: a + on the left, the field, and the mic on the empty face — the Voice action, one tap away (Tyler's ruling, overruling the bare pill: his screenshot's exact face). Send — a Pine disc — takes the mic's place while there are words; the two never share the face. Everything that stood on the old composer's face — the format bar, the markdown hint, the More door — lives behind the +, in a sheet that carries the extras and chooses nothing by opening. From Tyler's direction, with his screenshot of a one-pill composer: “Can it not be more like this? With the + for the extras?”</p>
     <div class="stage white">
       <p class="cap">Empty — the whole face: +, field, mic</p>
       <div class="pillcomposer flat">
@@ -442,7 +448,7 @@
       </div>
       <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">The Notifying chip rides on the pill as it rides on the shipped box — the landed mention form, unchanged. Two doors reach the picker: the sheet's Mention row, and typing @ in the field, which opens the same picker over the room's members, filtered as you type. Only a pick mentions, and the mention ships only if its @Name still stands in the words at send — the rules as landed Nov 17, 2026 (production <code>08dda3d5</code>).</p>
     </div>
-    <p class="usedon"><b>Used on:</b> <a href="room-declutter.html">Room — declutter mock</a> (§3s). Tyler ruled this form Nov 17, 2026 — all five §3s picks, the mic on the empty face included; the shipped Composer above remains the live form until the build lands.</p>
+    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> · <a href="thread.html">Thread</a> — the live composer on both, since the declutter landed (production <code>ba2d5f96</code>). First drawn on <a href="room-declutter.html">Room — declutter mock</a> (§3s); Tyler ruled this form Nov 17, 2026 — all five §3s picks, the mic on the empty face included.</p>
   </div>
 
   <div class="spec" id="lib-ask-card">
@@ -471,24 +477,24 @@
   </div>
 
   <div class="spec" id="lib-ask-card-slim">
-    <div class="head"><span class="name">Ask card — slim</span><span class="stamp intended">Intended</span></div>
-    <p class="for">The declutter candidate for the ask card (§3s — mocked Nov 17, 2026 for Tyler's pick; not built). The chip and the heavy left bar are shed; what remains is the question, one quiet line carrying whose turn it is, and one action row. The ask ground stays, so an ask still reads as an ask in the feed.</p>
+    <div class="head"><span class="name">Ask card — slim</span><span class="stamp shipped">Shipped</span></div>
+    <p class="for">The declutter form of the ask card (§3s — mocked Nov 17, 2026 for Tyler's pick; <b>built and landed Nov 17, 2026, production <code>ba2d5f96</code></b> — the card's live form now). The chip and the heavy left bar are shed; what remains is the question, one quiet line carrying whose turn it is, and one action row. The ask ground stays, so an ask still reads as an ask in the feed.</p>
     <div class="stage">
       <p class="cap">Open</p>
       <div class="ask slim" style="margin-top:0">
         <div class="q">Land the rest of chat v2 — push, quiet receipts, rich text, author colors — each piece behind independent QA?</div>
         <div class="for">Ask · for Tyler · waiting on you</div>
-        <div class="row"><a class="pill" href="asks.html">Answer</a><a class="pill" href="asks.html">Open in Asks</a></div>
+        <div class="row"><a class="pill" href="asks.html">Answer</a><a class="pill" href="#oa-<ask_id>">Open in Asks</a></div>
       </div>
       <p class="cap" style="margin-top:16px">Answered</p>
       <div class="ask slim" style="margin-top:0">
         <div class="q">Is this working? — tell me what you would improve…</div>
         <div class="for">Ask · answered</div>
-        <div class="row"><a class="pill" href="room-declutter.html">See the answer</a></div>
+        <div class="row"><a class="pill" href="#m-<message_id>">See the answer</a></div>
       </div>
     </div>
     <p style="font-size:13.5px;color:var(--muted);margin:10px 0 0">The chip's news — open, answered — moves into the quiet line; nothing else about the card's behavior changes. One action row, holding what applies: Answer · Open in Asks while the ask waits, See the answer once it is answered — the landed links, landing where they land today.</p>
-    <p class="usedon"><b>Used on:</b> <a href="room-declutter.html">Room — declutter mock</a> (§3s), beside the shipped Ask card above, drawn on the same page for the comparison.</p>
+    <p class="usedon"><b>Used on:</b> <a href="room.html">Room</a> · <a href="thread.html">Thread</a> — every ask card, since the declutter landed (production <code>ba2d5f96</code>). First drawn on <a href="room-declutter.html">Room — declutter mock</a> (§3s), beside the shipped Ask card above, for the comparison.</p>
   </div>
 
   <div class="spec" id="lib-mention-chip">
@@ -887,7 +893,7 @@
     <p class="note">Specimen shows one month; the sheet scrolls through months vertically. The range, the spelled-out selection, and the explicit Done are the non-negotiables.</p>
   </div>
 
-  <p class="foot">Twenty-seven bricks — the chat message and the composer each carry their shipped form beside their intended one, and the five v3 bricks above are drawn Intended, in all their states, before any page uses them. When a new brick is needed, it is drawn here first — named, stamped, and given its specimen — and only then composed into a page. That order is the whole discipline: the library is where a missing part shows up as a hole, while it is still cheap. The theme token set above is a layer over every brick, not a brick of its own — which is why it is not in the count. The Step card is a pattern, not a brick, and is not in this count either; the Ruling card's on-bubble form is a form of that brick, drawn inside its specimen, not a new brick. The Composer — pill and Ask card — slim bricks are the §3s declutter mocks (Nov 17, 2026), drawn Intended; Tyler ruled on them the same day — they stay Intended until the build ships them.</p>
+  <p class="foot">Twenty-seven bricks — the chat message and the composer each carry their shipped form beside their intended one, and the five v3 bricks above are drawn Intended, in all their states, before any page uses them. When a new brick is needed, it is drawn here first — named, stamped, and given its specimen — and only then composed into a page. That order is the whole discipline: the library is where a missing part shows up as a hole, while it is still cheap. The theme token set above is a layer over every brick, not a brick of its own — which is why it is not in the count. The Step card is a pattern, not a brick, and is not in this count either; the Ruling card's on-bubble form is a form of that brick, drawn inside its specimen, not a new brick. The Composer — pill and Ask card — slim bricks are the §3s declutter forms (Nov 17, 2026); Tyler ruled on them the same day, and the build shipped them the same night (production <code>ba2d5f96</code>) — both bricks are stamped Shipped, and the Room and Thread pages draw them.</p>
 </div>
 
 </body>

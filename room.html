@@ -33,7 +33,15 @@
        and holds, the ring pulsing — and a reader arriving on a link
        is no longer pulled to the newest message; the author's own
        open ask card carries Withdraw. Both faces are drawn in the
-       states at the foot of this page. -->
+       states at the foot of this page.
+       Declutter (production ba2d5f96): the composer is the pill —
+       + · field · mic (Voice) on the empty face, Send in the mic's
+       place while there are words — with the format bar, the ask
+       path, and the idea path behind the +, in the sheet; and the
+       ask card is slimmed to the question, one quiet line, and one
+       action row. "Dictate" reads Voice everywhere. The pill, the
+       sheet, ask mode, and the slim cards are drawn on this page —
+       in the feed, on the face, and in the states at the foot. -->
   <div style="display:flex;align-items:center;gap:10px">
     <span style="position:relative;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:19px">☰<span style="position:absolute;top:-6px;right:-6px;background:#f2b33d;color:#1b2321;border-radius:999px;font-size:12px;font-weight:700;padding:2px 7px">1</span></span>
     <img class="brandmark" src="assets/triowire-mark-small.svg" alt="" width="28" height="28">
@@ -66,11 +74,10 @@
         <li>Receipts are one quiet line; the Details button is gone</li>
       </ul>
       <p>Smoke test, <a class="mention tyler" href="you.html">@Tyler</a> — this mention should buzz your phone.</p>
-      <div class="ask">
-        <span class="chip open">Ask · Open</span>
+      <div class="ask slim">
         <div class="q">Land the rest of chat v2 — push, quiet receipts, rich text, author colors — each piece behind independent QA?</div>
-        <div class="for">For Tyler · waiting on you</div>
-        <div class="row"><a class="pill" href="asks.html">Answer</a><a class="pill" href="asks.html">Open in Asks</a></div>
+        <div class="for">Ask · for Tyler · waiting on you</div>
+        <div class="row"><a class="pill" href="asks.html">Answer</a><a class="pill" href="#oa-<ask_id>">Open in Asks</a></div>
       </div>
     </div>
     <div class="receipt">Confirmed · ✓ Tyler · 6:02 PM</div>
@@ -96,23 +103,18 @@
     <div class="receipt">Confirmed · ✓ Tyler · ✓ Grok · 10:29 PM</div>
   </div>
 
-  <!-- Composer — the shipped form, as live: format bar, growing box, Ask + Send,
-       the markdown hint below the row, and the closed More under the hint
-       (Dictate + the ask and idea paths; their open faces are drawn in the
-       states at the foot of this page — paths separated, nothing pre-picked,
-       landed Nov 17, 2026). No + control: pictures are not ruled in
-       (P1), and a dead control is never drawn. -->
-  <div class="composer">
-    <div class="chips" role="toolbar" aria-label="Formatting">
-      <span class="b">B</span><span class="i">I</span><span class="c">&lt;/&gt;</span><span>• List</span><span>Link</span>
-    </div>
-    <div class="box"><span class="dim">Message Chat…</span></div>
-    <div class="actions">
-      <div class="askbtn">Ask</div>
-      <div class="send shipped" title="Send"><span></span></div>
-    </div>
-    <p class="hint"><code>**bold**</code> · <code>*italic*</code> · <code>`code`</code> · <code>- list</code></p>
-    <p style="margin:8px 0 0;font-size:14.5px"><span style="font-weight:600">More</span> <span style="color:var(--muted)">— closed; Dictate and the two paths live under it (drawn open in the states below)</span></p>
+  <!-- Composer — the pill, as landed (declutter, §3s; production ba2d5f96):
+       one pill — the + on the left, the field, and the mic on the empty
+       face (the Voice action). Send exists only while there are words,
+       and takes the mic's place (drawn in the states at the foot of the
+       declutter mock and in this page's ask-mode state). Everything that
+       stood on the old face — the format bar, the markdown hint, the
+       More door with the ask and idea paths — lives behind the +, in
+       the sheet drawn open in the states below. -->
+  <div class="pillcomposer">
+    <div class="plusbtn" title="Extras">+</div>
+    <div class="pfield"><span class="dim">Message</span></div>
+    <div class="micbtn" title="Voice"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
   </div>
 
   <div class="statesec">
@@ -138,19 +140,26 @@
     <p class="quietline" style="font-size:13.5px;margin-top:4px">Landed Nov 17, 2026 (production <code>c9cf07ff</code>), from Tyler's phone walk: chat used to open at the top of the history.</p>
   </div>
   <div class="statesec">
-    <p class="statelabel">State — More, open · no path chosen</p>
-    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px">
-      <p style="font-size:13.5px;color:var(--muted);margin:0">Dictate, or start an idea from these words. Ordinary words do not start an idea unless you confirm that below.</p>
-      <p style="margin:10px 0 0"><span style="border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14.5px;font-weight:600;display:inline-block">Dictate</span></p>
-      <label style="display:block;font-size:15px;margin-top:12px"><input type="checkbox"> Ask a question — it waits on one person or group until it is answered.</label>
-      <label style="display:block;font-size:15px;margin-top:8px"><input type="checkbox"> Start a new idea. It stays on the board. It is not removed by itself.</label>
+    <p class="statelabel">State — the + sheet, open</p>
+    <div class="plussheet">
+      <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">The extras. Opening this sheet chooses nothing — each row starts its own path, and only its own.</p>
+      <div class="xrow first"><span class="xname">Ask a question</span><span class="xdesc">It waits on one person or group until it is answered. Choosing it opens ask mode, drawn below.</span></div>
+      <div class="xrow"><span class="xname">Mention someone</span><span class="xdesc">Pick a member of the room — the pick is what mentions. Typing a name by hand still mentions nobody.</span></div>
+      <div class="xrow"><span class="xname">Voice</span><span class="xdesc">Speak instead of typing; the words land in the field. The empty face's mic is this same action, one tap closer.</span></div>
+      <div class="xrow"><span class="xname">Start an idea</span><span class="xdesc">From these words. It stays on the board; it is not removed by itself.</span></div>
+      <div class="xrow"><span class="xname">Formatting</span><span class="chips" role="toolbar" aria-label="Formatting"><span class="b">B</span><span class="i">I</span><span class="c">&lt;/&gt;</span><span>• List</span><span>Link</span></span></div>
     </div>
-    <p class="quietline" style="font-size:13.5px;margin-top:6px">Opening More asks nothing: no question from either path shows until its own path is chosen.</p>
+    <div class="pillcomposer flat" style="margin-top:8px">
+      <div class="plusbtn" title="Extras">+</div>
+      <div class="pfield"><span class="dim">Message</span></div>
+      <div class="micbtn" title="Voice"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">The sheet is the old More door, renamed for what it holds: the format bar is its Formatting row, and Voice, the ask path, and the idea path are its rows. Opening it asks nothing — no question from either path shows until its own row is chosen. The markdown hint line is gone; the sheet names formatting in words. Landed Nov 17, 2026 (production <code>ba2d5f96</code>) — the declutter (§3s), under Tyler's rulings.</p>
   </div>
   <div class="statesec">
-    <p class="statelabel">State — More, Ask chosen</p>
-    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px">
-      <label style="display:block;font-size:15px"><input type="checkbox" checked> Ask a question — it waits on one person or group until it is answered.</label>
+    <p class="statelabel">State — ask mode · entered from the sheet</p>
+    <div class="askpanel">
+      <div class="aeyebrow"><span>Ask a question</span><span class="aexit">✕ Not an ask</span></div>
       <fieldset style="border:1px solid var(--line);border-radius:12px;padding:8px 14px 12px;margin:12px 0 0">
         <legend style="font-size:15px;font-weight:600;padding:0 6px">Who should answer?</legend>
         <label style="display:block;font-size:15px;margin-top:6px"><input type="radio" name="pv-ask-target"> Wall-E</label>
@@ -159,12 +168,17 @@
         <label style="display:block;font-size:15px;margin-top:6px"><input type="radio" name="pv-ask-target"> Decision maker</label>
       </fieldset>
     </div>
-    <p class="quietline" style="font-size:13.5px;margin-top:6px">Only the ask's own question shows — the idea path is gone while Ask is on — and nobody is pre-picked: until Nov 17 the first member (Grok) came selected.</p>
+    <div class="pillcomposer flat" style="margin-top:8px">
+      <div class="plusbtn" title="Extras">+</div>
+      <div class="pfield">Can you check the burn math before the 4 PM batch?</div>
+      <div class="senddisc" title="Send">↑</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">The ask panel stands above the pill: only the ask's own question shows — the idea path is gone while Ask is on — and nobody is pre-picked: until Nov 17 the first member (Grok) came selected. The words in the field were typed as a plain message; entering ask mode converts nothing, and the exit — ✕ Not an ask — removes the panel and nothing else: the words stay, a plain message again.</p>
   </div>
   <div class="statesec">
-    <p class="statelabel">State — More, idea confirmed</p>
-    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px">
-      <label style="display:block;font-size:15px"><input type="checkbox" checked> Start a new idea. It stays on the board. It is not removed by itself.</label>
+    <p class="statelabel">State — idea mode · entered from the sheet</p>
+    <div class="askpanel">
+      <div class="aeyebrow"><span>Start an idea</span><span class="aexit">✕ Not an idea</span></div>
       <fieldset style="border:1px solid var(--line);border-radius:12px;padding:8px 14px 12px;margin:12px 0 0">
         <legend style="font-size:15px;font-weight:600;padding:0 6px">Where should a new idea live?</legend>
         <label style="display:block;font-size:15px;margin-top:6px"><input type="radio" name="pv-lane"> Dolly</label>
@@ -175,7 +189,12 @@
       </fieldset>
       <p style="margin:12px 0 0"><span style="background:var(--pine);color:#fff;border-radius:999px;padding:9px 16px;font-size:14.5px;font-weight:600;display:inline-block">Start this idea</span></p>
     </div>
-    <p class="quietline" style="font-size:13.5px;margin-top:6px">The lane question appears only after the idea is confirmed, Ask has cleared, and no lane is pre-picked — Shop came selected until Nov 17.</p>
+    <div class="pillcomposer flat" style="margin-top:8px">
+      <div class="plusbtn" title="Extras">+</div>
+      <div class="pfield">A clubhouse page for the fantasy league…</div>
+      <div class="senddisc" title="Send">↑</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">The idea panel stands above the pill the same way: the lane question shows only once the idea path is chosen, Ask has cleared, and no lane is pre-picked — Shop came selected until Nov 17. ✕ Not an idea removes the panel and nothing else; the words stay in the field.</p>
   </div>
   <div class="statesec">
     <p class="statelabel">State — Send stopped · the pick not made</p>
@@ -195,11 +214,10 @@
       <div class="mark m-tyler">T</div>
       <div class="bubble b-tyler">
         <p>Is this working? — tell me what you would improve…</p>
-        <div class="ask" style="outline:3px solid #fffdf7;outline-offset:2px;box-shadow:0 0 0 6px rgba(27,35,33,.5)">
-          <span class="chip open">Ask · Open</span>
+        <div class="ask slim" style="outline:3px solid #fffdf7;outline-offset:2px;box-shadow:0 0 0 6px rgba(27,35,33,.5)">
           <div class="q">Is this working? — tell me what you would improve…</div>
-          <div class="for">For All agents · waiting on them</div>
-          <div class="row"><a class="pill" href="asks.html">Answer</a><a class="pill" href="asks.html">Open in Asks</a></div>
+          <div class="for">Ask · for All agents · waiting</div>
+          <div class="row"><a class="pill" href="asks.html">Answer</a><a class="pill" href="#oa-<ask_id>">Open in Asks</a></div>
         </div>
       </div>
       <div class="receipt">Confirmed · 9:56 AM</div>
@@ -212,11 +230,10 @@
       <div class="mark m-tyler">T</div>
       <div class="bubble b-tyler">
         <p>Is this working? — tell me what you would improve…</p>
-        <div class="ask">
-          <span class="chip" style="background:var(--pine);color:#fff">Ask · Answered</span>
+        <div class="ask slim">
           <div class="q">Is this working? — tell me what you would improve…</div>
-          <div class="for">For All agents · answered</div>
-          <div class="row"><a class="pill" href="room.html">See the answer</a></div>
+          <div class="for">Ask · answered</div>
+          <div class="row"><a class="pill" href="#m-<message_id>">See the answer</a></div>
         </div>
       </div>
       <div class="receipt">Confirmed · 9:56 AM</div>
@@ -230,18 +247,24 @@
   </div>
   <div class="statesec">
     <p class="statelabel">State — Mentions · the picker and the chip</p>
-    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px">
-      <div style="border:1px solid var(--line);border-radius:12px;padding:6px 8px">
-        <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-grok">G</div><span style="font-weight:600">Grok</span><span style="color:var(--muted);font-size:13.5px">Challenger and verifier</span></div>
-        <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-walle">W</div><span style="font-weight:600">Wall-E</span><span style="color:var(--muted);font-size:13.5px">Lead</span></div>
-        <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-tyler">T</div><span style="font-weight:600">Tyler</span><span style="color:var(--muted);font-size:13.5px">Owner</span></div>
-      </div>
-      <div style="border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:15.5px;margin-top:10px">@Gr</div>
-      <p style="font-size:13.5px;color:var(--muted);margin:12px 0 0">After the pick — the chip that rides above the box until send:</p>
-      <p style="margin:8px 0 0;font-size:15px">Notifying <span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:14.5px;font-weight:600;display:inline-block">Grok ✕</span></p>
-      <div style="border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:15.5px;margin-top:10px">@Grok — can you check the burn math?</div>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 8px">
+      <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-grok">G</div><span style="font-weight:600">Grok</span><span style="color:var(--muted);font-size:13.5px">Challenger and verifier</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-walle">W</div><span style="font-weight:600">Wall-E</span><span style="color:var(--muted);font-size:13.5px">Lead</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-tyler">T</div><span style="font-weight:600">Tyler</span><span style="color:var(--muted);font-size:13.5px">Owner</span></div>
     </div>
-    <p class="quietline" style="font-size:13.5px;margin-top:6px">Typing @ opens the member picker — every active member of the room, humans and agents, in their seat colors — and typing filters it. A pick is what makes a mention: it binds the member, shows the removable Notifying chip before send, and the mention ships only if the @Name still stands in the words at send — delete the name and the mention dies with it. Words typed by hand mention nobody. Landed Nov 17, 2026 (production <code>08dda3d5</code>) — chat basics 1 of 3 (§3n), under Tyler's rulings.</p>
+    <div class="pillcomposer flat" style="margin-top:8px">
+      <div class="plusbtn" title="Extras">+</div>
+      <div class="pfield">@Gr</div>
+      <div class="senddisc" title="Send">↑</div>
+    </div>
+    <p style="font-size:13.5px;color:var(--muted);margin:12px 0 0">After the pick — the chip that rides on the pill until send:</p>
+    <p style="margin:8px 0 6px;font-size:15px">Notifying <span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:14.5px;font-weight:600;display:inline-block">Grok ✕</span></p>
+    <div class="pillcomposer flat">
+      <div class="plusbtn" title="Extras">+</div>
+      <div class="pfield">@Grok — can you check the burn math?</div>
+      <div class="senddisc" title="Send">↑</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">Typing @ opens the member picker — every active member of the room, humans and agents, in their seat colors — and typing filters it; the sheet's Mention row opens the same picker. A pick is what makes a mention: it binds the member, shows the removable Notifying chip before send, and the mention ships only if the @Name still stands in the words at send — delete the name and the mention dies with it. Words typed by hand mention nobody. Landed Nov 17, 2026 (production <code>08dda3d5</code>) — chat basics 1 of 3 (§3n), under Tyler's rulings; the chip rides on the pill since the declutter (production <code>ba2d5f96</code>).</p>
   </div>
   <div class="statesec">
     <p class="statelabel">State — Mentions · a sent mention</p>
@@ -293,11 +316,10 @@
       <div class="mark m-tyler">T</div>
       <div class="bubble b-tyler">
         <p>One question from the first week of the room:</p>
-        <div class="ask">
-          <span class="chip open">Ask · Open</span>
+        <div class="ask slim">
           <div class="q">Is the invite packet ready for Grok's grade?</div>
-          <div class="for">For Grok · waiting on him</div>
-          <div class="row"><a class="pill" href="asks.html">Open in Asks</a><a class="pill" href="room.html">Withdraw</a></div>
+          <div class="for">Ask · for Grok · waiting</div>
+          <div class="row"><a class="pill" href="#oa-<ask_id>">Open in Asks</a><a class="pill" href="room.html">Withdraw</a></div>
         </div>
       </div>
       <div class="receipt">Confirmed · 9:41 AM</div>
@@ -307,9 +329,9 @@
       <div class="mark m-tyler">T</div>
       <div class="bubble b-tyler">
         <p>One question from the first week of the room:</p>
-        <div class="ask">
+        <div class="ask slim">
           <div class="q">Is the invite packet ready for Grok's grade?</div>
-          <div class="for">For Grok · waiting on him — Withdrawn</div>
+          <div class="for">Ask · for Grok · withdrawn</div>
         </div>
       </div>
       <div class="receipt">Confirmed · 9:41 AM</div>

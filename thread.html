@@ -51,18 +51,18 @@
     <div class="receipt">Confirmed · ✓ Tyler · 10:38 PM</div>
   </div>
 
-  <div class="composer">
-    <div class="chips" role="toolbar" aria-label="Formatting">
-      <span class="b">B</span><span class="i">I</span><span class="c">&lt;/&gt;</span><span>• List</span><span>Link</span>
-    </div>
-    <div class="box"><span class="dim">Message this thread…</span></div>
-    <div class="actions">
-      <div class="send shipped" title="Send"><span></span></div>
-    </div>
-    <p class="hint"><code>**bold**</code> · <code>*italic*</code> · <code>`code`</code> · <code>- list</code></p>
-    <p style="margin:8px 0 0;font-size:14.5px"><span style="font-weight:600">More</span> <span style="color:var(--muted)">— closed; Dictate and the ask block live under it (drawn open in the states below)</span></p>
-    <p style="font-size:13px;color:var(--muted);margin:8px 0 0">No Ask button in a thread: asks are created in the room only. The shared composer renders Ask in the room and omits it here — one component, two honest faces.</p>
+  <!-- The thread composer — the same pill as the Room's (declutter, §3s;
+       production ba2d5f96): + · field · mic (Voice) on the empty face,
+       Send in the mic's place while there are words. The thread's +
+       sheet carries Ask · Mention · Voice · Formatting and no idea
+       row — one component, two honest faces, the split the composer
+       has always kept. -->
+  <div class="pillcomposer">
+    <div class="plusbtn" title="Extras">+</div>
+    <div class="pfield"><span class="dim">Message</span></div>
+    <div class="micbtn" title="Voice"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
   </div>
+  <p style="font-size:13px;color:var(--muted);margin:8px 0 0">No idea path in a thread: the sheet's Start an idea row is the room's alone. Asks ride on thread replies exactly as they ride on room messages — the ask row stands in this sheet here too.</p>
 
   <div class="statesec">
     <p class="statelabel">State — loading / refreshing</p>
@@ -87,12 +87,20 @@
     <p class="quietline" style="font-size:13.5px;margin-top:4px">Landed Nov 17, 2026 (production <code>c9cf07ff</code>). The “New messages” marker still shows where the unread replies begin; it no longer decides where the page lands.</p>
   </div>
   <div class="statesec">
-    <p class="statelabel">State — More, open</p>
-    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px">
-      <p style="margin:0"><span style="border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:14.5px;font-weight:600;display:inline-block">Dictate</span></p>
-      <label style="display:block;font-size:15px;margin-top:12px"><input type="checkbox"> Ask a question — it waits on one person or group until it is answered.</label>
+    <p class="statelabel">State — the + sheet, open</p>
+    <div class="plussheet">
+      <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">The extras. Opening this sheet chooses nothing — each row starts its own path, and only its own.</p>
+      <div class="xrow first"><span class="xname">Ask a question</span><span class="xdesc">It waits on one person or group until it is answered.</span></div>
+      <div class="xrow"><span class="xname">Mention someone</span><span class="xdesc">Pick a member of the room — the pick is what mentions. Typing a name by hand still mentions nobody.</span></div>
+      <div class="xrow"><span class="xname">Voice</span><span class="xdesc">Speak instead of typing; the words land in the field. The empty face's mic is this same action, one tap closer.</span></div>
+      <div class="xrow"><span class="xname">Formatting</span><span class="chips" role="toolbar" aria-label="Formatting"><span class="b">B</span><span class="i">I</span><span class="c">&lt;/&gt;</span><span>• List</span><span>Link</span></span></div>
     </div>
-    <p class="quietline" style="font-size:13.5px;margin-top:6px">Everything beyond the reply — Dictate, the ask block — sits behind the same closed More as the room's (landed Nov 17, 2026); until then it sat on the thread's face, always on screen. The reply face itself stays bare: type, Send.</p>
+    <div class="pillcomposer flat" style="margin-top:8px">
+      <div class="plusbtn" title="Extras">+</div>
+      <div class="pfield"><span class="dim">Message</span></div>
+      <div class="micbtn" title="Voice"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">Everything beyond the reply sits behind the same + as the room's — the thread's sheet is the room's minus Start an idea, exactly the split the composer has always kept (the declutter, landed Nov 17, 2026, production <code>ba2d5f96</code>). The reply face itself stays bare: the pill, and nothing else on screen.</p>
   </div>
   <div class="statesec">
     <p class="statelabel">State — Open in Asks · in a thread</p>
@@ -100,11 +108,10 @@
       <div class="mark m-walle">W</div><span class="name n-walle">Wall-E</span>
       <div class="bubble b-walle">
         <p>One question rides on this reply:</p>
-        <div class="ask" style="outline:3px solid #fffdf7;outline-offset:2px;box-shadow:0 0 0 6px rgba(27,35,33,.5)">
-          <span class="chip open">Ask · Open</span>
+        <div class="ask slim" style="outline:3px solid #fffdf7;outline-offset:2px;box-shadow:0 0 0 6px rgba(27,35,33,.5)">
           <div class="q">Rule on the v3 Run Book before the build starts?</div>
-          <div class="for">For Tyler · waiting on you</div>
-          <div class="row"><a class="pill" href="asks.html">Answer</a><a class="pill" href="asks.html">Open in Asks</a></div>
+          <div class="for">Ask · for Tyler · waiting on you</div>
+          <div class="row"><a class="pill" href="asks.html">Answer</a><a class="pill" href="#oa-<ask_id>">Open in Asks</a></div>
         </div>
       </div>
       <div class="receipt">Confirmed · 10:38 PM</div>
@@ -117,11 +124,10 @@
       <div class="mark m-walle">W</div><span class="name n-walle">Wall-E</span>
       <div class="bubble b-walle">
         <p>One question rode on this reply, and it is answered:</p>
-        <div class="ask">
-          <span class="chip" style="background:var(--pine);color:#fff">Ask · Answered</span>
+        <div class="ask slim">
           <div class="q">Rule on the v3 Run Book before the build starts?</div>
-          <div class="for">For Tyler · answered</div>
-          <div class="row"><a class="pill" href="thread.html">See the answer</a></div>
+          <div class="for">Ask · answered</div>
+          <div class="row"><a class="pill" href="#m-<message_id>">See the answer</a></div>
         </div>
       </div>
       <div class="receipt">Confirmed · 10:38 PM</div>
@@ -135,15 +141,17 @@
   </div>
   <div class="statesec">
     <p class="statelabel">State — Mentions · in a thread</p>
-    <div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px">
-      <div style="border:1px solid var(--line);border-radius:12px;padding:6px 8px">
-        <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-walle">W</div><span style="font-weight:600">Wall-E</span><span style="color:var(--muted);font-size:13.5px">Lead</span></div>
-        <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-grok">G</div><span style="font-weight:600">Grok</span><span style="color:var(--muted);font-size:13.5px">Challenger and verifier</span></div>
-      </div>
-      <p style="margin:10px 0 0;font-size:15px">Notifying <span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:14.5px;font-weight:600;display:inline-block">Wall-E ✕</span></p>
-      <div style="border:1px solid var(--line);border-radius:12px;padding:11px 13px;font-size:15.5px;margin-top:10px">@Wall-E — the spec is updated in this thread.</div>
+    <div style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 8px">
+      <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-walle">W</div><span style="font-weight:600">Wall-E</span><span style="color:var(--muted);font-size:13.5px">Lead</span></div>
+      <div style="display:flex;align-items:center;gap:9px;padding:7px 6px"><div class="mark m-grok">G</div><span style="font-weight:600">Grok</span><span style="color:var(--muted);font-size:13.5px">Challenger and verifier</span></div>
     </div>
-    <p class="quietline" style="font-size:13.5px;margin-top:6px">The thread composer picks too: the same @ picker over the room's members, the same Notifying chip, the same rule that only a pick mentions — it landed with the room's mentions (Nov 17, 2026, production <code>08dda3d5</code>). The reply face stays bare apart from this: type, pick, Send.</p>
+    <p style="margin:10px 0 6px;font-size:15px">Notifying <span style="border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:14.5px;font-weight:600;display:inline-block">Wall-E ✕</span></p>
+    <div class="pillcomposer flat">
+      <div class="plusbtn" title="Extras">+</div>
+      <div class="pfield">@Wall-E — the spec is updated in this thread.</div>
+      <div class="senddisc" title="Send">↑</div>
+    </div>
+    <p class="quietline" style="font-size:13.5px;margin-top:6px">The thread composer picks too: the same @ picker over the room's members, the same Notifying chip riding on the pill, the same rule that only a pick mentions — it landed with the room's mentions (Nov 17, 2026, production <code>08dda3d5</code>), and the chip rides on the pill since the declutter (production <code>ba2d5f96</code>). The reply face stays bare apart from this: type, pick, Send.</p>
   </div>
   <div class="statesec">
     <p class="statelabel">State — the slim line · waiting in the Room</p>
@@ -161,11 +169,10 @@
       <div class="mark m-tyler">T</div>
       <div class="bubble b-tyler">
         <p>One question rides on this reply:</p>
-        <div class="ask">
-          <span class="chip open">Ask · Open</span>
+        <div class="ask slim">
           <div class="q">Can you re-check the staging counts before the grade?</div>
-          <div class="for">For Wall-E · waiting on him</div>
-          <div class="row"><a class="pill" href="asks.html">Open in Asks</a><a class="pill" href="thread.html">Withdraw</a></div>
+          <div class="for">Ask · for Wall-E · waiting</div>
+          <div class="row"><a class="pill" href="#oa-<ask_id>">Open in Asks</a><a class="pill" href="thread.html">Withdraw</a></div>
         </div>
       </div>
       <div class="receipt">Confirmed · 10:52 PM</div>

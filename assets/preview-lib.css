@@ -141,10 +141,10 @@
 .brandmark{width:28px;height:28px;display:block;border-radius:7px;box-shadow:0 0 0 1px rgba(251,249,244,.55)}
 .brandword{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:17px;color:var(--cream);letter-spacing:.01em}
 .previewbar nav{display:flex;gap:14px;white-space:nowrap}
-.previewbar nav a{color:var(--cream);text-decoration:underline;text-underline-offset:3px}
+.previewbar nav a{color:var(--cream);text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;min-height:44px;padding:0 2px}
 .specbar{position:static}
 .sub{color:var(--muted);font-size:15.5px;margin-top:5px}
-.themebtn{background:transparent;border:1px solid var(--cream);color:var(--cream);border-radius:999px;padding:4px 12px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.themebtn{background:transparent;border:1px solid var(--cream);color:var(--cream);border-radius:999px;padding:4px 12px;min-height:44px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
 .wrap{max-width:760px;margin:0 auto;padding:0 14px 40px}
 a{color:var(--accent)}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.45;-webkit-text-size-adjust:100%}
@@ -153,14 +153,14 @@ h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;
 /* ── §4 · FEED MECHANICS — B3 ChatLayout + ChatMessageList (role=log, density, stream faces) · state faces (loading / empty / error) ── */
 
 /* ── §5 · MESSAGE — TrioWire message row over the Astryx shell (G1 wrapper reading): ChatMessageBubble form · author fills (K6 tokens) · B4 text · B2 mention token (ChatTokenizedText) · B5 system lines · K7 thread block / framed parent ── */
-.b-grok{background:var(--rust)}
-.b-tyler{background:var(--pine)}
-.b-walle{background:var(--slate)}
+.b-grok{background:var(--rust);color:#fff}
+.b-tyler{background:var(--pine);color:#fff}
+.b-walle{background:var(--slate);color:#fff}
 .bubble{border-radius:14px;padding:14px 15px 12px 40px;font-size:16.5px}
 .bubble .ask{border-radius:10px;margin-top:11px;padding:11px 13px;border:1px solid rgba(251,249,244,.35);background:rgba(251,249,244,.14)}
 .bubble .mention{border-radius:7px;font-weight:700;padding:0 7px;text-decoration:none;background:#fffdf7;display:inline-block;color:#1b2321}
 .bubble .ruling{border-radius:10px;background:rgba(251,249,244,.14);border:1px solid rgba(251,249,244,.35);padding:11px 13px;margin-top:11px;border-left:4px solid #fff}
-.bubble .threadlink{font-size:14px;color:#fff;display:inline-block;font-weight:600;margin-top:7px}
+.bubble .threadlink{font-size:14px;color:#fff;display:inline-flex;align-items:center;min-height:44px;font-weight:600;margin-top:7px}
 .bubble a{color:#fff;text-decoration:underline}
 .bubble code{background:rgba(0,0,0,.28);border-radius:5px;padding:1px 5px;font-size:14.5px;font-family:ui-monospace,Menlo,monospace}
 .bubble li{margin:3px 0}
@@ -183,13 +183,24 @@ h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;
 .mention.tyler{color:var(--pine)}
 .msg{margin-top:16px}
 .msg .mark{position:absolute;top:-11px;left:-6px;z-index:2;width:29px;height:29px;font-size:14px;border:2px solid var(--paper);border-radius:50%;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+/* F-9 avatar gutter (face package, production 245cba9b, Nov 18 2026):
+   on the current Room and Thread pages the author's mark leaves the
+   bubble's corner for its own column — 30px mark + 10px gap + the
+   bubble column — and the bubble's compensating 40px left padding
+   goes back to even padding. The receipt line sits under the bubble
+   column. Scoped to the two current pages; the preserved v3 pages
+   keep the corner draw they were published with. */
+body.pg-room .msg,body.pg-thread .msg{display:flex;flex-wrap:wrap;column-gap:10px}
+body.pg-room .msg .mark,body.pg-thread .msg .mark{position:static;width:30px;height:30px;border:0;margin-top:5px}
+body.pg-room .msg .bubble,body.pg-thread .msg .bubble{flex:1;min-width:0;padding-left:15px}
+body.pg-room .msg .receipt,body.pg-thread .msg .receipt{flex-basis:100%;margin-left:40px}
 .name{font-weight:700;font-size:16.5px}
 .parent{border:1.5px solid var(--pine);border-radius:14px;background:var(--card);padding:13px 15px;margin-top:12px}
 .parent .name{color:var(--slate)}
 .pmark{width:29px;height:29px;border-radius:50%;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex:none;background:var(--slate)}
 .receipt{font-size:12.5px;color:var(--muted);margin-top:5px}
 .receipt a{font-weight:600}
-.threadlink{display:inline-block;margin-top:7px;font-size:14px;font-weight:600;text-decoration:none}
+.threadlink{display:inline-flex;align-items:center;min-height:44px;margin-top:7px;font-size:14px;font-weight:600;text-decoration:none}
 .threadlink:hover{text-decoration:underline}
 
 /* ── §6 · COMPOSER — B1 ChatComposer + ChatComposerInput (drawer / headerActions / footerActions slots) · B2 token chips · B6 attach face · B10 buttons ── */
@@ -202,7 +213,7 @@ h1{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;font-size:27px;
 .btnlabel{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
 .btnrow{display:flex;gap:8px;flex-wrap:wrap}
 .btnrow2{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.chips{display:flex;gap:6px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;min-width:0}
 .chips .b{font-weight:700}
 .chips .c{font-family:ui-monospace,Menlo,monospace;font-size:14px}
 .chips .i{font-style:italic}
@@ -344,7 +355,7 @@ th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-ali
 .answerbox .who{font-weight:700;color:var(--accent);font-size:13.5px}
 .arrow{align-self:center;font-size:19px;color:var(--accent);padding:3px 0;line-height:1}
 .arrow .lbl{font-size:12.5px;color:var(--muted);margin-left:7px;letter-spacing:.02em}
-.back{display:inline-block;margin:16px 0 2px;font-weight:600;text-decoration:none;font-size:15px}
+.back{display:inline-flex;align-items:center;min-height:44px;margin:16px 0 2px;font-weight:600;text-decoration:none;font-size:15px}
 .back:hover{text-decoration:underline}
 .bar{display:flex;align-items:center;gap:9px}
 .bigmark{width:58px;height:58px;border-radius:50%;background:var(--pine);color:#fff;font-weight:700;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
